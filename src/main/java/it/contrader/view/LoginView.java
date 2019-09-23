@@ -7,7 +7,7 @@ import java.util.Scanner;
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 
-public class LoginView {
+public class LoginView implements View{
 
 	private String username;
 	

@@ -6,7 +6,7 @@ import java.util.Scanner;
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 
-public class HomeUserView{
+public class HomeUserView implements View{
 
 	String choice;
     private Scanner scanner;
