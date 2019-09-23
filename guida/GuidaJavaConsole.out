@@ -1,0 +1,27 @@
+\BOOKMARK [1][-]{section.1}{Introduzione a Java}{}% 1
+\BOOKMARK [1][-]{section.2}{Classi e Oggetti}{}% 2
+\BOOKMARK [1][-]{section.3}{Metodi}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Composizione del metodo}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Definire un metodo}{section.3}% 5
+\BOOKMARK [1][-]{section.4}{Pattern MVC}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Componenti}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Funzionamento}{section.4}% 8
+\BOOKMARK [1][-]{section.5}{Model}{}% 9
+\BOOKMARK [2][-]{subsection.5.1}{Attributi}{section.5}% 10
+\BOOKMARK [2][-]{subsection.5.2}{Costruttore}{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.3}{Getter e Setter}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.4}{ToString e Equals}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{DAO}{}% 14
+\BOOKMARK [2][-]{subsection.6.1}{Definizione della Query}{section.6}% 15
+\BOOKMARK [2][-]{subsection.6.2}{Connessione al DB}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.3}{Esecuzione della Query}{section.6}% 17
+\BOOKMARK [1][-]{section.7}{Service}{}% 18
+\BOOKMARK [1][-]{section.8}{Controller}{}% 19
+\BOOKMARK [2][-]{subsection.8.1}{Interfaccia Controller}{section.8}% 20
+\BOOKMARK [2][-]{subsection.8.2}{Metodo doControl}{section.8}% 21
+\BOOKMARK [2][-]{subsection.8.3}{Reindirizzare ad una View}{section.8}% 22
+\BOOKMARK [1][-]{section.9}{View}{}% 23
+\BOOKMARK [2][-]{subsection.9.1}{Metodo showResults}{section.9}% 24
+\BOOKMARK [2][-]{subsection.9.2}{Metodo showOptiosn}{section.9}% 25
+\BOOKMARK [2][-]{subsection.9.3}{Metodo submit}{section.9}% 26
+\BOOKMARK [1][-]{section.10}{Pattern Singleton}{}% 27
