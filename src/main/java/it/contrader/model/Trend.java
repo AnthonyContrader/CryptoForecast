@@ -13,6 +13,8 @@ public class Trend {
 	
 	private String time;
 	
+	private String namecoin;
+	
 	
 
 	/**
@@ -22,10 +24,10 @@ public class Trend {
 		
 	}
 
-	public Trend (String variation, String time) {
+	public Trend (String variation, String time, String namecoin ) {
 		this.variation = variation;
 		this.time = time;
-		
+		this.namecoin = namecoin;
 	}
 
 	/**
@@ -55,16 +57,22 @@ public class Trend {
 		this.time = time;
 	}
 
-	
+	public String getNamecoin() {
+		return this.time;
+	}
+
+	public void setNamecoin(String time) {
+		this.time = time;
+	}
 
 	//Trasforma un oggetto in una stringa
 	@Override
 	public String toString() {
-		return  idtrend + "\t"  + variation +"\t\t" +   time + "\t\t";
+		return  idtrend + "\t"  + variation +"\t\t" +   time + "\t\t" + namecoin + "\t\t";
 	}
 
 	//Metodo per il confronto degli oggetti
-	/*@Override
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -74,22 +82,12 @@ public class Trend {
 			return false;
 		Trend other = (Trend) obj;
 		if (idtrend != other.idtrend)
-			return false;*/
-		/*if (variation == null) {
-			if (other.variation != null)
-				return false;
-		} else if (!password.equals(other.password))
 			return false;
-		if (username == null) {
-			if (other.username != null)
+		if (namecoin == null) {
+			if (other.namecoin != null)
 				return false;
-		} else if (!username.equals(other.username))
-			return false;
-		if (usertype == null) {
-			if (other.usertype != null)
-				return false;
-		} else if (!usertype.equals(other.usertype))
-			return false;
+		}
 		return true;
-	}*/
+	}
 }
+
