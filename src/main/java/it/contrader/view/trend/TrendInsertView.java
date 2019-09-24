@@ -8,8 +8,13 @@ import it.contrader.main.MainDispatcher;
 public class TrendInsertView {
 	private Request request;
 
+<<<<<<< HEAD
 	private String time;
 	private String variation;
+=======
+	private String variation;
+	private String time;
+>>>>>>> 1c3a440ba27d842617a5309b3eb3e9b22b8666d8
 	private String namecoin;
 	private final String mode = "INSERT";
 	private Scanner scanner;
@@ -34,11 +39,19 @@ public class TrendInsertView {
 	 */
 	
 	public void showOptions() {
+<<<<<<< HEAD
 			System.out.println("Inserisci time dell'utente:");
 			time = getInput();
 			System.out.println("Inserisci variation dell'utente:");
 			variation = getInput();
 			System.out.println("Inserisci tipo dell'utente:");
+=======
+			System.out.println("Inserisci la variazione:");
+			variation = getInput();
+			System.out.println("Inserisci la data:");
+			time = getInput();
+			System.out.println("Inserisci il nome della moneta:");
+>>>>>>> 1c3a440ba27d842617a5309b3eb3e9b22b8666d8
 			namecoin = getInput();
 	}
 
@@ -48,10 +61,18 @@ public class TrendInsertView {
 	
 	public void submit() {
 		request = new Request();
+<<<<<<< HEAD
 		request.put("time", time);
 		request.put("variation", variation);
 		request.put("namecoin", namecoin);
 		request.put("mode", mode);
+=======
+		request.put("variazione", variation);
+		request.put("time", time);
+		request.put("namecoin", namecoin);
+		request.put("mode", mode);
+		
+>>>>>>> 1c3a440ba27d842617a5309b3eb3e9b22b8666d8
 		MainDispatcher.getInstance().callAction("Trend", "doControl", request);
 	}
 	  public String getInput() {
