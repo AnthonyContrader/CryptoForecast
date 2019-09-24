@@ -15,9 +15,9 @@ import it.contrader.model.Trend;
 public class TrendDAO {
 
 	private final String QUERY_ALL = "SELECT * FROM trend";
-	private final String QUERY_CREATE = "INSERT INTO trend (time,variation) VALUES (?,?)";
+	private final String QUERY_CREATE = "INSERT INTO trend (time,variation,namecoin) VALUES (?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM trend WHERE idtrend=?";
-	private final String QUERY_UPDATE = "UPDATE trend SET time=?, variation=?,  WHERE idtrend=?";
+	private final String QUERY_UPDATE = "UPDATE trend SET time=?, variation=?, namecoin=?,  WHERE idtrend=?";
 	private final String QUERY_DELETE = "DELETE FROM trend WHERE idtrend=?";
 
 	public TrendDAO() {
@@ -35,7 +35,8 @@ public class TrendDAO {
 				int idtrend = resultSet.getInt("idtrend");
 				String time = resultSet.getString("time");
 				String variation = resultSet.getString("variation");
-				trend = new Trend(time, variation);
+            	String namecoin = resultSet.getString("namecoin");
+				trend = new Trend(time, variation, namecoin);
 				trend.setId(idtrend);
 				trendsList.add(trend);
 			}
@@ -51,6 +52,7 @@ public class TrendDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, trendToInsert.getTime());
 			preparedStatement.setString(2, trendToInsert.getVariation());
+			preparedStatement.setString(2, trendToInsert.getNamecoin());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -68,11 +70,12 @@ public class TrendDAO {
 			preparedStatement.setInt(1, trendId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			String time, variation;
+			String time, variation, namecoin;
 
 			time = resultSet.getString("time");
 			variation = resultSet.getString("variation");
-			Trend trend = new Trend(time,variation);
+			namecoin = resultSet.getString("namecoin");
+			Trend trend = new Trend(time,variation,namecoin);
 			trend.setId(resultSet.getInt("idtrend"));
 
 			return trend;
@@ -100,13 +103,16 @@ public class TrendDAO {
 				if (trendToUpdate.getVariation() == null || trendToUpdate.getVariation().equals("")) {
 					trendToUpdate.setVariation(trendRead.getVariation());
 				}
+				if (trendToUpdate.getNamecoin() == null || trendToUpdate.getNamecoin().equals("")) {
+					trendToUpdate.setNamecoin(trendRead.getNamecoin());
 
-				
+				}
 
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, trendToUpdate.getTime());
 				preparedStatement.setString(2, trendToUpdate.getVariation());
+				preparedStatement.setString(3, trendToUpdate.getNamecoin());
 				preparedStatement.setInt(4, trendToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)
