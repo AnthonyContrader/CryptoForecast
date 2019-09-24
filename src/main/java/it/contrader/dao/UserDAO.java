@@ -8,7 +8,7 @@ import it.contrader.model.User;
 
 /**
  * 
- * @author Vittorio
+ * @author Giuseppe
  *
  *Per i dettagli della classe vedi Guida sez 6: DAO
  */
@@ -16,9 +16,9 @@ public class UserDAO {
 
 	private final String QUERY_ALL = "SELECT * FROM user";
 	private final String QUERY_CREATE = "INSERT INTO user (username, password, usertype) VALUES (?,?,?)";
-	private final String QUERY_READ = "SELECT * FROM user WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE user SET username=?, password=?, usertype=? WHERE id=?";
-	private final String QUERY_DELETE = "DELETE FROM user WHERE id=?";
+	private final String QUERY_READ = "SELECT * FROM user WHERE iduser=?";
+	private final String QUERY_UPDATE = "UPDATE user SET username=?, password=?, usertype=? WHERE iduser=?";
+	private final String QUERY_DELETE = "DELETE FROM user WHERE iduser=?";
 
 	public UserDAO() {
 
@@ -32,12 +32,12 @@ public class UserDAO {
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			User user;
 			while (resultSet.next()) {
-				int id = resultSet.getInt("id");
+				int iduser = resultSet.getInt("iduser");
 				String username = resultSet.getString("username");
 				String password = resultSet.getString("password");
 				String usertype = resultSet.getString("usertype");
 				user = new User(username, password, usertype);
-				user.setId(id);
+				user.setId(iduser);
 				usersList.add(user);
 			}
 		} catch (SQLException e) {
@@ -76,7 +76,7 @@ public class UserDAO {
 			password = resultSet.getString("password");
 			usertype = resultSet.getString("usertype");
 			User user = new User(username, password, usertype);
-			user.setId(resultSet.getInt("id"));
+			user.setId(resultSet.getInt("iduser"));
 
 			return user;
 		} catch (SQLException e) {

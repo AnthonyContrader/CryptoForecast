@@ -2,75 +2,69 @@ package it.contrader.model;
 /**
  * Per dettagli vedi guida sez 4 Model
  */
-public class User {
+public class Trend {
 
 	/**
 	 * Qui sotto definisco gli attributi di User. 
 	 */
-	private int iduser;
+	private int idtrend;
 
-	private String username;
+	private String variation;
 	
-	private String password;
+	private String time;
 	
-	private String usertype;
+	
 
 	/**
 	 * Definisco i due costruttori, uno vuoto e uno con tre parametri per costrire oggetti di tipo User
 	 */
-	public User() {
+	public Trend() {
 		
 	}
 
-	public User (String username, String password, String usertype) {
-		this.username = username;
-		this.password = password;
-		this.usertype = usertype;
+	public Trend (String variation, String time) {
+		this.variation = variation;
+		this.time = time;
+		
 	}
 
 	/**
 	 * Getter e Setter: servono alle altre classi a recuperare e modificare gli attributi di User
 	 */
 	public int getId() {
-		return this.iduser;
+		return this.idtrend;
 	}
-	public void setId(int iduser) {
-		this.iduser = iduser;
-	}
-
-	public String getUsertype() {
-		return this.usertype;
+	public void setId(int id) {
+		this.idtrend = idtrend;
 	}
 
-	public void setUsertype(String usertype) {
-		this.usertype = usertype;
+	public String getVariation() {
+		return this.variation;
+	}
+
+	public void setVariation(String variation) {
+		this.variation = variation;
 	}
 
 
-	public String getPassword() {
-		return this.password;
+	public String getTime() {
+		return this.time;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setTime(String time) {
+		this.time = time;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getUsername() {
-		return username;
-	}
+	
 
 	//Trasforma un oggetto in una stringa
 	@Override
 	public String toString() {
-		return  iduser + "\t"  + username +"\t\t" +   password + "\t\t" + usertype;
+		return  idtrend + "\t"  + variation +"\t\t" +   time + "\t\t";
 	}
 
 	//Metodo per il confronto degli oggetti
-	@Override
+	/*@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
@@ -78,11 +72,11 @@ public class User {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
-		if (iduser != other.iduser)
-			return false;
-		if (password == null) {
-			if (other.password != null)
+		Trend other = (Trend) obj;
+		if (idtrend != other.idtrend)
+			return false;*/
+		/*if (variation == null) {
+			if (other.variation != null)
 				return false;
 		} else if (!password.equals(other.password))
 			return false;
@@ -97,5 +91,5 @@ public class User {
 		} else if (!usertype.equals(other.usertype))
 			return false;
 		return true;
-	}
+	}*/
 }
