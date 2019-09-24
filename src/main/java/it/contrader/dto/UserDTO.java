@@ -30,7 +30,7 @@ public class UserDTO {
 		this.usertype = usertype;
 	}
 
-	public UserDTO (int id, String username, String password, String usertype) {
+	public UserDTO (int iduser, String username, String password, String usertype) {
 		this.iduser = iduser;
 		this.username = username;
 		this.password = password;
@@ -40,7 +40,7 @@ public class UserDTO {
 	public int getId() {
 		return this.iduser;
 	}
-	public void setId(int id) {
+	public void setId(int iduser) {
 		this.iduser = iduser;
 	}
 

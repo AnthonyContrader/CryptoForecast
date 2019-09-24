@@ -41,7 +41,7 @@ public class UserController implements Controller {
 		String choice = (String) request.get("choice");
 
 		//Definisce i campi della classe (serviranno sempre, tanto vale definirli una sola volta)
-		int id;
+		int iduser;
 		String username;
 		String password;
 		String usertype;
@@ -50,8 +50,8 @@ public class UserController implements Controller {
 		
 		// Arriva qui dalla UserReadView. Invoca il Service con il parametro id e invia alla UserReadView uno user da mostrare 
 		case "READ":
-			id = Integer.parseInt(request.get("id").toString());
-			User user = userService.read(id);
+			iduser = Integer.parseInt(request.get("iduser").toString());
+			User user = userService.read(iduser);
 			request.put("user", user);
 			MainDispatcher.getInstance().callView(sub_package + "UserRead", request);
 			break;
@@ -74,9 +74,9 @@ public class UserController implements Controller {
 		
 		// Arriva qui dalla UserDeleteView. Estrae l'id dell'utente da cancellare e lo passa al Service
 		case "DELETE":
-			id = Integer.parseInt(request.get("id").toString());
+			iduser = Integer.parseInt(request.get("iduser").toString());
 			//Qui chiama il service
-			userService.delete(id);
+			userService.delete(iduser);
 			request = new Request();
 			request.put("mode", "mode");
 			MainDispatcher.getInstance().callView(sub_package + "UserDelete", request);
@@ -84,12 +84,12 @@ public class UserController implements Controller {
 		
 		// Arriva qui dalla UserUpdateView
 		case "UPDATE":
-			id = Integer.parseInt(request.get("id").toString());
+			iduser = Integer.parseInt(request.get("id").toString());
 			username = request.get("username").toString();
 			password = request.get("password").toString();
 			usertype = request.get("usertype").toString();
 			User usertoupdate = new User(username, password, usertype);
-			usertoupdate.setId(id);
+			usertoupdate.setId(iduser);
 			userService.update(usertoupdate);
 			request = new Request();
 			request.put("mode", "mode");
