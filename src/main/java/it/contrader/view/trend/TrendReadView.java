@@ -8,7 +8,7 @@ import it.contrader.model.Trend;
 
 public class TrendReadView  {
 
-	private int id;
+	private int idtrend;
 	private Request request;
 	private final String mode = "READ";
 	private Scanner scanner;
@@ -35,21 +35,21 @@ public class TrendReadView  {
 
 	
 	/**
-	 * chiede all'utente di inserire l'id dell'utente da leggere
+	 * chiede all'utente di inserire l'idtrend dell'utente da leggere
 	 */
 	
 	public void showOptions() {
 		System.out.println("Inserisci l'ID dell'utente:");
-		id = Integer.parseInt(getInput());
+		idtrend = Integer.parseInt(getInput());
 	}
 
 	/**
-	 * impacchetta una request con l'id dell'utente da leggere e la manda al controller tramite il Dispatcher
+	 * impacchetta una request con l'idtrend dell'utente da leggere e la manda al controller tramite il Dispatcher
 	 */
 	
 	public void submit() {
 		request = new Request();
-		request.put("id", id);
+		request.put("idtrend", idtrend);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Trend", "doControl", request);
 	}
