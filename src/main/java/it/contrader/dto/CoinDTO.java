@@ -34,7 +34,7 @@ public CoinDTO(String name, String quotation, String symbol) {
 
 
 //costruttore con campi
-	public CoinDTO(int id, String name, String quotation, String symbol) {
+	public CoinDTO(int idcoin, String name, String quotation, String symbol) {
 	
 		this.idcoin = idcoin;
 		this.name = name;
