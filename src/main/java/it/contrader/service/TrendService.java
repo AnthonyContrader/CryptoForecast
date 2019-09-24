@@ -8,9 +8,12 @@ import it.contrader.model.Trend;
 public class TrendService {
 
 	private TrendDAO trendDAO;
+	
 	/**
 	 * Costruisce un oggetto di tipo trendDAO per poterne usare i metodi
 	 */
+	
+	
 	public TrendService() {
 		this.trendDAO = new TrendDAO();
 	}

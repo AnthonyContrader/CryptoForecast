@@ -17,7 +17,11 @@ public class TrendDAO {
 	private final String QUERY_ALL = "SELECT * FROM trend";
 	private final String QUERY_CREATE = "INSERT INTO trend (time,variation,namecoin) VALUES (?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM trend WHERE idtrend=?";
+<<<<<<< HEAD
 	private final String QUERY_UPDATE = "UPDATE trend SET time=?, variation=?, namecoin=?,  WHERE idtrend=?";
+=======
+	private final String QUERY_UPDATE = "UPDATE trend SET time=?, variation=?, namecoin=?  WHERE idtrend=?";
+>>>>>>> bec0e31725ae73c5353d0aa8cd8794a5e23be1a0
 	private final String QUERY_DELETE = "DELETE FROM trend WHERE idtrend=?";
 
 	public TrendDAO() {
@@ -35,7 +39,11 @@ public class TrendDAO {
 				int idtrend = resultSet.getInt("idtrend");
 				String time = resultSet.getString("time");
 				String variation = resultSet.getString("variation");
+<<<<<<< HEAD
             	String namecoin = resultSet.getString("namecoin");
+=======
+				String namecoin = resultSet.getString("namecoin");
+>>>>>>> bec0e31725ae73c5353d0aa8cd8794a5e23be1a0
 				trend = new Trend(time, variation, namecoin);
 				trend.setId(idtrend);
 				trendsList.add(trend);
@@ -52,7 +60,11 @@ public class TrendDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, trendToInsert.getTime());
 			preparedStatement.setString(2, trendToInsert.getVariation());
+<<<<<<< HEAD
 			preparedStatement.setString(2, trendToInsert.getNamecoin());
+=======
+			preparedStatement.setString(3, trendToInsert.getNamecoin());
+>>>>>>> bec0e31725ae73c5353d0aa8cd8794a5e23be1a0
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -70,12 +82,20 @@ public class TrendDAO {
 			preparedStatement.setInt(1, trendId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
+<<<<<<< HEAD
 			String time, variation, namecoin;
+=======
+			String time, variation,namecoin;
+>>>>>>> bec0e31725ae73c5353d0aa8cd8794a5e23be1a0
 
 			time = resultSet.getString("time");
 			variation = resultSet.getString("variation");
 			namecoin = resultSet.getString("namecoin");
+<<<<<<< HEAD
 			Trend trend = new Trend(time,variation,namecoin);
+=======
+			Trend trend = new Trend(time, variation, namecoin);
+>>>>>>> bec0e31725ae73c5353d0aa8cd8794a5e23be1a0
 			trend.setId(resultSet.getInt("idtrend"));
 
 			return trend;

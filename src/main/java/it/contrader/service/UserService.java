@@ -21,8 +21,8 @@ public class UserService {
 	}
 	
 	//chiama il metodo del DAO che restituisce uno user in base al suo id
-	public User read(int id) {
-		return this.userDAO.read(id);
+	public User read(int iduser) {
+		return this.userDAO.read(iduser);
 	}
 
 	//chiama il metodo del DAO che cancella uno user in base al suo id
