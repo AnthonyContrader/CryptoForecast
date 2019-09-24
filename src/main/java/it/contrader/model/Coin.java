@@ -77,9 +77,23 @@ public class Coin {
 		return  idcoin + "\t"  + name +"\t\t" +   quotation + "\t\t" + symbol;
 	}
 	
-
-
-
-
-
-}
+	//Metodo per il confronto degli oggetti
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Coin other = (Coin) obj;
+			if (idcoin != other.idcoin)
+				return false;
+						if (symbol == null) {
+				if (other.symbol != null)
+					return false;
+			} else if (!symbol.equals(other.symbol))
+				return false;
+			return true;
+		}
+	}
