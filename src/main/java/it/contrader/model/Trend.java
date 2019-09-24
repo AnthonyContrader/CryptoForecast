@@ -34,7 +34,7 @@ public class Trend {
 	public int getId() {
 		return this.idtrend;
 	}
-	public void setId(int id) {
+	public void setId(int idtrend) {
 		this.idtrend = idtrend;
 	}
 
