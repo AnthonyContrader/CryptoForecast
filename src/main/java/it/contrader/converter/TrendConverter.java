@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.dto.TrendDTO;
-import it.contrader.dto.UserDTO;
 import it.contrader.model.Trend;
 
 /**
