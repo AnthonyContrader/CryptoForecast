@@ -23,7 +23,7 @@ public class TrendView  {
 	
 	public void showResults(Request request) {
 		if (request != null) {
-			System.out.println("\n------------------- Gestione utenti ----------------\n");
+			System.out.println("\n------------------- Gestione trend ----------------\n");
 			System.out.println("ID\tTime\tVariation\tNameCoin");
 			System.out.println("----------------------------------------------------\n");
 			

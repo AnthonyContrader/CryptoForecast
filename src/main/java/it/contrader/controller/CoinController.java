@@ -4,8 +4,8 @@ import java.util.List;
 
 
 import it.contrader.main.MainDispatcher;
-import it.contrader.model.Coin;
 import it.contrader.service.CoinService;
+import it.contrader.dto.CoinDTO;
 
 public class CoinController implements Controller {
 
@@ -51,8 +51,8 @@ public class CoinController implements Controller {
 		// Arriva qui dalla UserReadView. Invoca il Service con il parametro id e invia alla UserReadView uno user da mostrare 
 		case "READ":
 			idcoin = Integer.parseInt(request.get("idcoin").toString());
-			Coin coin = coinService.read(idcoin);
-			request.put("coin", coin);
+			CoinDTO coinDTO = coinService.read(idcoin);
+			request.put("coin", coinDTO);
 			MainDispatcher.getInstance().callView(sub_package + "CoinRead", request);
 			break;
 		
@@ -63,7 +63,7 @@ public class CoinController implements Controller {
 			symbol = request.get("symbol").toString();
 			
 			//costruisce l'oggetto coin da inserire
-			Coin cointoinsert = new Coin(name, quotation, symbol);
+			CoinDTO cointoinsert = new CoinDTO(name, quotation, symbol);
 			//invoca il service
 			coinService.insert(cointoinsert);
 			request = new Request();
@@ -88,7 +88,7 @@ public class CoinController implements Controller {
 			name = request.get("name").toString();
 			quotation = request.get("quotation").toString();
 			symbol = request.get("symbol").toString();
-			Coin cointoupdate = new Coin (name, quotation, symbol);
+			CoinDTO cointoupdate = new CoinDTO (name, quotation, symbol);
 			cointoupdate.setId(idcoin);
 			coinService.update(cointoupdate);
 			request = new Request();
@@ -97,10 +97,10 @@ public class CoinController implements Controller {
 			break;
 			
 		//Arriva qui dalla UserView Invoca il Service e invia alla UserView il risultato da mostrare 
-		case "USERLIST":
-			List<Coin> coins = coinService.getAll();
+		case "COINLIST":
+			List<CoinDTO> coinsDTO = coinService.getAll();
 			//Impacchetta la request con la lista degi user
-			request.put("coins", coins);
+			request.put("coins", coinsDTO);
 			MainDispatcher.getInstance().callView("Coin", request);
 			break;
 			

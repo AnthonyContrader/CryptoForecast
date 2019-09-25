@@ -25,7 +25,7 @@ public class CoinDAO {
 	}
 
 	public List<Coin> getAll() {
-		List<Coin> coinList = new ArrayList<>();
+		List<Coin> coinsList = new ArrayList<>();
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			Statement statement = connection.createStatement();
@@ -38,12 +38,12 @@ public class CoinDAO {
 				String symbol = resultSet.getString("symbol");
 				coin = new Coin (name, quotation, symbol);
 				coin.setId(idcoin);
-				coinList.add(coin);
+				coinsList.add(coin);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return coinList;
+		return coinsList;
 	}
 
 	public boolean insert(Coin coinToInsert) {

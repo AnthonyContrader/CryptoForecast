@@ -29,6 +29,14 @@ public class Coin {
 		this.quotation = quotation;
 		this.symbol = symbol;
 	}
+    
+	public Coin(int idcoin, String name, String quotation, String symbol) {
+		
+    	this.idcoin = idcoin;
+		this.name = name;
+		this.quotation = quotation;
+		this.symbol = symbol;
+	}
 
 	// gettere e setter
 	

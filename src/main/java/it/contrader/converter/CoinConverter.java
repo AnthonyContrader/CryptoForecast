@@ -35,13 +35,7 @@ public class CoinConverter  {
 	 */
 	
 	public Coin toEntity(CoinDTO coinDTO) {
-		Coin coin = new Coin();
-		if (coinDTO != null) {
-			coin.setId(coinDTO.getId());
-			coin.setName(coinDTO.getName());
-			coin.setQuotation(coinDTO.getQuotation());
-			coin.setSymbol(coinDTO.getSymbol());
-		}
+		Coin coin = new Coin(coinDTO.getId(), coinDTO.getName(), coinDTO.getQuotation(), coinDTO.getSymbol());
 		return coin;
 	}
 
