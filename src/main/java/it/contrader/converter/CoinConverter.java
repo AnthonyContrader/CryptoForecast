@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.dto.CoinDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.model.Coin;
 
 /**
@@ -14,31 +15,26 @@ import it.contrader.model.Coin;
  *         è OBBLIGATA ad implementarne i metodi
  *
  */
-public class CoinConverter implements Converter<Coin, CoinDTO> {
+public class CoinConverter  {
 
 	/**
 	 * Crea un oggetto di tipo CoinDTO e lo riempie con i campi del parametro coin
 	 * di tipo Coin. Notare l'uso del metodo get() per ottenere il valore
 	 * dell'attributo-
 	 */
-	@Override
+	
 	public CoinDTO toDTO(Coin coin) {
-		CoinDTO coinDTO = new CoinDTO();
-		if (coin != null) {
-			coinDTO.setId(coin.getId());
-			coinDTO.setName(coin.getName());
-			coinDTO.setQuotation(coin.getQuotation());
-			coinDTO.setSymbol(coin.getSymbol());
-		}
+		CoinDTO coinDTO = new CoinDTO(coin.getId(), coin.getName(), coin.getQuotation(), coin.getSymbol());
 		return coinDTO;
-	}
+		}
+	
 
 	/**
 	 * Crea un oggetto di tipo Coin e lo riempie con i campi del parametro coin di
 	 * tipo CoinDTO. Notare l'uso del metodo get() per ottenere il valore
 	 * dell'attributo-
 	 */
-	@Override
+	
 	public Coin toEntity(CoinDTO coinDTO) {
 		Coin coin = new Coin();
 		if (coinDTO != null) {
@@ -53,7 +49,7 @@ public class CoinConverter implements Converter<Coin, CoinDTO> {
 	/**
 	 * Metodo per convertire le liste di Coin.
 	 */
-	@Override
+	
 	public List<CoinDTO> toDTOList(List<Coin> coinList) {
 		// Crea una lista vuota.
 		List<CoinDTO> coinDTOList = new ArrayList<CoinDTO>();
