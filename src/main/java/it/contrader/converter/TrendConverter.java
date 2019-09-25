@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.contrader.dto.TrendDTO;
+import it.contrader.dto.UserDTO;
 import it.contrader.model.Trend;
 
 /**
@@ -14,31 +15,26 @@ import it.contrader.model.Trend;
  *         è OBBLIGATA ad implementarne i metodi
  *
  */
-public class TrendConverter implements Converter<Trend, TrendDTO> {
+public class TrendConverter  {
 
 	/**
 	 * Crea un oggetto di tipo TrendDTO e lo riempie con i campi del parametro trend
 	 * di tipo Trend. Notare l'uso del metodo get() per ottenere il valore
 	 * dell'attributo-
 	 */
-	@Override
+	
 	public TrendDTO toDTO(Trend trend) {
-		TrendDTO trendDTO = new TrendDTO();
-		if (trend != null) {
-			trendDTO.setId(trend.getId());
-			trendDTO.setTime(trend.getTime());
-			trendDTO.setVariation(trend.getVariation());
-			trendDTO.setNamecoin(trend.getNamecoin());
-		}
+		TrendDTO trendDTO = new TrendDTO(trend.getId(), trend.getTime(), trend.getVariation(), trend.getNamecoin());
 		return trendDTO;
-	}
+		}
+	
 
 	/**
 	 * Crea un oggetto di tipo Trend e lo riempie con i campi del parametro trend di
 	 * tipo TrendDTO. Notare l'uso del metodo get() per ottenere il valore
 	 * dell'attributo-
 	 */
-	@Override
+	
 	public Trend toEntity(TrendDTO trendDTO) {
 		Trend trend = new Trend();
 		if (trendDTO != null) {
@@ -53,7 +49,7 @@ public class TrendConverter implements Converter<Trend, TrendDTO> {
 	/**
 	 * Metodo per convertire le liste di Trend.
 	 */
-	@Override
+	
 	public List<TrendDTO> toDTOList(List<Trend> trendList) {
 		// Crea una lista vuota.
 		List<TrendDTO> trendDTOList = new ArrayList<TrendDTO>();
