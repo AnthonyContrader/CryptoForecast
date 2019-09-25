@@ -15,6 +15,3 @@ Cliccare su "Start Import" (in basso a destra). A questo punto si può eseguire i
 
 Nel db ci sono due users:  	ADMIN	(username: 	admin, 	password: admin)
 							USER 	(username: 	user, 	password: user )
-							
-Nel caso si volesse modificare il nome dello schema del db si può modificare dalla workbench e inserire 
-LO STESSO nome nel file config.properties al posto di "sampledb"

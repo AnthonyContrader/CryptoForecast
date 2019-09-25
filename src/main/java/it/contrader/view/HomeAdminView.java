@@ -5,8 +5,6 @@
 package it.contrader.view;
 
 
-import java.util.Scanner;
-
 /**
  * Per Ulteriori dettagli vedi Guida sez 9 View.
  * Per la descrizione dei metodi vedi l'interfaccia View in questo pacchetto.
@@ -14,12 +12,11 @@ import java.util.Scanner;
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 
-public class HomeAdminView implements View {
+public class HomeAdminView extends AbstractView {
 
     private String choice;
     
 	private Request request;
-    private Scanner scanner;
 
 	/**
 	 * Se la request non è nulla mostra un messaggio di benvenuto
@@ -65,10 +62,4 @@ public class HomeAdminView implements View {
         	MainDispatcher.getInstance().callAction("Login", "doControl", request);
         }
     }
-
-    public String getInput() {
-    	
-		scanner = new Scanner(System.in);
-		return scanner.nextLine();
-	}
 }

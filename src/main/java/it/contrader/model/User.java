@@ -7,7 +7,7 @@ public class User {
 	/**
 	 * Qui sotto definisco gli attributi di User. 
 	 */
-	private int iduser;
+	private int id;
 
 	private String username;
 	
@@ -28,14 +28,21 @@ public class User {
 		this.usertype = usertype;
 	}
 
+	public User (int id, String username, String password, String usertype) {
+		this.id = id;
+		this.username = username;
+		this.password = password;
+		this.usertype = usertype;
+	}
+
 	/**
 	 * Getter e Setter: servono alle altre classi a recuperare e modificare gli attributi di User
 	 */
 	public int getId() {
-		return this.iduser;
+		return this.id;
 	}
-	public void setId(int iduser) {
-		this.iduser = iduser;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getUsertype() {
@@ -66,7 +73,7 @@ public class User {
 	//Trasforma un oggetto in una stringa
 	@Override
 	public String toString() {
-		return  iduser + "\t"  + username +"\t\t" +   password + "\t\t" + usertype;
+		return  id + "\t"  + username +"\t\t" +   password + "\t\t" + usertype;
 	}
 
 	//Metodo per il confronto degli oggetti
@@ -79,7 +86,7 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (iduser != other.iduser)
+		if (id != other.id)
 			return false;
 		if (password == null) {
 			if (other.password != null)

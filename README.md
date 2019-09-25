@@ -1,1 +1,2 @@
-# CryptoForecast
+# SAMPLE
+Sample Projects

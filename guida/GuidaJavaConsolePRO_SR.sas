@@ -8,7 +8,7 @@
  */
  
  
-%include "./GuidaJavaConsole_SR_preamble.sas" /nosource;
+%include "./GuidaJavaConsolePRO_SR_preamble.sas" /nosource;
 /* Remove all output files. */
 %cleandir(., tex, tex);
 %cleandir(., png, png);

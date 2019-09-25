@@ -1,16 +1,14 @@
 package it.contrader.view.user;
 
-import java.util.Scanner;
-
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
+import it.contrader.view.AbstractView;
 
-public class UserDeleteView {
+public class UserDeleteView extends AbstractView {
 	private Request request;
 
-	private int iduser;
+	private int id;
 	private final String mode = "DELETE";
-	private Scanner scanner;
 
 	public UserDeleteView() {
 	}
@@ -19,7 +17,7 @@ public class UserDeleteView {
 	 * Se la request non è nulla (ovvero se si arriva dalla mode DELETE del controller) mostra
 	 * l'esito dell'operazione
 	 */
-	
+	@Override
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Cancellazione andata a buon fine.\n");
@@ -30,29 +28,23 @@ public class UserDeleteView {
 	/**
 	 * Chiede all'utente di inserire l'id dell'utente da cancellare
 	 */
-	
+	@Override
 	public void showOptions() {
 			System.out.println("Inserisci id dell'utente:");
-			iduser = Integer.parseInt(getInput());
+			id = Integer.parseInt(getInput());
 
 	}
 
 	/**
 	 * impacchetta la request con l'id dell'utente da cancellare
 	 */
-	
+	@Override
 	public void submit() {
 		request = new Request();
-		request.put("iduser", iduser);
+		request.put("id", id);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("User", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
-	
 
 
 }

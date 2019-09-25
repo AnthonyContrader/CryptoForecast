@@ -1,13 +1,12 @@
 package it.contrader.view.user;
 
 
-import java.util.Scanner;
-
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
+import it.contrader.view.AbstractView;
 
 
-public class UserUpdateView  {
+public class UserUpdateView extends AbstractView {
 	private Request request;
 
 	private int id;
@@ -15,7 +14,6 @@ public class UserUpdateView  {
 	private String password;
 	private String usertype;
 	private final String mode = "UPDATE";
-	private Scanner scanner;
 
 	public UserUpdateView() {
 	}
@@ -24,7 +22,7 @@ public class UserUpdateView  {
 	 * Se la request non è nulla (ovvero se si arriva dalla mode UPDATE del controller) mostra
 	 * l'esito dell'operazione
 	 */
-	
+	@Override
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Modifica andata a buon fine.\n");
@@ -35,7 +33,7 @@ public class UserUpdateView  {
 	/**
 	 * Chiede all'utente di inserire gli attributi dell'utente da modificare
 	 */
-	
+	@Override
 	public void showOptions() {
 		try {
 			System.out.println("Inserisci id dell'utente:");
@@ -55,7 +53,7 @@ public class UserUpdateView  {
 	/**
 	 * Impacchetta la request con i dati inseriti nel metodo showOption()
 	 */
-	
+	@Override
 	public void submit() {
 		request = new Request();
 		request.put("id", id);
@@ -65,10 +63,5 @@ public class UserUpdateView  {
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("User", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
 
 }
