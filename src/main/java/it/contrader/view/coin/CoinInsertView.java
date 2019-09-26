@@ -1,18 +1,19 @@
 package it.contrader.view.coin;
 
-import java.util.Scanner;
+
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
+import it.contrader.view.AbstractView;
 
-public class CoinInsertView {
+public class CoinInsertView extends AbstractView {
 	private Request request;
 
 	private String name;
 	private String quotation;
 	private String symbol;
 	private final String mode = "INSERT";
-	private Scanner scanner;
+	
 
 	public CoinInsertView() {
 	}
@@ -34,11 +35,11 @@ public class CoinInsertView {
 	 */
 	
 	public void showOptions() {
-			System.out.println("Inserisci username dell'utente:");
+			System.out.println("Inserisci il nome della moneta:");
 			name = getInput();
-			System.out.println("Inserisci password dell'utente:");
+			System.out.println("Inserisci la quotazione:");
 			quotation = getInput();
-			System.out.println("Inserisci tipo dell'utente:");
+			System.out.println("Inserisci il symbol:");
 			symbol = getInput();
 	}
 
@@ -54,11 +55,7 @@ public class CoinInsertView {
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Coin", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
+	 
 
 
 }

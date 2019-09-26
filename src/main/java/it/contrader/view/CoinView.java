@@ -25,7 +25,7 @@ public class CoinView  extends AbstractView {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione coin ----------------\n");
-			System.out.println("ID\tname\tquotation\tsymbol");
+			System.out.println("IDcoin\tname\tquotation\tsymbol");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")

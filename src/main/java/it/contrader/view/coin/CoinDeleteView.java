@@ -1,16 +1,17 @@
 package it.contrader.view.coin;
 
-import java.util.Scanner;
+
+import it.contrader.view.AbstractView;
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 
-public class CoinDeleteView {
+public class CoinDeleteView extends AbstractView {
 	private Request request;
 
-	private int id;
+	private int idcoin;
 	private final String mode = "DELETE";
-	private Scanner scanner;
+	
 
 	public CoinDeleteView() {
 	}
@@ -32,8 +33,8 @@ public class CoinDeleteView {
 	 */
 	
 	public void showOptions() {
-			System.out.println("Inserisci id dell'utente:");
-			id = Integer.parseInt(getInput());
+			System.out.println("Inserisci id della coin:");
+			idcoin = Integer.parseInt(getInput());
 
 	}
 
@@ -43,15 +44,11 @@ public class CoinDeleteView {
 	
 	public void submit() {
 		request = new Request();
-		request.put("id", id);
+		request.put("idcoin", idcoin);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Coin", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
+	 
 	
 
 

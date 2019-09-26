@@ -1,6 +1,7 @@
 package it.contrader.view;
 
 import java.util.Scanner;
+import it.contrader.view.AbstractView;
 
 public abstract class AbstractView implements View {
 

@@ -1,13 +1,13 @@
 package it.contrader.view.coin;
 
-
+import it.contrader.view.AbstractView;
 import java.util.Scanner;
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 
 
-public class CoinUpdateView  {
+public class CoinUpdateView extends AbstractView {
 	private Request request;
 
 	private int idcoin;
@@ -15,7 +15,7 @@ public class CoinUpdateView  {
 	private String symbol;
 	private String quotation;
 	private final String mode = "UPDATE";
-	private Scanner scanner;
+	
 
 	public CoinUpdateView() {
 	}
@@ -65,10 +65,6 @@ public class CoinUpdateView  {
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Coin", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
+	  
 
 }

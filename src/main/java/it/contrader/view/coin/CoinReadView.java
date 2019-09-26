@@ -1,17 +1,19 @@
 package it.contrader.view.coin;
 
-import java.util.Scanner;
+
+import it.contrader.view.AbstractView;
+
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
 import it.contrader.model.Coin;
 
-public class CoinReadView  {
+public class CoinReadView extends AbstractView {
 
-	private int id;
+	private int idcoin;
 	private Request request;
 	private final String mode = "READ";
-	private Scanner scanner;
+	
 
 	public CoinReadView() {
 	}
@@ -40,7 +42,7 @@ public class CoinReadView  {
 	
 	public void showOptions() {
 		System.out.println("Inserisci l'ID della moneta:");
-		id = Integer.parseInt(getInput());
+		idcoin = Integer.parseInt(getInput());
 	}
 
 	/**
@@ -49,14 +51,10 @@ public class CoinReadView  {
 	
 	public void submit() {
 		request = new Request();
-		request.put("id", id);
+		request.put("idcoin", idcoin);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Coin", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
+	  
 
 }
