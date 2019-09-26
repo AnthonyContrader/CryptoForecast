@@ -1,16 +1,16 @@
 package it.contrader.view.trend;
 
-import java.util.Scanner;
+
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
+import it.contrader.view.AbstractView;
 
-public class TrendDeleteView {
+public class TrendDeleteView extends AbstractView {
 	private Request request;
 
 	private int idtrend;
 	private final String mode = "DELETE";
-	private Scanner scanner;
 
 	public TrendDeleteView() {
 	}
@@ -32,7 +32,7 @@ public class TrendDeleteView {
 	 */
 	
 	public void showOptions() {
-			System.out.println("Inserisci idtrend dell'utente:");
+			System.out.println("Inserisci id del Trend:");
 			idtrend = Integer.parseInt(getInput());
 
 	}
@@ -47,11 +47,7 @@ public class TrendDeleteView {
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Trend", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
+	  
 	
 
 

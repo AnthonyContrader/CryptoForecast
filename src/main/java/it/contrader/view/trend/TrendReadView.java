@@ -1,18 +1,16 @@
 package it.contrader.view.trend;
 
-import java.util.Scanner;
 
 import it.contrader.controller.Request;
+import it.contrader.dto.TrendDTO;
 import it.contrader.main.MainDispatcher;
-import it.contrader.model.Trend;
+import it.contrader.view.AbstractView;
 
-public class TrendReadView  {
+public class TrendReadView extends AbstractView  {
 
 	private int idtrend;
 	private Request request;
 	private final String mode = "READ";
-	private Scanner scanner;
-
 	public TrendReadView() {
 	}
 
@@ -27,7 +25,7 @@ public class TrendReadView  {
 	
 	public void showResults(Request request) {
 		if (request != null) {
-			Trend trend = (Trend) request.get("trend");
+			TrendDTO trend = (TrendDTO) request.get("trend");
 			System.out.println(trend);
 			MainDispatcher.getInstance().callView("Trend", null);
 		}
@@ -39,7 +37,7 @@ public class TrendReadView  {
 	 */
 	
 	public void showOptions() {
-		System.out.println("Inserisci l'ID dell'utente:");
+		System.out.println("Inserisci l'ID del trend:");
 		idtrend = Integer.parseInt(getInput());
 	}
 
@@ -53,10 +51,6 @@ public class TrendReadView  {
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Trend", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
+	  
 
 }

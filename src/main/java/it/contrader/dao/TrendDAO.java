@@ -17,9 +17,8 @@ public class TrendDAO {
 	private final String QUERY_ALL = "SELECT * FROM trend";
 	private final String QUERY_CREATE = "INSERT INTO trend (time,variation,namecoin) VALUES (?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM trend WHERE idtrend=?";
-	private final String QUERY_UPDATE = "UPDATE trend SET time=?, variation=?, namecoin=?,  WHERE idtrend=?";
+	private final String QUERY_UPDATE = "UPDATE trend SET time=?, variation=?, namecoin=?  WHERE idtrend=?";
 	private final String QUERY_DELETE = "DELETE FROM trend WHERE idtrend=?";
-
 	public TrendDAO() {
 
 	}
@@ -53,9 +52,7 @@ public class TrendDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, trendToInsert.getTime());
 			preparedStatement.setString(2, trendToInsert.getVariation());
-			preparedStatement.setString(2, trendToInsert.getNamecoin());
 			preparedStatement.setString(3, trendToInsert.getNamecoin());
-
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -64,13 +61,13 @@ public class TrendDAO {
 
 	}
 
-	public Trend read(int trendId) {
+	public Trend read(int idtrend) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 
 
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, trendId);
+			preparedStatement.setInt(1, idtrend);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 

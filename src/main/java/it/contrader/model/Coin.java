@@ -97,7 +97,7 @@ public class Coin {
 			Coin other = (Coin) obj;
 			if (idcoin != other.idcoin)
 				return false;
-						if (symbol == null) {
+			if (symbol == null) {
 				if (other.symbol != null)
 					return false;
 			} else if (!symbol.equals(other.symbol))

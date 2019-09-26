@@ -1,7 +1,6 @@
 package it.contrader.view.coin;
 
 import it.contrader.view.AbstractView;
-import java.util.Scanner;
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;

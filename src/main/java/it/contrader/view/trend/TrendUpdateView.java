@@ -1,13 +1,13 @@
 package it.contrader.view.trend;
 
 
-import java.util.Scanner;
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
+import it.contrader.view.AbstractView;
 
 
-public class TrendUpdateView  {
+public class TrendUpdateView extends AbstractView  {
 	private Request request;
 
 	private int idtrend;
@@ -15,7 +15,6 @@ public class TrendUpdateView  {
 	private String variation;
 	private String namecoin;
 	private final String mode = "UPDATE";
-	private Scanner scanner;
 
 	public TrendUpdateView() {
 	}
@@ -24,7 +23,7 @@ public class TrendUpdateView  {
 	 * Se la request non è nulla (ovvero se si arriva dalla mode UPDATE del controller) mostra
 	 * l'esito dell'operazione
 	 */
-	
+	@Override
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Modifica andata a buon fine.\n");
@@ -38,13 +37,13 @@ public class TrendUpdateView  {
 	
 	public void showOptions() {
 		try {
-			System.out.println("Inserisci idtrend dell'utente:");
+			System.out.println("Inserisci id del trend:");
 			idtrend = Integer.parseInt(getInput());
-			System.out.println("Inserisci time dell'utente:");
+			System.out.println("Inserisci la data:");
 			time = getInput();
-			System.out.println("Inserisci variation dell'utente:");
+			System.out.println("Inserisci la variazione:");
 			variation = getInput();
-			System.out.println("Inserisci tipo dell'utente:");
+			System.out.println("Inserisci nome della moneta:");
 			namecoin = getInput();
 		} catch (Exception e) {
 
@@ -65,10 +64,6 @@ public class TrendUpdateView  {
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Trend", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
+	  
 
 }
