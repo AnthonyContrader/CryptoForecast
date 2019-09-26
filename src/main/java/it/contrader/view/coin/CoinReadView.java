@@ -5,8 +5,9 @@ import it.contrader.view.AbstractView;
 
 
 import it.contrader.controller.Request;
+import it.contrader.dto.CoinDTO;
 import it.contrader.main.MainDispatcher;
-import it.contrader.model.Coin;
+
 
 public class CoinReadView extends AbstractView {
 
@@ -29,7 +30,7 @@ public class CoinReadView extends AbstractView {
 	
 	public void showResults(Request request) {
 		if (request != null) {
-			Coin coin = (Coin) request.get("coin");
+			CoinDTO coin = (CoinDTO) request.get("coin");
 			System.out.println(coin);
 			MainDispatcher.getInstance().callView("Coin", null);
 		}
