@@ -1,17 +1,16 @@
 package it.contrader.view.trend;
 
-import java.util.Scanner;
 
 import it.contrader.controller.Request;
 import it.contrader.main.MainDispatcher;
+import it.contrader.view.AbstractView;
 
-public class TrendInsertView {
+public class TrendInsertView extends AbstractView{
 	private Request request;
 	private String time;
 	private String variation;
 	private String namecoin;
 	private final String mode = "INSERT";
-	private Scanner scanner;
 
 	public TrendInsertView() {
 	}
@@ -34,15 +33,10 @@ public class TrendInsertView {
 	
 	public void showOptions() {
 		
-			System.out.println("Inserisci time dell'utente:");
-			time = getInput();
-			System.out.println("Inserisci variation dell'utente:");
-			variation = getInput();
-			System.out.println("Inserisci tipo dell'utente:");
-			System.out.println("Inserisci la variazione:");
-			variation = getInput();
 			System.out.println("Inserisci la data:");
 			time = getInput();
+			System.out.println("Inserisci la variazione:");
+			variation = getInput();
 			System.out.println("Inserisci il nome della moneta:");
 			namecoin = getInput();
 	}
@@ -57,17 +51,9 @@ public class TrendInsertView {
 		request.put("variation", variation);
 		request.put("namecoin", namecoin);
 		request.put("mode", mode);
-		request.put("variazione", variation);
-		request.put("time", time);
-		request.put("namecoin", namecoin);
-		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Trend", "doControl", request);
 	}
-	  public String getInput() {
-	    	
-			scanner = new Scanner(System.in);
-			return scanner.nextLine();
-		}
+	  
 
 
 }

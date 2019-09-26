@@ -1,17 +1,16 @@
 package it.contrader.view;
 
 import java.util.List;
-import java.util.Scanner;
 
 import it.contrader.controller.Request;
+import it.contrader.dto.TrendDTO;
 import it.contrader.main.MainDispatcher;
 import it.contrader.model.Trend;
 
-public class TrendView  {
+public class TrendView extends AbstractView {
 
 	private Request request;
 	private String choice;
-	private Scanner scanner;
 
 	public TrendView() {
 		
@@ -24,12 +23,12 @@ public class TrendView  {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione trend ----------------\n");
-			System.out.println("ID\tTime\tVariation\tNameCoin");
+			System.out.println("IDTrend\tTime\tVariation\tNameCoin");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
-			List<Trend> trends = (List<Trend>) request.get("trends");
-			for (Trend u: trends)
+			List<TrendDTO> trends = (List<TrendDTO>) request.get("trends");
+			for (TrendDTO u: trends)
 				System.out.println(u);
 			System.out.println();
 		}
@@ -59,9 +58,6 @@ public class TrendView  {
 		request.put("mode", "GETCHOICE");
 		MainDispatcher.getInstance().callAction("Trend", "doControl", this.request);
 	}
-	public String getInput() {
-		scanner = new Scanner(System.in);
-		return scanner.nextLine();
-	}
+	
 
 }

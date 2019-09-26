@@ -2,12 +2,14 @@ package it.contrader.service;
 
 import java.util.List;
 
+import it.contrader.converter.TrendConverter;
 import it.contrader.dao.TrendDAO;
-import it.contrader.model.Trend;
+import it.contrader.dto.TrendDTO;
 
 public class TrendService {
 
 	private TrendDAO trendDAO;
+	private TrendConverter trendConverter;
 	
 	/**
 	 * Costruisce un oggetto di tipo trendDAO per poterne usare i metodi
@@ -16,31 +18,32 @@ public class TrendService {
 	
 	public TrendService() {
 		this.trendDAO = new TrendDAO();
+		this.trendConverter = new TrendConverter();
 	}
 
 	//chiama il metodo del DAO che ottiene una lista di tutti gli Trend
-	public List<Trend> getAll() {
-		return this.trendDAO.getAll();
+	public List<TrendDTO> getAll() {
+		return trendConverter.toDTOList(trendDAO.getAll());
 	}
 	
 	//chiama il metodo del DAO che restituisce uno trend in base al suo id
-	public Trend read(int idtrend) {
-		return this.trendDAO.read(idtrend);
+	public TrendDTO read(int idtrend) {
+		return trendConverter.toDTO(trendDAO.read(idtrend));
 	}
 
 	//chiama il metodo del DAO che cancella uno trend in base al suo id
-	public boolean delete(int trendId) {
-		return trendDAO.delete(trendId);
+	public boolean delete(int idtrend) {
+		return trendDAO.delete(idtrend);
 	}
 	
 	//chiama il metodo del DAO che inserisce un oggetto Trend
-	public boolean insert(Trend trend) {
-		return trendDAO.insert(trend);
+	public boolean insert(TrendDTO dto) {
+		return trendDAO.insert(trendConverter.toEntity(dto));
 	}
 
 	//chiama il metodo del DAO che modifica un utente
-	public boolean update(Trend trend) {
-		return trendDAO.update(trend);
+	public boolean update(TrendDTO dto) {
+		return trendDAO.update(trendConverter.toEntity(dto));
 	}
 
 

@@ -2,9 +2,8 @@ package it.contrader.controller;
 
 import java.util.List;
 
-
+import it.contrader.dto.TrendDTO;
 import it.contrader.main.MainDispatcher;
-import it.contrader.model.Trend;
 import it.contrader.service.TrendService;
 
 public class TrendController implements Controller {
@@ -51,8 +50,8 @@ public class TrendController implements Controller {
 		// Arriva qui dalla TrendReadView. Invoca il Service con il parametro idtrend e invia alla TrendReadView uno trend da mostrare 
 		case "READ":
 			idtrend = Integer.parseInt(request.get("idtrend").toString());
-			Trend trend = trendService.read(idtrend);
-			request.put("trend", trend);
+			TrendDTO trendDTO = trendService.read(idtrend);
+			request.put("trend", trendDTO);
 			MainDispatcher.getInstance().callView(sub_package + "TrendRead", request);
 			break;
 		
@@ -63,7 +62,7 @@ public class TrendController implements Controller {
 			namecoin = request.get("namecoin").toString();
 			
 			//costruisce l'oggetto trend da inserire
-			Trend trendtoinsert = new Trend(time, variation, namecoin);
+			TrendDTO trendtoinsert = new TrendDTO(time, variation, namecoin);
 			//invoca il service
 			trendService.insert(trendtoinsert);
 			request = new Request();
@@ -88,7 +87,7 @@ public class TrendController implements Controller {
 			time = request.get("time").toString();
 			variation = request.get("variation").toString();
 			namecoin = request.get("namecoin").toString();
-			Trend trendtoupdate = new Trend(time, variation, namecoin);
+			TrendDTO trendtoupdate = new TrendDTO(time, variation, namecoin);
 			trendtoupdate.setId(idtrend);
 			trendService.update(trendtoupdate);
 			request = new Request();
@@ -97,10 +96,10 @@ public class TrendController implements Controller {
 			break;
 			
 		//Arriva qui dalla TrendView Invoca il Service e invia alla TrendView il risultato da mostrare 
-		case "USERLIST":
-			List<Trend> trends = trendService.getAll();
+		case "TRENDLIST":
+			List<TrendDTO> trendsDTO = trendService.getAll();
 			//Impacchetta la request con la lista degi trend
-			request.put("trends", trends);
+			request.put("trends", trendsDTO);
 			MainDispatcher.getInstance().callView("Trend", request);
 			break;
 			
