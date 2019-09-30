@@ -8,7 +8,7 @@ import it.contrader.model.Coin;
 
 /**
  * 
- * @author Diego
+ * @author team GDA
  *
  *Per i dettagli della classe vedi Guida sez 6: DAO
  */
@@ -34,7 +34,7 @@ public class CoinDAO {
 			while (resultSet.next()) {
 				int idcoin = resultSet.getInt("idcoin");
 				String name = resultSet.getString("name");
-				String quotation = resultSet.getString("quotation");
+				int quotation = resultSet.getInt("quotation");
 				String symbol = resultSet.getString("symbol");
 				coin = new Coin (name, quotation, symbol);
 				coin.setId(idcoin);
@@ -51,7 +51,7 @@ public class CoinDAO {
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, coinToInsert.getName());
-			preparedStatement.setString(2, coinToInsert.getQuotation());
+			preparedStatement.setInt(2, coinToInsert.getQuotation());
 			preparedStatement.setString(3, coinToInsert.getSymbol());
 			preparedStatement.execute();
 			return true;
@@ -70,10 +70,11 @@ public class CoinDAO {
 			preparedStatement.setInt(1, coinId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
-			String name, quotation, symbol;
+			String name,  symbol;
+			int quotation;
 
 			name = resultSet.getString("name");
-			quotation = resultSet.getString("quotation");
+			quotation = resultSet.getInt("quotation");
 			symbol = resultSet.getString("symbol");
 			Coin coin = new Coin(name, quotation, symbol);
 			coin.setId(resultSet.getInt("idcoin"));
@@ -100,7 +101,7 @@ public class CoinDAO {
 					coinToUpdate.setName(coinRead.getName());
 				}
 
-				if (coinToUpdate.getQuotation() == null || coinToUpdate.getQuotation().equals("")) {
+				if (coinToUpdate.getQuotation() == 0 /*|| coinToUpdate.getQuotation().equals("")*/) {
 					coinToUpdate.setQuotation(coinRead.getQuotation());
 				}
 
@@ -111,7 +112,7 @@ public class CoinDAO {
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, coinToUpdate.getName());
-				preparedStatement.setString(2, coinToUpdate.getQuotation());
+				preparedStatement.setInt(2, coinToUpdate.getQuotation());
 				preparedStatement.setString(3, coinToUpdate.getSymbol());
 				preparedStatement.setInt(4, coinToUpdate.getId());
 				int a = preparedStatement.executeUpdate();

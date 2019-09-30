@@ -9,7 +9,7 @@ import it.contrader.main.ConnectionSingleton;
 
 /**
  * 
- * @author Vittorio
+ * @author team GDA
  *
  *Per i dettagli della classe vedi Guida sez 6: DAO
  */

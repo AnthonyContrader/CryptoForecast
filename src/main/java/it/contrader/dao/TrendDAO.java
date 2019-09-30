@@ -8,7 +8,7 @@ import it.contrader.model.Trend;
 
 /**
  * 
- * @author Atif
+ * @author team GDA
  *
  *Per i dettagli della classe vedi Guida sez 6: DAO
  */

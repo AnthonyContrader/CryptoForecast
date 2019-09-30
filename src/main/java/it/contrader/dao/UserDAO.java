@@ -8,7 +8,7 @@ import it.contrader.model.User;
 
 /**
  * 
- * @author Vittorio
+ * @author GDA
  *
  *Per i dettagli della classe vedi Guida sez 6: DAO
  */

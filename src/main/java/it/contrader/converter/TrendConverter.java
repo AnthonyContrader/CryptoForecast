@@ -8,7 +8,7 @@ import it.contrader.model.Trend;
 
 /**
  * 
- * @author Vittorio
+ * @author GDA
  * 
  *         Implementando questa l'interfaccia converter la classe TrendConverter
  *         è OBBLIGATA ad implementarne i metodi

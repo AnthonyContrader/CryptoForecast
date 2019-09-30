@@ -43,7 +43,7 @@ public class CoinController implements Controller {
 		//Definisce i campi della classe (serviranno sempre, tanto vale definirli una sola volta)
 		int idcoin;
 		String name;
-		String quotation;
+		int quotation;
 		String symbol;
 
 		switch (mode) {
@@ -59,7 +59,7 @@ public class CoinController implements Controller {
 		// Arriva qui dalla UserInsertView. Estrae i parametri da inserire e chiama il service per inserire uno user con questi parametri
 		case "INSERT":
 			name = request.get("name").toString();
-			quotation = request.get("quotation").toString();
+			quotation = Integer.parseInt(request.get("quotation").toString());
 			symbol = request.get("symbol").toString();
 			
 			//costruisce l'oggetto coin da inserire
@@ -86,7 +86,7 @@ public class CoinController implements Controller {
 		case "UPDATE":
 			idcoin = Integer.parseInt(request.get("idcoin").toString());
 			name = request.get("name").toString();
-			quotation = request.get("quotation").toString();
+			quotation = Integer.parseInt(request.get("quotation").toString());
 			symbol = request.get("symbol").toString();
 			CoinDTO cointoupdate = new CoinDTO (name, quotation, symbol);
 			cointoupdate.setId(idcoin);

@@ -8,7 +8,7 @@ import it.contrader.model.Coin;
 
 /**
  * 
- * @author Diego
+ * @author team GDA
  * 
  *         Implementando questa l'interfaccia converter la classe CoinConverter
  *         è OBBLIGATA ad implementarne i metodi

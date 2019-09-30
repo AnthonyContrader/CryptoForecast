@@ -8,7 +8,7 @@ import it.contrader.model.User;
 
 /**
  * 
- * @author Vittorio, De Santis 
+ * @author GDA
  *
  */
 public class UserConverter   {

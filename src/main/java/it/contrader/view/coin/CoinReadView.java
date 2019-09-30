@@ -27,7 +27,7 @@ public class CoinReadView extends AbstractView {
 	 * dal controller con mode READ) mostra la moneta. In questo caso torna alla CoinView senza eseguire
 	 * gli altri due metodi
 	 */
-	
+	@Override
 	public void showResults(Request request) {
 		if (request != null) {
 			CoinDTO coin = (CoinDTO) request.get("coin");
@@ -40,7 +40,7 @@ public class CoinReadView extends AbstractView {
 	/**
 	 * chiede all'utente di inserire l'id della moneta da leggere
 	 */
-	
+	@Override
 	public void showOptions() {
 		System.out.println("Inserisci l'ID della moneta:");
 		idcoin = Integer.parseInt(getInput());
@@ -49,7 +49,7 @@ public class CoinReadView extends AbstractView {
 	/**
 	 * impacchetta una request con l'id della moneta da leggere e la manda al controller tramite il Dispatcher
 	 */
-	
+	@Override
 	public void submit() {
 		request = new Request();
 		request.put("idcoin", idcoin);

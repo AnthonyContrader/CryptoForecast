@@ -5,13 +5,13 @@ package it.contrader.model;
 public class Coin {
 
 	/**
-	 * Qui sotto definisco gli attributi di User. 
+	 * Qui sotto definisco gli attributi di Coin. 
 	 */
 	private int idcoin;
 
 	private String name;
 	
-	private String quotation;
+	private int quotation;
 	
 	private String symbol;
 
@@ -23,14 +23,16 @@ public class Coin {
 	
 	// costruttore senza id
 
-	public Coin(String name, String quotation, String symbol) {
+	public Coin(String name, int quotation, String symbol) {
 		
 		this.name = name;
 		this.quotation = quotation;
 		this.symbol = symbol;
 	}
     
-	public Coin(int idcoin, String name, String quotation, String symbol) {
+	// costruttore completo
+	
+	public Coin(int idcoin, String name, int quotation, String symbol) {
 		
     	this.idcoin = idcoin;
 		this.name = name;
@@ -61,12 +63,12 @@ public class Coin {
 	}
 
 
-	public String getQuotation() {
+	public int getQuotation() {
 		return quotation;
 	}
 
 
-	public void setQuotation(String quotation) {
+	public void setQuotation(int quotation) {
 		this.quotation = quotation;
 	}
 
@@ -82,7 +84,7 @@ public class Coin {
 
 	@Override
 	public String toString() {
-		return  idcoin + "\t"  + name +"\t\t" +   quotation + "\t\t" + symbol;
+		return  idcoin + "\t"  + name +"\t\t" + quotation + "\t\t" + symbol;
 	}
 	
 	//Metodo per il confronto degli oggetti
@@ -96,6 +98,16 @@ public class Coin {
 				return false;
 			Coin other = (Coin) obj;
 			if (idcoin != other.idcoin)
+				return false;
+			if (name == null) {
+				if (other.name != null)
+					return false;
+			} else if (!name.equals(other.name))
+				return false;
+			if (quotation == 0) {
+				if (other.quotation != 0)
+					return false;
+			} else if (quotation != (other.quotation))
 				return false;
 			if (symbol == null) {
 				if (other.symbol != null)

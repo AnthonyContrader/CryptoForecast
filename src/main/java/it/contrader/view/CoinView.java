@@ -21,11 +21,11 @@ public class CoinView  extends AbstractView {
 	/**
 	 * Mostra la lista utenti
 	 */
-	
+	@Override
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione coin ----------------\n");
-			System.out.println("IDcoin\tname\tquotation\tsymbol");
+			System.out.println("IDcoin\tname\t     quotation\t      symbol");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
@@ -40,7 +40,7 @@ public class CoinView  extends AbstractView {
 	 * Chiede all'utente un input (lettera da tastiera) per la choice (vedi CoinController). 
 	 * Mette la modalità GETCHOICE nella mode.
 	 */
-
+	@Override
 	public void showOptions() {
 		System.out.println("          Scegli l'operazione da effettuare:");
 		System.out.println("[L]eggi [I]nserisci [M]odifica [C]ancella [B]ack [E]sci");
@@ -53,7 +53,7 @@ public class CoinView  extends AbstractView {
 	/**
 	 * Impacchetta la request e la manda allo UserController.
 	 */
-	
+	@Override
 	public void submit() {
 		request = new Request();
 		request.put("choice", choice);

@@ -8,7 +8,7 @@ import it.contrader.service.UserService;
 
 /**
  * 
- * @author Vittorio
+ * @author team GDA
  *
  *Si osservi che nel Controller compaiono solo oggetti del DTO e non del Model!
  */

@@ -2,7 +2,7 @@ package it.contrader.dto;
 
 /**
  * 
- * @author Diego
+ * @author team GDA
  *
  *Il DTO è simile al Model ma può contenere meno attributi (ad esempio d dati sensibili
  *che non devono arrivare alla View). GLi oggetti vengono trasformati da oggetti del Model
@@ -15,7 +15,7 @@ public class CoinDTO {
 
 	private String name;
 	
-	private String quotation;
+	private int quotation;
 	
 	private String symbol;
 
@@ -25,7 +25,7 @@ public class CoinDTO {
 	}
 		
 // costruttore senza campo idcoin
-public CoinDTO(String name, String quotation, String symbol) {
+public CoinDTO(String name, int quotation, String symbol) {
 
 		this.name = name;
 		this.quotation = quotation;
@@ -34,7 +34,7 @@ public CoinDTO(String name, String quotation, String symbol) {
 
 
 //costruttore con campi
-	public CoinDTO(int idcoin, String name, String quotation, String symbol) {
+	public CoinDTO(int idcoin, String name, int quotation, String symbol) {
 	
 		this.idcoin = idcoin;
 		this.name = name;
@@ -67,13 +67,13 @@ public CoinDTO(String name, String quotation, String symbol) {
 
 
 
-	public String getQuotation() {
+	public int getQuotation() {
 		return quotation;
 	}
 
 
 
-	public void setQuotation(String quotation) {
+	public void setQuotation(int quotation) {
 		this.quotation = quotation;
 	}
 

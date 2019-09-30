@@ -12,7 +12,7 @@ public class CoinDeleteView extends AbstractView {
 	private int idcoin;
 	private final String mode = "DELETE";
 	
-
+	
 	public CoinDeleteView() {
 	}
 
@@ -20,7 +20,7 @@ public class CoinDeleteView extends AbstractView {
 	 * Se la request non è nulla (ovvero se si arriva dalla mode DELETE del controller) mostra
 	 * l'esito dell'operazione
 	 */
-	
+	@Override
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Cancellazione andata a buon fine.\n");
@@ -31,7 +31,7 @@ public class CoinDeleteView extends AbstractView {
 	/**
 	 * Chiede all'utente di inserire l'id dell'utente da cancellare
 	 */
-	
+	@Override
 	public void showOptions() {
 			System.out.println("Inserisci id della coin:");
 			idcoin = Integer.parseInt(getInput());
@@ -41,7 +41,7 @@ public class CoinDeleteView extends AbstractView {
 	/**
 	 * impacchetta la request con l'id dell'utente da cancellare
 	 */
-	
+	@Override
 	public void submit() {
 		request = new Request();
 		request.put("idcoin", idcoin);
