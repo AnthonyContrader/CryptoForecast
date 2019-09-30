@@ -1,50 +1,25 @@
 package it.contrader.service;
 
-import java.util.List;
-
 import it.contrader.converter.TrendConverter;
 import it.contrader.dao.TrendDAO;
 import it.contrader.dto.TrendDTO;
+import it.contrader.model.Trend;
 
-public class TrendService {
-
-	private TrendDAO trendDAO;
-	private TrendConverter trendConverter;
+/**
+ * 
+ * @author Vittorio
+ *
+ *Grazie all'ereditarietà mi basta specificare i tipi di questa classe per
+ *ereditare i metodi della clase AbstractService. Pertanto la classe risulta meno complicata
+ *da scrivere, facendoci risparmiare tempo e fatica!
+ */
+public class TrendService extends AbstractService<Trend, TrendDTO> {
 	
-	/**
-	 * Costruisce un oggetto di tipo trendDAO per poterne usare i metodi
-	 */
-	
-	
-	public TrendService() {
-		this.trendDAO = new TrendDAO();
-		this.trendConverter = new TrendConverter();
-	}
-
-	//chiama il metodo del DAO che ottiene una lista di tutti gli Trend
-	public List<TrendDTO> getAll() {
-		return trendConverter.toDTOList(trendDAO.getAll());
+	//Istanzio DAO  e Converter specifici.
+	public TrendService(){
+		this.dao = new TrendDAO();
+		this.converter = new TrendConverter();
 	}
 	
-	//chiama il metodo del DAO che restituisce uno trend in base al suo id
-	public TrendDTO read(int idtrend) {
-		return trendConverter.toDTO(trendDAO.read(idtrend));
-	}
-
-	//chiama il metodo del DAO che cancella uno trend in base al suo id
-	public boolean delete(int idtrend) {
-		return trendDAO.delete(idtrend);
-	}
-	
-	//chiama il metodo del DAO che inserisce un oggetto Trend
-	public boolean insert(TrendDTO dto) {
-		return trendDAO.insert(trendConverter.toEntity(dto));
-	}
-
-	//chiama il metodo del DAO che modifica un utente
-	public boolean update(TrendDTO dto) {
-		return trendDAO.update(trendConverter.toEntity(dto));
-	}
-
 
 }

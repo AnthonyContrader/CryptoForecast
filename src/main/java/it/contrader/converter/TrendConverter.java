@@ -1,4 +1,4 @@
-package it.contrader.converter;
+ package it.contrader.converter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import it.contrader.model.Trend;
  *         è OBBLIGATA ad implementarne i metodi
  *
  */
-public class TrendConverter  {
+public class TrendConverter implements Converter<Trend , TrendDTO> {
 
 	/**
 	 * Crea un oggetto di tipo TrendDTO e lo riempie con i campi del parametro trend
@@ -35,13 +35,8 @@ public class TrendConverter  {
 	 */
 	
 	public Trend toEntity(TrendDTO trendDTO) {
-		Trend trend = new Trend();
-		if (trendDTO != null) {
-			trend.setId(trendDTO.getId());
-			trend.setTime(trendDTO.getTime());
-			trend.setVariation(trendDTO.getVariation());
-			trend.setNamecoin(trendDTO.getNamecoin());
-		}
+		Trend trend = new Trend(trendDTO.getId(), trendDTO.getTime(), trendDTO.getVariation(), trendDTO.getNamecoin());
+		
 		return trend;
 	}
 
