@@ -11,8 +11,8 @@ public class CoinUpdateView extends AbstractView {
 
 	private int idcoin;
 	private String name;
+	private int quotation;
 	private String symbol;
-	private String quotation;
 	private final String mode = "UPDATE";
 	
 
@@ -42,7 +42,7 @@ public class CoinUpdateView extends AbstractView {
 			System.out.println("Inserisci nome della moneta:");
 			name = getInput();
 			System.out.println("Inserisci la quotazione della moneta:");
-			quotation = getInput();
+			quotation = Integer.parseInt(getInput());
 			System.out.println("Inserisci il simbolo della moneta:");
 			symbol = getInput();
 		} catch (Exception e) {

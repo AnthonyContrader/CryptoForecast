@@ -10,7 +10,7 @@ public class CoinInsertView extends AbstractView {
 	private Request request;
 
 	private String name;
-	private String quotation;
+	private int quotation;
 	private String symbol;
 	private final String mode = "INSERT";
 	
@@ -38,7 +38,7 @@ public class CoinInsertView extends AbstractView {
 			System.out.println("Inserisci il nome della moneta:");
 			name = getInput();
 			System.out.println("Inserisci la quotazione:");
-			quotation = getInput();
+			quotation = Integer.parseInt(getInput());
 			System.out.println("Inserisci il symbol:");
 			symbol = getInput();
 	}
