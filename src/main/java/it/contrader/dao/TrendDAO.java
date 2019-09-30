@@ -33,7 +33,7 @@ public class TrendDAO {
 			while (resultSet.next()) {
 				int idtrend = resultSet.getInt("idtrend");
 				String time = resultSet.getString("time");
-				String variation = resultSet.getString("variation");
+				int variation = resultSet.getInt("variation");
             	String namecoin = resultSet.getString("namecoin");
 				
 				trend = new Trend(time, variation, namecoin);
@@ -51,7 +51,7 @@ public class TrendDAO {
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
 			preparedStatement.setString(1, trendToInsert.getTime());
-			preparedStatement.setString(2, trendToInsert.getVariation());
+			preparedStatement.setInt(2, trendToInsert.getVariation());
 			preparedStatement.setString(3, trendToInsert.getNamecoin());
 			preparedStatement.execute();
 			return true;
@@ -71,10 +71,11 @@ public class TrendDAO {
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 
-			String time, variation, namecoin;
+			String time,  namecoin;
+			int variation;
 
 			time = resultSet.getString("time");
-			variation = resultSet.getString("variation");
+			variation = resultSet.getInt("variation");
 			namecoin = resultSet.getString("namecoin");
 			Trend trend = new Trend(time,variation,namecoin);
 			
@@ -102,7 +103,7 @@ public class TrendDAO {
 					trendToUpdate.setTime(trendRead.getTime());
 				}
 
-				if (trendToUpdate.getVariation() == null || trendToUpdate.getVariation().equals("")) {
+				if (trendToUpdate.getVariation() == 0) {
 					trendToUpdate.setVariation(trendRead.getVariation());
 				}
 				if (trendToUpdate.getNamecoin() == null || trendToUpdate.getNamecoin().equals("")) {
@@ -113,7 +114,7 @@ public class TrendDAO {
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 				preparedStatement.setString(1, trendToUpdate.getTime());
-				preparedStatement.setString(2, trendToUpdate.getVariation());
+				preparedStatement.setInt(2, trendToUpdate.getVariation());
 				preparedStatement.setString(3, trendToUpdate.getNamecoin());
 				preparedStatement.setInt(4, trendToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
