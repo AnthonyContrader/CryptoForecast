@@ -27,7 +27,7 @@ public class CoinUpdateView extends AbstractView {
 	public void showResults(Request request) {
 		if (request!=null) {
 			System.out.println("Modifica andata a buon fine.\n");
-			MainDispatcher.getInstance().callView("User", null);
+			MainDispatcher.getInstance().callView("Coin", null);
 		}
 	}
 
