@@ -9,7 +9,7 @@ public class Trend {
 	 */
 	private int idtrend;
 	private String time;
-	private String variation;
+	private int variation;
 	private String namecoin;
 	
 	
@@ -25,13 +25,13 @@ public class Trend {
 		
 	}
 
-	public Trend (String time, String variation, String namecoin ) {
+	public Trend (String time, int variation, String namecoin ) {
 		this.time = time;
 		this.variation = variation;
 		this.namecoin = namecoin;
 	}
 
-	public Trend(int idtrend,String time, String variation,  String namecoin) {
+	public Trend(int idtrend,String time, int variation,  String namecoin) {
 		
 		this.idtrend = idtrend;
 		this.time = time;
@@ -56,11 +56,11 @@ public class Trend {
 		this.time = time;
 	}
 
-	public String getVariation() {
+	public int getVariation() {
 		return this.variation;
 	}
 
-	public void setVariation(String variation) {
+	public void setVariation(int variation) {
 		this.variation = variation;
 	}
 
@@ -96,10 +96,10 @@ public class Trend {
 				return false;
 		} else if (!time.equals(other.time))
 			return false;
-		if (variation == null) {
-			if (other.variation != null)
+		if (variation == 0) {
+			if (other.variation != 0)
 				return false;
-		} else if (!variation.equals(other.variation))
+		} else if (variation != (other.variation))
 			return false;
 		if (namecoin == null) {
 			if (other.namecoin != null)
