@@ -61,13 +61,13 @@ public class CoinDAO {
 
 	}
 
-	public Coin read(int coinId) {
+	public Coin read(int idcoin) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 
 
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, coinId);
+			preparedStatement.setInt(1, idcoin);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String name,  symbol;

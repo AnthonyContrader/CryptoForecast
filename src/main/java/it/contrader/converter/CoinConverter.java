@@ -14,7 +14,7 @@ import it.contrader.model.Coin;
  *         è OBBLIGATA ad implementarne i metodi
  *
  */
-public class CoinConverter  {
+public class CoinConverter  implements Converter<Coin, CoinDTO> {
 
 	/**
 	 * Crea un oggetto di tipo CoinDTO e lo riempie con i campi del parametro coin
