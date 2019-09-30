@@ -73,7 +73,7 @@
                 <version>2.4</version>
                 <configuration>
                     <warName>JspApp</warName>
-                    <outputDirectory>apache-tomcat-9.0.17/webapps</outputDirectory>
+                    <outputDirectory>apache-tomcat-9.5.46/webapps</outputDirectory>
                 </configuration>
             </plugin>
             <plugin>
