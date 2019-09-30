@@ -6,7 +6,10 @@ import it.contrader.controller.Request;
 import it.contrader.dto.TrendDTO;
 import it.contrader.main.MainDispatcher;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 061a4818da1b50224fcf056ac0ccb302c91aca35
 public class TrendView extends AbstractView {
 
 	private Request request;
@@ -23,7 +26,11 @@ public class TrendView extends AbstractView {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Gestione trend ----------------\n");
+<<<<<<< HEAD
 			System.out.println("IDTrend\t  Time\t       Variation\t       NameCoin");
+=======
+			System.out.println("IDTrend\tTime\tVariation\tNameCoin");
+>>>>>>> 061a4818da1b50224fcf056ac0ccb302c91aca35
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")

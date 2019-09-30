@@ -34,7 +34,7 @@ public class TrendUpdateView extends AbstractView  {
 	/**
 	 * Chiede all'utente di inserire gli attributi dell'utente da modificare
 	 */
-	
+	@Override
 	public void showOptions() {
 		try {
 			System.out.println("Inserisci id del trend:");
@@ -54,7 +54,7 @@ public class TrendUpdateView extends AbstractView  {
 	/**
 	 * Impacchetta la request con i dati inseriti nel metodo showOption()
 	 */
-	
+	@Override
 	public void submit() {
 		request = new Request();
 		request.put("idtrend", idtrend);

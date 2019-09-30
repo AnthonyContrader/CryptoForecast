@@ -15,7 +15,11 @@ public class Trend {
 	
 
 	/**
+<<<<<<< HEAD
 	 * Definisco i tre costruttori, uno vuoto e uno con tre parametri per costrire oggetti di tipo Trend
+=======
+	 * Definisco i due costruttori, uno vuoto e uno con tre parametri per costrire oggetti di tipo Trend
+>>>>>>> 061a4818da1b50224fcf056ac0ccb302c91aca35
 	 */
 	public Trend() {
 		
