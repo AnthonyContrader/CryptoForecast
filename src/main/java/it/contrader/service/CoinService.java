@@ -1,6 +1,6 @@
 package it.contrader.service;
 
-import it.contrader.converter.UserConverter;
+import it.contrader.converter.CoinConverter;
 import it.contrader.dao.CoinDAO;
 import it.contrader.dto.CoinDTO;
 import it.contrader.model.Coin;

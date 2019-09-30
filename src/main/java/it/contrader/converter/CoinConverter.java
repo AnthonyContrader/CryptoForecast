@@ -6,6 +6,7 @@ import java.util.List;
 import it.contrader.dto.CoinDTO;
 import it.contrader.model.Coin;
 
+
 /**
  * 
  * @author team GDA

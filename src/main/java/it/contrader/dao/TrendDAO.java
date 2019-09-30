@@ -6,13 +6,14 @@ import java.util.List;
 import it.contrader.utils.ConnectionSingleton;
 import it.contrader.model.Trend;
 
+
 /**
  * 
  * @author team GDA
  *
  *Per i dettagli della classe vedi Guida sez 6: DAO
  */
-public class TrendDAO {
+public class TrendDAO implements DAO<Trend> {
 
 	private final String QUERY_ALL = "SELECT * FROM trend";
 	private final String QUERY_CREATE = "INSERT INTO trend (time,variation,namecoin) VALUES (?,?,?)";

@@ -6,13 +6,14 @@ import java.util.List;
 import it.contrader.utils.ConnectionSingleton;
 import it.contrader.model.Coin;
 
+
 /**
  * 
  * @author team GDA
  *
  *Per i dettagli della classe vedi Guida sez 6: DAO
  */
-public class CoinDAO {
+public class CoinDAO implements DAO<Coin> {
 
 	private final String QUERY_ALL = "SELECT * FROM coin";
 	private final String QUERY_CREATE = "INSERT INTO coin (name, quotation, symbol) VALUES (?,?,?)";
