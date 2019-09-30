@@ -13,7 +13,7 @@ public class TrendDTO {
 	
 	private int idtrend;
 	private String time;
-	private String variation;
+	private int variation;
 	private String namecoin;
 
 	
@@ -24,7 +24,7 @@ public class TrendDTO {
 
 
 
-	public TrendDTO(String time, String variation, String namecoin) {
+	public TrendDTO(String time, int variation, String namecoin) {
 	
 		this.time = time;
 		this.variation = variation;
@@ -32,7 +32,7 @@ public class TrendDTO {
 	}
 	
 	
-	public TrendDTO(int idtrend, String time, String variation, String namecoin) {
+	public TrendDTO(int idtrend, String time, int variation, String namecoin) {
 	
 		this.idtrend = idtrend;
 		this.time = time;
@@ -62,13 +62,13 @@ public class TrendDTO {
 		this.time = time;
 	}
 
-	public String getVariation() {
+	public int getVariation() {
 		return variation;
 	}
 
 
 
-	public void setVariation(String variation) {
+	public void setVariation(int variation) {
 		this.variation = variation;
 	}
 

@@ -42,7 +42,7 @@ public class TrendController implements Controller {
 		//Definisce i campi della classe (serviranno sempre, tanto vale definirli una sola volta)
 		int idtrend;
 		String time;
-		String variation;
+		int variation;
 		String namecoin;
 
 		switch (mode) {
@@ -58,7 +58,7 @@ public class TrendController implements Controller {
 		// Arriva qui dalla TrendInsertView. Estrae i parametri da inserire e chiama il service per inserire uno trend con questi parametri
 		case "INSERT":
 			time = request.get("time").toString();
-			variation = request.get("variation").toString();
+			variation = Integer.parseInt(request.get("variation").toString());
 			namecoin = request.get("namecoin").toString();
 			
 			//costruisce l'oggetto trend da inserire
@@ -85,7 +85,7 @@ public class TrendController implements Controller {
 		case "UPDATE":
 			idtrend = Integer.parseInt(request.get("idtrend").toString());
 			time = request.get("time").toString();
-			variation = request.get("variation").toString();
+			variation = Integer.parseInt(request.get("variation").toString());
 			namecoin = request.get("namecoin").toString();
 			TrendDTO trendtoupdate = new TrendDTO(time, variation, namecoin);
 			trendtoupdate.setId(idtrend);
