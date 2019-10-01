@@ -10,12 +10,9 @@
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
+<%@ include file="../menu/menu.jsp"%>
 
-<div class="navbar">
-  <a  href="homeadmin.jsp">Home</a>
-  <a class="active" href="CoinServlet?mode=coinlist">Coins</a>
-  <a href="LogoutServlet" id="logout">Logout</a>
-</div>
+
 <div class="main">
 	<%
 		List<CoinDTO> list = (List<CoinDTO>) request.getAttribute("list");
@@ -53,7 +50,7 @@
 
 
 
-<form id="floatright" action="UserServlet?mode=insert" method="post">
+<form id="floatright" action="CoinServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
       <label for="coin">Name</label>
@@ -75,11 +72,9 @@
       <label for="type">Symbol</label>
     </div>
    		 <div class="col-75">
- 			<select id="symb" name="symbol">
-  				<option value="ADMIN">ADMIN</option>
-  				<option value="USER">USER</option>
- 
-			</select>
+ 			<input type="text" id="symb" name="symbol" placeholder="inserisci symbol"> 
+  				
+			
     	</div>
   </div>
       <button type="submit" >Insert</button>
