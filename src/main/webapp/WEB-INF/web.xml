@@ -48,7 +48,7 @@
     <description></description>
     <display-name>TrendServlet</display-name>
     <servlet-name>TrendServlet</servlet-name>
-    <servlet-class>it.contrader.servlets.TreendServlet</servlet-class>
+    <servlet-class>it.contrader.servlets.TrendServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>TrendServlet</servlet-name>
