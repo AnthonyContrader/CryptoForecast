@@ -44,7 +44,7 @@ public CoinDTO(String name, int quotation, String symbol) {
 
 //costruttore getters and setters
 	public int getId() {
-		return id;
+		return this.id;
 	}
 
 
@@ -56,7 +56,7 @@ public CoinDTO(String name, int quotation, String symbol) {
 
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 
@@ -68,7 +68,7 @@ public CoinDTO(String name, int quotation, String symbol) {
 
 
 	public int getQuotation() {
-		return quotation;
+		return this.quotation;
 	}
 
 
@@ -80,7 +80,7 @@ public CoinDTO(String name, int quotation, String symbol) {
 
 
 	public String getSymbol() {
-		return symbol;
+		return this.symbol;
 	}
 
 
