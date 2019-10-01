@@ -37,15 +37,14 @@
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="type">Symbol</label>
+     <label for="pass">Symbol</label>
     </div>
-   		 <div class="col-75">
- 			<select id="type" name="Symbol">
-  				<%-- <option value="ADMIN" <%if(u.getUsertype().equals("ADMIN")) {%>selected<%}%>>ADMIN</option>
-  				<option value="USER" <%if(u.getUsertype().equals("USER")) {%>selected<%}%>>USER</option> --%>
-			</select>
-    	</div>
+    <div class="col-75">
+      <input
+			type="text" id="pass" name="symbol" value=<%=u.getSymbol()%>> 
+    </div>
   </div>
+  
       <button type="submit" >Edit</button>
 </form>
 

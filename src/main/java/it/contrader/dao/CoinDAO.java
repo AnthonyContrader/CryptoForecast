@@ -131,11 +131,11 @@ public class CoinDAO implements DAO<Coin> {
 
 	}
 
-	public boolean delete(int id) {
+	public boolean delete(int idcoin) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setInt(1, idcoin);
 			int n = preparedStatement.executeUpdate();
 			if (n != 0)
 				return true;

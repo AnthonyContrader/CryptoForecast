@@ -44,4 +44,16 @@
     <url-pattern>/CoinServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <description></description>
+    <display-name>TrendServlet</display-name>
+    <servlet-name>TrendServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.TreendServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TrendServlet</servlet-name>
+    <url-pattern>/TrendServlet</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
