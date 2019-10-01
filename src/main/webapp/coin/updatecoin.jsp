@@ -9,11 +9,8 @@
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
-<div class="navbar">
-  <a href="homeadmin.jsp">Home</a>
-  <a class="active" href="UserServlet?mode=coinlist">Coins</a>
-  <a href="LogoutServlet" idcoin="logout">Logout</a>
-</div>
+<%@ include file="../menu/menu.jsp" %>
+
 <br>
 <div class="main">
 
