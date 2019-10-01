@@ -11,7 +11,7 @@ package it.contrader.dto;
  */
 public class TrendDTO {
 	
-	private int idtrend;
+	private int id;
 	private String time;
 	private int variation;
 	private String namecoin;
@@ -32,9 +32,9 @@ public class TrendDTO {
 	}
 	
 	
-	public TrendDTO(int idtrend, String time, int variation, String namecoin) {
+	public TrendDTO(int id, String time, int variation, String namecoin) {
 	
-		this.idtrend = idtrend;
+		this.id = id;
 		this.time = time;
 		this.variation = variation;
 		this.namecoin = namecoin;
@@ -43,17 +43,17 @@ public class TrendDTO {
 
 
 	public int getId() {
-		return idtrend;
+		return this.id;
 	}
 
 
 
 	public void setId(int idtrend) {
-		this.idtrend = idtrend;
+		this.id = id;
 	}
 
 	public String getTime() {
-		return time;
+		return this.time;
 	}
 
 
@@ -63,7 +63,7 @@ public class TrendDTO {
 	}
 
 	public int getVariation() {
-		return variation;
+		return this.variation;
 	}
 
 
@@ -76,7 +76,7 @@ public class TrendDTO {
 
 
 	public String getNamecoin() {
-		return namecoin;
+		return this.namecoin;
 	}
 
 
@@ -89,6 +89,6 @@ public class TrendDTO {
 
 	@Override
 	public String toString() {
-		return  idtrend + "\t"  + time +"\t\t" +   variation + "\t\t" + namecoin;
+		return  id + "\t"  + time +"\t\t" +   variation + "\t\t" + namecoin;
 	}
 }
