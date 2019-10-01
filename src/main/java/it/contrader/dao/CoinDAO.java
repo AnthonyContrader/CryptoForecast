@@ -17,9 +17,9 @@ public class CoinDAO implements DAO<Coin> {
 
 	private final String QUERY_ALL = "SELECT * FROM coin";
 	private final String QUERY_CREATE = "INSERT INTO coin (name, quotation, symbol) VALUES (?,?,?)";
-	private final String QUERY_READ = "SELECT * FROM coin WHERE idcoin=?";
-	private final String QUERY_UPDATE = "UPDATE coin SET name=?, quotation=?, symbol=? WHERE idcoin=?";
-	private final String QUERY_DELETE = "DELETE FROM coin WHERE idcoin=?";
+	private final String QUERY_READ = "SELECT * FROM coin WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE coin SET name=?, quotation=?, symbol=? WHERE id=?";
+	private final String QUERY_DELETE = "DELETE FROM coin WHERE id=?";
 
 	public CoinDAO() {
 
@@ -33,12 +33,12 @@ public class CoinDAO implements DAO<Coin> {
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			Coin coin;
 			while (resultSet.next()) {
-				int idcoin = resultSet.getInt("idcoin");
+				int id = resultSet.getInt("id");
 				String name = resultSet.getString("name");
 				int quotation = resultSet.getInt("quotation");
 				String symbol = resultSet.getString("symbol");
 				coin = new Coin (name, quotation, symbol);
-				coin.setId(idcoin);
+				coin.setId(id);
 				coinsList.add(coin);
 			}
 		} catch (SQLException e) {
@@ -62,13 +62,13 @@ public class CoinDAO implements DAO<Coin> {
 
 	}
 
-	public Coin read(int idcoin) {
+	public Coin read(int id) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 
 
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, idcoin);
+			preparedStatement.setInt(1, id);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 			String name,  symbol;
@@ -78,7 +78,7 @@ public class CoinDAO implements DAO<Coin> {
 			quotation = resultSet.getInt("quotation");
 			symbol = resultSet.getString("symbol");
 			Coin coin = new Coin(name, quotation, symbol);
-			coin.setId(resultSet.getInt("idcoin"));
+			coin.setId(resultSet.getInt("id"));
 
 			return coin;
 		} catch (SQLException e) {
@@ -131,11 +131,11 @@ public class CoinDAO implements DAO<Coin> {
 
 	}
 
-	public boolean delete(int idcoin) {
+	public boolean delete(int id) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
-			preparedStatement.setInt(1, idcoin);
+			preparedStatement.setInt(1, id);
 			int n = preparedStatement.executeUpdate();
 			if (n != 0)
 				return true;

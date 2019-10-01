@@ -17,13 +17,13 @@
 <%CoinDTO u = (CoinDTO) request.getAttribute("dto");%>
 
 
-<form idcoin="floatleft" action="CoinServlet?mode=update&idcoin=<%=u.getId()%>" method="post">
+<form id="floatleft" action="CoinServlet?mode=update&id=<%=u.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="coin">Name</label>
+      <label for="id">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="coin" name="name" value=<%=u.getName()%>>
+      <input type="text" id="id" name="name" value=<%=u.getName()%>>
     </div>
   </div>
   <div class="row">
