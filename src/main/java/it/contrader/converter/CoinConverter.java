@@ -22,7 +22,7 @@ public class CoinConverter  implements Converter<Coin, CoinDTO> {
 	 * di tipo Coin. Notare l'uso del metodo get() per ottenere il valore
 	 * dell'attributo-
 	 */
-	
+	@Override
 	public CoinDTO toDTO(Coin coin) {
 		CoinDTO coinDTO = new CoinDTO(coin.getId(), coin.getName(), coin.getQuotation(), coin.getSymbol());
 		return coinDTO;
@@ -43,7 +43,7 @@ public class CoinConverter  implements Converter<Coin, CoinDTO> {
 	/**
 	 * Metodo per convertire le liste di Coin.
 	 */
-	
+	@Override
 	public List<CoinDTO> toDTOList(List<Coin> coinList) {
 		// Crea una lista vuota.
 		List<CoinDTO> coinDTOList = new ArrayList<CoinDTO>();

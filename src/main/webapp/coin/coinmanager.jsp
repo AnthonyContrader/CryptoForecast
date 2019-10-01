@@ -61,7 +61,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="pass">Password</label>
+     <label for="pass">Quotation</label>
     </div>
     <div class="col-75">
       <input type="text" id="quot" name="quotation" placeholder="inserisci quotation"> 
