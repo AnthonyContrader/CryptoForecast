@@ -7,7 +7,7 @@ public class Trend {
 	/**
 	 * Qui sotto definisco gli attributi di Trend. 
 	 */
-	private int idtrend;
+	private int id;
 	private String time;
 	private int variation;
 	private String namecoin;
@@ -31,9 +31,9 @@ public class Trend {
 		this.namecoin = namecoin;
 	}
 
-	public Trend(int idtrend,String time, int variation,  String namecoin) {
+	public Trend(int id,String time, int variation,  String namecoin) {
 		
-		this.idtrend = idtrend;
+		this.id = id;
 		this.time = time;
 		this.variation = variation;
 		this.namecoin = namecoin;
@@ -43,10 +43,10 @@ public class Trend {
 	 * Getter e Setter: servono alle altre classi a recuperare e modificare gli attributi di Trend
 	 */
 	public int getId() {
-		return this.idtrend;
+		return this.id;
 	}
-	public void setId(int idtrend) {
-		this.idtrend = idtrend;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getTime() {
 		return this.time;
@@ -76,7 +76,7 @@ public class Trend {
 	//Trasforma un oggetto in una stringa
 	@Override
 	public String toString() {
-		return  idtrend + "\t"  + time +"\t\t" +   variation + "\t\t" + namecoin + "\t\t";
+		return  id + "\t"  + time +"\t\t" +   variation + "\t\t" + namecoin + "\t\t";
 	}
 
 	//Metodo per il confronto degli oggetti
@@ -89,7 +89,7 @@ public class Trend {
 		if (getClass() != obj.getClass())
 			return false;
 		Trend other = (Trend) obj;
-		if (idtrend != other.idtrend)
+		if (id != other.id)
 			return false;
 		if (time == null) {
 			if (other.time != null)
