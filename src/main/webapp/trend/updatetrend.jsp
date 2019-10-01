@@ -16,7 +16,7 @@
 <%TrendDTO t = (TrendDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="UserServlet?mode=update&id=<%=t.getId()%>" method="post">
+<form id="floatleft" action="TrendServlet?mode=update&id=<%=t.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
       <label for="user">Time</label>
@@ -36,7 +36,7 @@
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="pass">Namecoin</label>
+     <label for="pass">Name coin</label>
     </div>
     <div class="col-75">
       <input

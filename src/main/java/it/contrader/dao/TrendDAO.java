@@ -62,13 +62,13 @@ public class TrendDAO implements DAO<Trend> {
 
 	}
 
-	public Trend read(int id) {
+	public Trend read(int trendId) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 
 
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setInt(1, trendId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 

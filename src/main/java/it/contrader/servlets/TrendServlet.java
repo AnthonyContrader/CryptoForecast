@@ -59,9 +59,9 @@ public class TrendServlet extends HttpServlet {
 
 		case "INSERT":
 			String time = request.getParameter("time").toString();
-			int variations = Integer.parseInt(request.getParameter("id")); 
+			int variation = Integer.parseInt(request.getParameter("variation")); 
 			String namecoin = request.getParameter("namecoin").toString();
-			dto = new TrendDTO (time,variations,namecoin);
+			dto = new TrendDTO (time,variation,namecoin);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
@@ -70,10 +70,10 @@ public class TrendServlet extends HttpServlet {
 			
 		case "UPDATE":
 			time = request.getParameter("time");
-			variations = Integer.parseInt(request.getParameter("id"));
+			variation = Integer.parseInt(request.getParameter("variation"));
 			namecoin = request.getParameter("namecoin");
 			id = Integer.parseInt(request.getParameter("id"));
-			dto = new TrendDTO (id,time, variations, namecoin);
+			dto = new TrendDTO (id,time, variation, namecoin);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/trend/trendmanager.jsp").forward(request, response);
