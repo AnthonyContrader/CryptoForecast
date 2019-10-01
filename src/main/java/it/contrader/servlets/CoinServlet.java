@@ -33,7 +33,7 @@ public class CoinServlet extends HttpServlet {
 		Service<CoinDTO> service = new CoinService();
 		String mode = request.getParameter("mode");
 		CoinDTO dto;
-		int idcoin;
+		int id;
 		boolean ans;
 
 		switch (mode.toUpperCase()) {
@@ -44,8 +44,8 @@ public class CoinServlet extends HttpServlet {
 			break;
 
 		case "READ":
-			idcoin = Integer.parseInt(request.getParameter("idcoin"));
-			dto = service.read(idcoin);
+			id = Integer.parseInt(request.getParameter("id"));
+			dto = service.read(id);
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
@@ -69,20 +69,20 @@ public class CoinServlet extends HttpServlet {
 			break;
 			
 		case "UPDATE":
-			idcoin = Integer.parseInt(request.getParameter("idcoin"));
+			id = Integer.parseInt(request.getParameter("id"));
 			name = request.getParameter("name");
 			quotation = Integer.parseInt(request.getParameter("quotation"));
 			symbol = request.getParameter("symbol");
 			
-			dto = new CoinDTO (idcoin, name, quotation, symbol);
+			dto = new CoinDTO (id, name, quotation, symbol);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/coin/coinmanager.jsp").forward(request, response);
 			break;
 
 		case "DELETE":
-			idcoin = Integer.parseInt(request.getParameter("idcoin"));
-			ans = service.delete(idcoin);
+			id = Integer.parseInt(request.getParameter("id"));
+			ans = service.delete(id);
 			request.setAttribute("ans", ans);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/coin/coinmanager.jsp").forward(request, response);
