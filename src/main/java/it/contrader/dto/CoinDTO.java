@@ -11,7 +11,7 @@ package it.contrader.dto;
  */
 public class CoinDTO {
 	
-	private int idcoin;
+	private int id;
 
 	private String name;
 	
@@ -36,7 +36,7 @@ public CoinDTO(String name, int quotation, String symbol) {
 //costruttore con campi
 	public CoinDTO(int idcoin, String name, int quotation, String symbol) {
 	
-		this.idcoin = idcoin;
+		this.id = id;
 		this.name = name;
 		this.quotation = quotation;
 		this.symbol = symbol;
@@ -44,13 +44,13 @@ public CoinDTO(String name, int quotation, String symbol) {
 
 //costruttore getters and setters
 	public int getId() {
-		return idcoin;
+		return id;
 	}
 
 
 
-	public void setId(int idcoin) {
-		this.idcoin = idcoin;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 
@@ -93,6 +93,6 @@ public CoinDTO(String name, int quotation, String symbol) {
 
 	@Override
 	public String toString() {
-		return  idcoin + "\t"  + name +"\t\t" +   quotation + "\t\t" + symbol;
+		return  id + "\t"  + name +"\t\t" +   quotation + "\t\t" + symbol;
 	}
 }
