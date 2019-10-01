@@ -17,7 +17,7 @@
 <br>
 
 <div class="main">
-<%TrendDTO u = (TrendDTO) request.getAttribute("dto");%>
+<%TrendDTO t = (TrendDTO) request.getAttribute("dto");%>
 
 
 <table>
@@ -27,9 +27,9 @@
 		<th>Namecoin</th>
 	</tr>
 	<tr>
-		<td><%=u.getTime()%></td>
-		<td> <%=u.getVariation()%></td>
-		<td> <%=u.getNamecoin()%></td>
+		<td><%=t.getTime()%></td>
+		<td> <%=t.getVariation()%></td>
+		<td> <%=t.getNamecoin()%></td>
 	</tr>	
 </table>
 

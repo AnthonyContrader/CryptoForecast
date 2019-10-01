@@ -13,16 +13,16 @@
 <br>
 <div class="main">
 
-<%TrendDTO u = (TrendDTO) request.getAttribute("dto");%>
+<%TrendDTO t = (TrendDTO) request.getAttribute("dto");%>
 
 
-<form id="floatleft" action="UserServlet?mode=update&id=<%=u.getId()%>" method="post">
+<form id="floatleft" action="UserServlet?mode=update&id=<%=t.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
       <label for="user">Time</label>
     </div>
     <div class="col-75">
-      <input type="text" id="time" name="time" value=<%=u.getTime()%>>
+      <input type="text" id="time" name="time" value=<%=t.getTime()%>>
     </div>
   </div>
   <div class="row">
@@ -31,7 +31,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="var" name="variation" value=<%=u.getVariation()%>> 
+			type="text" id="var" name="variation" value=<%=t.getVariation()%>> 
     </div>
   </div>
   <div class="row">
@@ -40,7 +40,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" id="text" name="namecoin" value=<%=u.getNamecoin()%>> 
+			type="text" id="text" name="namecoin" value=<%=t.getNamecoin()%>> 
     </div>
   </div>
   

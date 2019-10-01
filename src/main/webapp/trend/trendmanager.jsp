@@ -29,17 +29,17 @@
 			<th></th>
 		</tr>
 		<%
-			for (TrendDTO u : list) {
+			for (TrendDTO t : list) {
 		%>
 		<tr>
-			<td><a href=TrendServlet?mode=read&id=<%=u.getId()%>>
-					<%=u.getTime()%>
+			<td><a href=TrendServlet?mode=read&id=<%=t.getId()%>>
+					<%=t.getTime()%>
 			</a></td>
-			<td><%=u.getVariation()%></td>
-			<td><%=u.getNamecoin()%></td>
-			<td><a href=TrendServlet?mode=read&update=true&id=<%=u.getId()%>>Edit</a>
+			<td><%=t.getVariation()%></td>
+			<td><%=t.getNamecoin()%></td>
+			<td><a href=TrendServlet?mode=read&update=true&id=<%=t.getId()%>>Edit</a>
 			</td>
-			<td><a href=TrendServlet?mode=delete&id=<%=u.getId()%>>Delete</a>
+			<td><a href=TrendServlet?mode=delete&id=<%=t.getId()%>>Delete</a>
 			</td>
 
 		</tr>
