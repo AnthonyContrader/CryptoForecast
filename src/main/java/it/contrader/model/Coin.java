@@ -7,7 +7,7 @@ public class Coin {
 	/**
 	 * Qui sotto definisco gli attributi di Coin. 
 	 */
-	private int idcoin;
+	private int id;
 
 	private String name;
 	
@@ -32,9 +32,9 @@ public class Coin {
     
 	// costruttore completo
 	
-	public Coin(int idcoin, String name, int quotation, String symbol) {
+	public Coin(int id, String name, int quotation, String symbol) {
 		
-    	this.idcoin = idcoin;
+    	this.id = id;
 		this.name = name;
 		this.quotation = quotation;
 		this.symbol = symbol;
@@ -44,12 +44,12 @@ public class Coin {
 	
 	
 	public int getId() {
-		return this.idcoin;
+		return this.id;
 	}
 
 
-	public void setId(int idcoin) {
-		this.idcoin = idcoin;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 
@@ -84,7 +84,7 @@ public class Coin {
 
 	@Override
 	public String toString() {
-		return  idcoin + "\t"  + name +"\t\t" + quotation + "\t\t" + symbol;
+		return  id + "\t"  + name +"\t\t" + quotation + "\t\t" + symbol;
 	}
 	
 	//Metodo per il confronto degli oggetti
@@ -97,7 +97,7 @@ public class Coin {
 			if (getClass() != obj.getClass())
 				return false;
 			Coin other = (Coin) obj;
-			if (idcoin != other.idcoin)
+			if (id != other.id)
 				return false;
 			if (name == null) {
 				if (other.name != null)
