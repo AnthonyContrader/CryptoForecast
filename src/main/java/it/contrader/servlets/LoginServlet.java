@@ -13,6 +13,7 @@ import it.contrader.service.LoginService;
 /*
  * Login Servlet
  */
+
 public class LoginServlet extends HttpServlet {
 	// UID della servlet
 	private static final long serialVersionUID = 1L;
