@@ -35,17 +35,17 @@
 			<th></th>
 		</tr>
 		<%
-			for (CoinDTO u : list) {
+			for (CoinDTO c : list) {
 		%>
 		<tr>
-			<td><a href=CoinServlet?mode=read&id=<%=u.getId()%>>
-					<%=u.getName()%>
+			<td><a href=CoinServlet?mode=read&id=<%=c.getId()%>>
+					<%=c.getName()%>
 			</a></td>
-			<td><%=u.getQuotation()%></td>
-			<td><%=u.getSymbol()%></td>
-			<td><a href=CoinServlet?mode=read&update=true&id=<%=u.getId()%>>Edit</a>
+			<td><%=c.getQuotation()%></td>
+			<td><%=c.getSymbol()%></td>
+			<td><a href=CoinServlet?mode=read&update=true&id=<%=c.getId()%>>Edit</a>
 			</td>
-			<td><a href=CoinServlet?mode=delete&id=<%=u.getId()%>>Delete</a>
+			<td><a href=CoinServlet?mode=delete&id=<%=c.getId()%>>Delete</a>
 			</td>
 
 		</tr>
