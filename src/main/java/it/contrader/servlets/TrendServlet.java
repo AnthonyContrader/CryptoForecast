@@ -33,7 +33,7 @@ public class TrendServlet extends HttpServlet {
 		Service<TrendDTO> service = new TrendService();
 		String mode = request.getParameter("mode");
 		TrendDTO dto;
-		int idtrend;
+		int id;
 		boolean ans;
 
 		switch (mode.toUpperCase()) {
@@ -44,8 +44,8 @@ public class TrendServlet extends HttpServlet {
 			break;
 
 		case "READ":
-			idtrend = Integer.parseInt(request.getParameter("idtrend"));
-			dto = service.read(idtrend);
+			id = Integer.parseInt(request.getParameter("id"));
+			dto = service.read(id);
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
@@ -59,7 +59,7 @@ public class TrendServlet extends HttpServlet {
 
 		case "INSERT":
 			String time = request.getParameter("time").toString();
-			int variations = Integer.parseInt(request.getParameter("idtrend")); 
+			int variations = Integer.parseInt(request.getParameter("id")); 
 			String namecoin = request.getParameter("namecoin").toString();
 			dto = new TrendDTO (time,variations,namecoin);
 			ans = service.insert(dto);
@@ -70,18 +70,18 @@ public class TrendServlet extends HttpServlet {
 			
 		case "UPDATE":
 			time = request.getParameter("time");
-			variations = Integer.parseInt(request.getParameter("idtrend"));
+			variations = Integer.parseInt(request.getParameter("id"));
 			namecoin = request.getParameter("namecoin");
-			idtrend = Integer.parseInt(request.getParameter("idtrend"));
-			dto = new TrendDTO (idtrend,time, variations, namecoin);
+			id = Integer.parseInt(request.getParameter("id"));
+			dto = new TrendDTO (id,time, variations, namecoin);
 			ans = service.update(dto);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/trend/trendmanager.jsp").forward(request, response);
 			break;
 
 		case "DELETE":
-			idtrend = Integer.parseInt(request.getParameter("idtrend"));
-			ans = service.delete(idtrend);
+			id = Integer.parseInt(request.getParameter("id"));
+			ans = service.delete(id);
 			request.setAttribute("ans", ans);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/trend/trendmanager.jsp").forward(request, response);
