@@ -44,7 +44,7 @@ public class Coin {
 	
 	
 	public int getId() {
-		return idcoin;
+		return this.idcoin;
 	}
 
 
@@ -54,7 +54,7 @@ public class Coin {
 
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 
@@ -64,7 +64,7 @@ public class Coin {
 
 
 	public int getQuotation() {
-		return quotation;
+		return this.quotation;
 	}
 
 
@@ -74,7 +74,7 @@ public class Coin {
 
 
 	public String getSymbol() {
-		return symbol;
+		return this.symbol;
 	}
 
 

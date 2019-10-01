@@ -70,7 +70,7 @@ public class CoinServlet extends HttpServlet {
 			
 		case "UPDATE":
 			name = request.getParameter("name");
-			quotation = Integer.parseInt(request.getParameter("idcoin"));
+			quotation = Integer.parseInt(request.getParameter("quotation"));
 			symbol = request.getParameter("symbol");
 			idcoin = Integer.parseInt(request.getParameter("idcoin"));
 			dto = new CoinDTO (idcoin, name, quotation, symbol);

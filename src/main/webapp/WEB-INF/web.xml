@@ -32,4 +32,16 @@
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/UserServlet</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>CoinServlet</display-name>
+    <servlet-name>CoinServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.CoinServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CoinServlet</servlet-name>
+    <url-pattern>/CoinServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

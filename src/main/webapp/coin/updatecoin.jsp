@@ -17,13 +17,13 @@
 <%CoinDTO u = (CoinDTO) request.getAttribute("dto");%>
 
 
-<form idcoin="floatleft" action="UserServlet?mode=update&idcoin=<%=u.getId()%>" method="post">
+<form idcoin="floatleft" action="CoinServlet?mode=update&idcoin=<%=u.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
       <label for="coin">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" idcoin="coin" name="name" value=<%=u.getName()%>>
+      <input type="text" id="coin" name="name" value=<%=u.getName()%>>
     </div>
   </div>
   <div class="row">
@@ -32,7 +32,7 @@
     </div>
     <div class="col-75">
       <input
-			type="text" idccoin="pass" name="quotation" value=<%=u.getQuotation()%>> 
+			type="text" id="pass" name="quotation" value=<%=u.getQuotation()%>> 
     </div>
   </div>
   <div class="row">
@@ -40,7 +40,7 @@
       <label for="type">Symbol</label>
     </div>
    		 <div class="col-75">
- 			<select idcoin="type" name="Symbol">
+ 			<select id="type" name="Symbol">
   				<%-- <option value="ADMIN" <%if(u.getUsertype().equals("ADMIN")) {%>selected<%}%>>ADMIN</option>
   				<option value="USER" <%if(u.getUsertype().equals("USER")) {%>selected<%}%>>USER</option> --%>
 			</select>
