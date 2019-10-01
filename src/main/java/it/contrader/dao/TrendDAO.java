@@ -17,9 +17,9 @@ public class TrendDAO implements DAO<Trend> {
 
 	private final String QUERY_ALL = "SELECT * FROM trend";
 	private final String QUERY_CREATE = "INSERT INTO trend (time,variation,namecoin) VALUES (?,?,?)";
-	private final String QUERY_READ = "SELECT * FROM trend WHERE idtrend=?";
-	private final String QUERY_UPDATE = "UPDATE trend SET time=?, variation=?, namecoin=?  WHERE idtrend=?";
-	private final String QUERY_DELETE = "DELETE FROM trend WHERE idtrend=?";
+	private final String QUERY_READ = "SELECT * FROM trend WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE trend SET time=?, variation=?, namecoin=?  WHERE id=?";
+	private final String QUERY_DELETE = "DELETE FROM trend WHERE id=?";
 	public TrendDAO() {
 
 	}
@@ -32,13 +32,13 @@ public class TrendDAO implements DAO<Trend> {
 			ResultSet resultSet = statement.executeQuery(QUERY_ALL);
 			Trend trend;
 			while (resultSet.next()) {
-				int idtrend = resultSet.getInt("idtrend");
+				int id = resultSet.getInt("id");
 				String time = resultSet.getString("time");
 				int variation = resultSet.getInt("variation");
             	String namecoin = resultSet.getString("namecoin");
 				
 				trend = new Trend(time, variation, namecoin);
-				trend.setId(idtrend);
+				trend.setId(id);
 				trendsList.add(trend);
 			}
 		} catch (SQLException e) {
@@ -62,13 +62,13 @@ public class TrendDAO implements DAO<Trend> {
 
 	}
 
-	public Trend read(int idtrend) {
+	public Trend read(int id) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 
 
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_READ);
-			preparedStatement.setInt(1, idtrend);
+			preparedStatement.setInt(1, id);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
 
@@ -80,7 +80,7 @@ public class TrendDAO implements DAO<Trend> {
 			namecoin = resultSet.getString("namecoin");
 			Trend trend = new Trend(time,variation,namecoin);
 			
-			trend.setId(resultSet.getInt("idtrend"));
+			trend.setId(resultSet.getInt("id"));
 
 			return trend;
 		} catch (SQLException e) {
@@ -133,11 +133,11 @@ public class TrendDAO implements DAO<Trend> {
 
 	}
 
-	public boolean delete(int idtrend) {
+	public boolean delete(int id) {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_DELETE);
-			preparedStatement.setInt(1, idtrend);
+			preparedStatement.setInt(1, id);
 			int n = preparedStatement.executeUpdate();
 			if (n != 0)
 				return true;
