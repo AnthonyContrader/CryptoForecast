@@ -34,7 +34,7 @@ public class CoinConverter  implements Converter<Coin, CoinDTO> {
 	 * tipo CoinDTO. Notare l'uso del metodo get() per ottenere il valore
 	 * dell'attributo-
 	 */
-	
+	@Override
 	public Coin toEntity(CoinDTO coinDTO) {
 		Coin coin = new Coin(coinDTO.getId(), coinDTO.getName(), coinDTO.getQuotation(), coinDTO.getSymbol());
 		return coin;
