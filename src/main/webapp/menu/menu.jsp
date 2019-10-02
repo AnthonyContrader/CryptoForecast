@@ -13,7 +13,7 @@
 					// MENU ADMIN
 					%>
 					<div class="navbar">
-					  <a class="active" href="homeadmin.jsp">Home</a>
+					  <a href="homeadmin.jsp">Home</a>
 					  <a href="UserServlet?mode=userlist">Users</a>
 					  <a href="CoinServlet?mode=coinlist">Coins</a> 
 					 
