@@ -68,6 +68,17 @@
   
   <servlet>
     <description></description>
+    <display-name>TrendServlet2</display-name>
+    <servlet-name>TrendServlet2</servlet-name>
+    <servlet-class>it.contrader.servlets.TrendServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TrendServlet2</servlet-name>
+    <url-pattern>/TrendServlet2</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
     <display-name>ForecastServlet</display-name>
     <servlet-name>ForecastServlet</servlet-name>
     <servlet-class>it.contrader.servlets.ForecastServlet</servlet-class>
