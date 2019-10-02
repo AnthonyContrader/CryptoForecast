@@ -38,12 +38,12 @@ public class ForecastServlet extends HttpServlet {
 
 		switch (mode.toUpperCase()) {
 
-		case "COINLIST":
+		case "FORECASTLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/coin/coinmanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/forecast/forecastmanager.jsp").forward(request, response);
 			break;
 
-		case "READ":
+		/*case "READ":
 			id = Integer.parseInt(request.getParameter("id"));
 			dto = service.read(id);
 			request.setAttribute("dto", dto);
@@ -86,7 +86,7 @@ public class ForecastServlet extends HttpServlet {
 			request.setAttribute("ans", ans);
 			updateList(request);
 			getServletContext().getRequestDispatcher("/coin/coinmanager.jsp").forward(request, response);
-			break;
+			break;*/
 		}
 	}
 }

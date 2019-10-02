@@ -55,5 +55,15 @@
     <url-pattern>/TrendServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <description></description>
+    <display-name>ForecastServlet</display-name>
+    <servlet-name>ForecastServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.ForecastServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForecastServlet</servlet-name>
+    <url-pattern>/ForecastServlet</url-pattern>
+  </servlet-mapping>
   
 </web-app>
