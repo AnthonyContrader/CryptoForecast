@@ -16,7 +16,7 @@
 					  <a class="active" href="homeadmin.jsp">Home</a>
 					  <a href="UserServlet?mode=userlist">Users</a>
 					  <a href="CoinServlet?mode=coinlist">Coins</a> 
-					  <a href="ForecastServlet?mode=forecastlist">Forecast</a>
+					 
 					  <a href="TrendServlet?mode=trendlist">Trends</a>
 					  
 					  

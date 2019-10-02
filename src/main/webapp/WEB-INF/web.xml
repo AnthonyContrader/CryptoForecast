@@ -66,4 +66,15 @@
     <url-pattern>/ForecastServlet</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+    <description></description>
+    <display-name>NextServlet</display-name>
+    <servlet-name>NextServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.NextServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NextServlet</servlet-name>
+    <url-pattern>/NextServlet</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
