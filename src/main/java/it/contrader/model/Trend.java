@@ -24,6 +24,14 @@ public class Trend {
 	public Trend() {
 		
 	}
+	
+	public Trend (int variation, String namecoin) {
+	
+		this.variation = variation;
+		this.namecoin = namecoin;
+	}
+	
+	
 
 	public Trend (String time, int variation, String namecoin ) {
 		this.time = time;

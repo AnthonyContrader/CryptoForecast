@@ -10,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import it.contrader.dto.CoinDTO;
+import it.contrader.dto.TrendDTO;
 import it.contrader.service.Service;
+import it.contrader.service.TrendService;
 import it.contrader.service.CoinService;
 
 /*
@@ -30,10 +32,13 @@ public class ForecastServlet extends HttpServlet {
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Service<CoinDTO> service = new CoinService();
+		Service<CoinDTO> servicec = new CoinService();
+		Service<TrendDTO> servicet = new TrendService();
 		String mode = request.getParameter("mode");
-		CoinDTO dto;
+		TrendDTO dto;
+		
 		int id;
+		String namecoin;
 		boolean ans;
 
 		switch (mode.toUpperCase()) {
@@ -43,21 +48,22 @@ public class ForecastServlet extends HttpServlet {
 			getServletContext().getRequestDispatcher("/forecast/forecastmanager.jsp").forward(request, response);
 			break;
 
-		/*case "READ":
+		case "READ":
 			id = Integer.parseInt(request.getParameter("id"));
-			dto = service.read(id);
+			namecoin = request.getParameter("namecoin");
+			dto = new TrendDTO (id, namecoin);
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
-				 getServletContext().getRequestDispatcher("/coin/readcoin.jsp").forward(request, response);
+				 getServletContext().getRequestDispatcher("/forecast/readforecast.jsp").forward(request, response);
 				
 			}
 			
-			else getServletContext().getRequestDispatcher("/coin/updatecoin.jsp").forward(request, response);
+			//else getServletContext().getRequestDispatcher("/coin/updatecoin.jsp").forward(request, response);
 			
 			break;
 
-		case "INSERT":
+		/*case "INSERT":
 			String name = request.getParameter("name").toString();
 			int quotation = Integer.parseInt(request.getParameter("quotation"));
 			String symbol = request.getParameter("symbol").toString();

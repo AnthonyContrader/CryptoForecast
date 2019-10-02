@@ -24,6 +24,8 @@ public class CoinDTO {
 		
 	}
 		
+		
+		
 // costruttore senza campo idcoin
 public CoinDTO(String name, int quotation, String symbol) {
 

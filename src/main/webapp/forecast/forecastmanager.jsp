@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" import="java.util.List"
-	import="it.contrader.dto.CoinDTO"%>
+	import="it.contrader.dto.CoinDTO"
+	import="it.contrader.dto.TrendDTO"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,9 +16,12 @@
 
 
 
+
 <div class="main">
 	<%
 		List<CoinDTO> list = (List<CoinDTO>) request.getAttribute("list");
+		List<TrendDTO> list2 = (List<TrendDTO>) request.getAttribute("list2");
+		
 	%>
 
 <br>
@@ -25,15 +29,19 @@
 	<table>
 		<tr>
 			<th>Name Coin</th>
-			<th></th>
-			<th></th>
+			<th>Quotation</th>
+			<th>Variation</th>
+			
 		</tr>
 		<%
 			for (CoinDTO c : list) {
 		%>
+					
 		<tr>
 			<td><a href=CoinServlet?mode=read&id=<%=c.getId()%>>
 					<%=c.getName()%>
+					<%=c.getQuotation()%>
+					<%= %>
 			</a></td>
 			
 
@@ -41,6 +49,9 @@
 		<%
 			}
 		%>
+		
+		
+	
 	</table>
 
 

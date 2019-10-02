@@ -15,16 +15,18 @@ public class TrendDTO {
 	private String time;
 	private int variation;
 	private String namecoin;
-	private final int M1 = 55;
-	private final int M2 = 40;
-	private final int M3 = 100;
+	
 	
 	
 	public TrendDTO() {
 		
 	}
 
-
+	public TrendDTO(int id, String namecoin) {
+		
+		this.id = id;
+		this.namecoin = namecoin;
+	}
 
 	public TrendDTO(String time, int variation, String namecoin) {
 	
@@ -50,7 +52,7 @@ public class TrendDTO {
 
 
 
-	public void setId(int idtrend) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -94,16 +96,6 @@ public class TrendDTO {
 		return  id + "\t"  + time +"\t\t" +   variation + "\t\t" + namecoin;
 	}
 	
-	public String ForecastM1(int id, int variation, String namecoin) {
-		
-		for (int i = 0; i<this.id; i++)
-		{
-			
-		}
-			
-		
-		
-	}
-		
+	
 		
 }

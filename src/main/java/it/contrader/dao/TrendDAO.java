@@ -18,6 +18,7 @@ public class TrendDAO implements DAO<Trend> {
 	private final String QUERY_ALL = "SELECT * FROM trend";
 	private final String QUERY_CREATE = "INSERT INTO trend (time,variation,namecoin) VALUES (?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM trend WHERE id=?";
+	private final String QUERY_SELECT = "SELECT variation,namecoin FROM trend" ;
 	private final String QUERY_UPDATE = "UPDATE trend SET time=?, variation=?, namecoin=?  WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM trend WHERE id=?";
 	public TrendDAO() {
@@ -147,5 +148,28 @@ public class TrendDAO implements DAO<Trend> {
 		return false;
 	}
 
+	public boolean selct() {
+		List<Trend> trendsList = new ArrayList<>();
+		Connection connection = ConnectionSingleton.getInstance();
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(QUERY_SELECT);
+			Trend trend;
+			while (resultSet.next()) {
+				int id = resultSet.getInt("id");
+				int variation = resultSet.getInt("variation");
+				String namecoin = resultSet.getString("namecoin");
+	        	trend = new Trend(variation, namecoin);
+				trend.setId(id);
+				trendsList.add(trend);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return false;
+	}
 
 }
+
