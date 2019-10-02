@@ -17,7 +17,7 @@
 
 
 <div class="main">
-<h1>Welcome ${user.getUsername()}</h1>
+<h1>Buongiorno ${user.getUsername()}</h1>
 
 "Questo progetto calcola la previsione di una Cryptovaluta basandosi sull'andamento della stessa
 Le crittovalute (o criptovalute) utilizzano tecnologie di tipo peer-to-peer (p2p) su reti i cui 
