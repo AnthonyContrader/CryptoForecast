@@ -35,7 +35,7 @@
 			for (TrendDTO t : list) {
 		%>
 		<tr>
-			<td><a href=TrendServlet?mode=read&id=<%=t.getId()%>>
+			<td><a href=usertrend?mode=read&id=<%=t.getId()%>>
 					<%=t.getTime()%>
 			</a></td>
 			<td><%=t.getVariation()%></td>
