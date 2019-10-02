@@ -16,14 +16,22 @@
 					  <a href="homeadmin.jsp">Home</a>
 					  <a href="UserServlet?mode=userlist">Users</a>
 					  <a href="CoinServlet?mode=coinlist">Coins</a> 
-					 
 					  <a href="TrendServlet?mode=trendlist">Trends</a>
-					  
-					  
 					  <a href="LogoutServlet" id="logout">Logout</a>
 					</div>
 					<%
-				} 
+				} 	else {
+					// MENU USER
+					%>
+					<div class="navbar">
+					  	<a href="homeuser.jsp">Home</a>
+					  	<a href="CoinServlet2?mode=coinlist">Coins</a> 
+					  	<a href="TrendServlet?mode=trendlist">Trends</a>
+						<a href="LogoutServlet" id="logout">Logout</a>
+					</div>
+					<%
+				}		
+				
 			}
 		%>
 	</body>

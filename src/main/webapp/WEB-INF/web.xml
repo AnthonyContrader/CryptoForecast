@@ -46,6 +46,17 @@
   
   <servlet>
     <description></description>
+    <display-name>CoinServlet2</display-name>
+    <servlet-name>CoinServlet2</servlet-name>
+    <servlet-class>it.contrader.servlets.CoinServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CoinServlet2</servlet-name>
+    <url-pattern>/CoinServlet2</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
     <display-name>TrendServlet</display-name>
     <servlet-name>TrendServlet</servlet-name>
     <servlet-class>it.contrader.servlets.TrendServlet</servlet-class>
