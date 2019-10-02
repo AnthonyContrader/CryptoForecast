@@ -68,13 +68,13 @@
   
   <servlet>
     <description></description>
-    <display-name>TrendServlet2</display-name>
-    <servlet-name>TrendServlet2</servlet-name>
-    <servlet-class>it.contrader.servlets.TrendServlet</servlet-class>
+    <display-name>usertrend</display-name>
+    <servlet-name>usertrend</servlet-name>
+    <servlet-class>it.contrader.servlets.usertrend</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>TrendServlet2</servlet-name>
-    <url-pattern>/TrendServlet2</url-pattern>
+    <servlet-name>usertrend</servlet-name>
+    <url-pattern>/usertrend</url-pattern>
   </servlet-mapping>
   
   <servlet>

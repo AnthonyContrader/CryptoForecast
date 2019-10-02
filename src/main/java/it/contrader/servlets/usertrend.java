@@ -16,10 +16,10 @@ import it.contrader.service.TrendService;
 /*
  * Per dettagli vedi Guida sez Servlet
  */
-public class TrendServlet2 extends HttpServlet {
+public class usertrend extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public TrendServlet2() {
+	public usertrend() {
 	}
 	
 	public void updateList(HttpServletRequest request) {
@@ -34,7 +34,7 @@ public class TrendServlet2 extends HttpServlet {
 		String mode = request.getParameter("mode");
 		TrendDTO dto;
 		int id;
-		boolean ans;
+		
 
 		switch (mode.toUpperCase()) {
 
