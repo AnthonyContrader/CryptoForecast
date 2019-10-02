@@ -15,7 +15,9 @@ public class TrendDTO {
 	private String time;
 	private int variation;
 	private String namecoin;
-
+	private final int M1 = 55;
+	private final int M2 = 40;
+	private final int M3 = 100;
 	
 	
 	public TrendDTO() {
@@ -91,4 +93,17 @@ public class TrendDTO {
 	public String toString() {
 		return  id + "\t"  + time +"\t\t" +   variation + "\t\t" + namecoin;
 	}
+	
+	public String ForecastM1(int id, int variation, String namecoin) {
+		
+		for (int i = 0; i<this.id; i++)
+		{
+			
+		}
+			
+		
+		
+	}
+		
+		
 }

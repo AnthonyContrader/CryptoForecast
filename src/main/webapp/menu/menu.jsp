@@ -18,6 +18,8 @@
 					  <a href="CoinServlet?mode=coinlist">Coins</a> 
 					  <a href="ForecastServlet?mode=forecastlist">Forecast</a>
 					  <a href="TrendServlet?mode=trendlist">Trends</a>
+					  <a href="NextServlet?mode=nextlist">Next</a>
+					  
 					  <a href="LogoutServlet" id="logout">Logout</a>
 					</div>
 					<%
