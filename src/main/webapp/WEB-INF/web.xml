@@ -101,13 +101,13 @@
   
    <servlet>
     <description></description>
-    <display-name>NextServlet</display-name>
-    <servlet-name>NextServlet</servlet-name>
-    <servlet-class>it.contrader.servlets.NextServlet</servlet-class>
+    <display-name>CombServlet</display-name>
+    <servlet-name>CombServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.CombServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>NextServlet</servlet-name>
-    <url-pattern>/NextServlet</url-pattern>
+    <servlet-name>CombServlet</servlet-name>
+    <url-pattern>/CombServlet</url-pattern>
   </servlet-mapping>
   
 </web-app>
