@@ -58,7 +58,7 @@
       <label for="commit">Namecoin</label>
     </div>
     <div class="col-75">
-      <input type="text" id="coin" name="name" placeholder="inserisci name moneta">
+      <input type="text" id="coin" name="namecoin" placeholder="inserisci nome moneta">
     </div>
   </div>
   <div class="row">
@@ -66,7 +66,7 @@
      <label for="numb">Number</label>
     </div>
     <div class="col-75">
-      <input type="text" id="numb" name="numero" placeholder="inserisci numero"> 
+      <input type="text" id="numb" name="number" placeholder="inserisci numero commit"> 
     </div>
   </div>
   <div class="row">
@@ -74,7 +74,7 @@
       <label for="type">Data</label>
     </div>
    		 <div class="col-75">
- 			<input type="text" id="symb" name="data" placeholder="inserisci data"> 
+ 			<input type="text" id="symb" name="data" placeholder="inserisci la data"> 
   				
 			
     	</div>

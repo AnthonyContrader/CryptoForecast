@@ -17,10 +17,10 @@ import it.contrader.utils.ConnectionSingleton;
 public class CommitDAO implements DAO<Commit> {
 
 	private final String QUERY_ALL = "SELECT * FROM commit";
-	private final String QUERY_CREATE = "INSERT INTO user (namecoin, number, data) VALUES (?,?,?)";
-	private final String QUERY_READ = "SELECT * FROM user WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE user SET namecoin=?, number=?, data=? WHERE id=?";
-	private final String QUERY_DELETE = "DELETE FROM user WHERE id=?";
+	private final String QUERY_CREATE = "INSERT INTO commit (namecoin, number, data) VALUES (?,?,?)";
+	private final String QUERY_READ = "SELECT * FROM commit WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE commit SET namecoin=?, number=?, data=? WHERE id=?";
+	private final String QUERY_DELETE = "DELETE FROM commit WHERE id=?";
 
 	public CommitDAO() {
 
