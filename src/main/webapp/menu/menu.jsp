@@ -17,7 +17,8 @@
 					  <a href="UserServlet?mode=userlist">Users</a>
 					  <a href="CoinServlet?mode=coinlist">Coins</a> 
 					  <a href="TrendServlet?mode=trendlist">Trends</a>
-					  <a href="CommitServlet?mode=commitlist">Commit</a>
+					  <a href="CommitServlet?mode=commitlist">Commits</a>
+					  <a href="SocialServlet?mode=sociallist">Socials</a>
 					  <a href="LogoutServlet" id="logout">Logout</a>
 					</div>
 					<%

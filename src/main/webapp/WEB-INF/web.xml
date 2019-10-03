@@ -110,6 +110,17 @@
     <url-pattern>/CommitServlet2</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+    <description></description>
+    <display-name>SocialServlet</display-name>
+    <servlet-name>SocialServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.SocialServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SocialServlet</servlet-name>
+    <url-pattern>/SocialServlet</url-pattern>
+  </servlet-mapping>
+  
 
 
   
