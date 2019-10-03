@@ -90,24 +90,16 @@
   
   <servlet>
     <description></description>
-    <display-name>ForecastServlet</display-name>
-    <servlet-name>ForecastServlet</servlet-name>
-    <servlet-class>it.contrader.servlets.ForecastServlet</servlet-class>
+    <display-name>CommitServlet</display-name>
+    <servlet-name>CommitServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.CommitServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ForecastServlet</servlet-name>
-    <url-pattern>/ForecastServlet</url-pattern>
+    <servlet-name>CommitServlet</servlet-name>
+    <url-pattern>/CommitServlet</url-pattern>
   </servlet-mapping>
   
-   <servlet>
-    <description></description>
-    <display-name>CombServlet</display-name>
-    <servlet-name>CombServlet</servlet-name>
-    <servlet-class>it.contrader.servlets.CombServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>CombServlet</servlet-name>
-    <url-pattern>/CombServlet</url-pattern>
-  </servlet-mapping>
+
+
   
 </web-app>
