@@ -89,15 +89,15 @@ public SocialDTO(String url, int post, String data, String namecoin) {
 		this.data = data;
 	}
 
-
+	public String getNamecoin() {
+		return this.namecoin;
+	}
+	
 	public void setNamecoin(String namecoin) {
 		this.namecoin = namecoin;
 	}
 	
-	public String getNamecoin() {
-		return this.namecoin;
-	}
-
+	
 
 	@Override
 	public String toString() {
