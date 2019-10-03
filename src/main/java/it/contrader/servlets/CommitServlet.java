@@ -58,10 +58,10 @@ public class CommitServlet extends HttpServlet {
 			else getServletContext().getRequestDispatcher("/commit/updatecommit.jsp").forward(request, response);
 			
 			break;
-
+//insert
 		case "INSERT":
 			String namecoin = request.getParameter("namecoin").toString();
-			int number = Integer.parseInt(request.getParameter("number"));
+			int number = Integer.parseInt(request.getParameter("number"));             
 			String data = request.getParameter("data").toString();
 			dto = new CommitDTO (namecoin,number,data);
 			ans = service.insert(dto);
