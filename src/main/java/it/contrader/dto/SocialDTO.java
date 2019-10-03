@@ -25,7 +25,7 @@ public class SocialDTO {
 		
 		
 // costruttore senza campo id
-public SocialDTO(String url, int quotation, String data, String namecoin) {
+public SocialDTO(String url, int post, String data, String namecoin) {
 
 		this.url = url;
 		this.post = post;
@@ -35,7 +35,7 @@ public SocialDTO(String url, int quotation, String data, String namecoin) {
 
 
 //costruttore con campi
-	public SocialDTO(int id, String url, int quotation, String data, String namecoin) {
+	public SocialDTO(int id, String url, int post, String data, String namecoin) {
 	
 		this.id = id;
 		this.url = url;
@@ -69,13 +69,13 @@ public SocialDTO(String url, int quotation, String data, String namecoin) {
 
 
 
-	public int getpost() {
+	public int getPost() {
 		return this.post;
 	}
 
 
 
-	public void setpost(int post) {
+	public void setPost(int post) {
 		this.post = post;
 	}
 
@@ -91,7 +91,7 @@ public SocialDTO(String url, int quotation, String data, String namecoin) {
 
 
 	public void setNamecoin(String namecoin) {
-		this.data = data;
+		this.namecoin = namecoin;
 	}
 	
 	public String getNamecoin() {
