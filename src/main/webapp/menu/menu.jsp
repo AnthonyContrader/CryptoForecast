@@ -29,7 +29,10 @@
 					  	
 					  	<a href="CoinServlet2?mode=coinlist">Coins</a> 
 					  	<a href="usertrend?mode=trendlist">Trends</a>
+					  	<a href="CommitServlet2?mode=commitlist">Commit</a>
+					  	
 					  	<a href="LogoutServlet" id="logout">Logout</a>
+					  	
 					</div>
 					<%
 				}		

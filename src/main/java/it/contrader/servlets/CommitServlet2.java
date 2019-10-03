@@ -41,7 +41,7 @@ public class CommitServlet2 extends HttpServlet {
 
 		case "COMMITLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/commit/commitmanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/commit/commitmanager2.jsp").forward(request, response);
 			break;
 
 		case "READ":
