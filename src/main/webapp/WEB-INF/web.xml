@@ -99,6 +99,17 @@
     <url-pattern>/CommitServlet</url-pattern>
   </servlet-mapping>
   
+   <servlet>
+    <description></description>
+    <display-name>CommitServlet2</display-name>
+    <servlet-name>CommitServlet2</servlet-name>
+    <servlet-class>it.contrader.servlets.CommitServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CommitServlet2</servlet-name>
+    <url-pattern>/CommitServlet2</url-pattern>
+  </servlet-mapping>
+  
 
 
   
