@@ -39,10 +39,7 @@
 			</a></td>
 			<td><%=c.getNumber()%></td>
 			<td><%=c.getData()%></td>
-			<td><a href=CommitServlet2?mode=read&update=true&id=<%=c.getId()%>>Edit</a>
-			</td>
-			<td><a href=CommitServlet2?mode=delete&id=<%=c.getId()%>>Delete</a>
-			</td>
+	
 
 		</tr>
 		<%
