@@ -29,6 +29,7 @@
 			<th>Data</th>
 			<th>Namecoin</th>
 			<th></th>
+			<th></th>
 		</tr>
 		<%
 			for (SocialDTO c : list) {

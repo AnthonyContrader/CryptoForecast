@@ -51,7 +51,7 @@ public class SocialServlet extends HttpServlet {
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
-				 getServletContext().getRequestDispatcher("/social/readscocial.jsp").forward(request, response);
+				 getServletContext().getRequestDispatcher("/social/readsocial.jsp").forward(request, response);
 				
 			}
 			

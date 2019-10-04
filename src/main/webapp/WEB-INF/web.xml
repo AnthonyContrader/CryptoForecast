@@ -121,6 +121,16 @@
     <url-pattern>/SocialServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <description></description>
+    <display-name>SocialServlet2</display-name>
+    <servlet-name>SocialServlet2</servlet-name>
+    <servlet-class>it.contrader.servlets.SocialServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SocialServlet2</servlet-name>
+    <url-pattern>/SocialServlet2</url-pattern>
+  </servlet-mapping>
 
 
   
