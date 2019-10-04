@@ -41,7 +41,7 @@
 			<td><%=c.getData()%></td>
 			<td><%=c.getNamecoin()%></td>
 			
-			</td>
+			
 
 		</tr>
 		<%

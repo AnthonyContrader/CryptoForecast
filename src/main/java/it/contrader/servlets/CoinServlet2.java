@@ -35,8 +35,7 @@ public class CoinServlet2 extends HttpServlet {
 		String mode = request.getParameter("mode");
 		CoinDTO dto;
 		int id;
-		boolean ans;
-
+		
 		switch (mode.toUpperCase()) {
 
 		case "COINLIST":
