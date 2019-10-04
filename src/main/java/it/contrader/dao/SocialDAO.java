@@ -56,7 +56,7 @@ public class SocialDAO implements DAO<Social> {
 			preparedStatement.setString(1, socialToInsert.getUrl());
 			preparedStatement.setInt(2, socialToInsert.getPost());
 			preparedStatement.setString(3, socialToInsert.getData());
-			preparedStatement.setString(1, socialToInsert.getNamecoin());
+			preparedStatement.setString(4, socialToInsert.getNamecoin());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {

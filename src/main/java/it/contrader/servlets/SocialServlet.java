@@ -40,7 +40,7 @@ public class SocialServlet extends HttpServlet {
 
 		switch (mode.toUpperCase()) {
 
-		case "COINLIST":
+		case "SOCIALLIST":
 			updateList(request);
 			getServletContext().getRequestDispatcher("/social/socialmanager.jsp").forward(request, response);
 			break;
@@ -68,7 +68,7 @@ public class SocialServlet extends HttpServlet {
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/social/coinmanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/social/socialmanager.jsp").forward(request, response);
 			break;
 			
 		case "UPDATE":

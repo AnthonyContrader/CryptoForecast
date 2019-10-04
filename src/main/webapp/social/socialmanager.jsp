@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/vittoriostyle.css" rel="stylesheet">
-<title>Coin Manager</title>
+<title>Social Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -59,7 +59,7 @@
       <label for="social">Social Media</label>
     </div>
     <div class="col-75">
-      <input type="text" id="url" name="social name" placeholder="inserisci social">
+      <input type="text" id="url" name="url" placeholder="inserisci social">
     </div>
   </div>
   <div class="row">
@@ -83,7 +83,7 @@
       <label for="type">namecoin</label>
     </div>
    		 <div class="col-75">
- 			<input type="text" id="name" name="name coin" placeholder="inserisci il nome della moneta"> 
+ 			<input type="text" id="name" name="namecoin" placeholder="inserisci il nome della moneta"> 
     </div>
     
   </div>
