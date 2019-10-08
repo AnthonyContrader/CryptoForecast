@@ -17,6 +17,7 @@
 		<a href="/user/getall">Users</a>
 		<a href="/coin/getall">Coins</a>
 		<a href="/trend/getall">Trends</a>
+		<a href="/commit/getall">Commits</a> 
 		<a class="active" href="/social/getall">Socials</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>

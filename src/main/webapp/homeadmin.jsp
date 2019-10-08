@@ -25,12 +25,10 @@
 		<a href=/user/getall>Users</a>
 		<a href=/coin/getall>Coins</a>
 		<a href=/trend/getall>Trends</a>
-<<<<<<< HEAD
+
 		<a href=/social/getall>Socials</a>
-=======
 		<a href=/commit/getall>Commits</a>
 		
->>>>>>> 3c5e694c298c0c1400d7d6213fb6dbe046631995
 		
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>

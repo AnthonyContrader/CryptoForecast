@@ -7,7 +7,7 @@
 <meta name="description" content="User Management">
 <meta name="author" content="Vittorio Valent">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Coin Manager</title>
+<title>Commit Manager</title>
 
 </head>
 <body>
@@ -17,8 +17,9 @@
 		<a href="/homeadmin.jsp">Home</a> 
 		<a href="/user/getall">Users</a> 	
 		<a href="/coin/getall">Coins</a>
-		<a class="active" href="/commit/getall">Commits</a>
 		<a href="/trend/getall">Trends</a> 
+		<a class="active" href="/commit/getall">Commits</a>
+		<a href="/social/getall">Socials</a> 
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">
