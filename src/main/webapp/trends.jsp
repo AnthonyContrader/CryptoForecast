@@ -16,7 +16,7 @@
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> 
 		<a href="/user/getall">Users</a> 
-		<a href="/trend/getall">Coins</a> 
+		<a href="/coin/getall">Coins</a> 
 		<a class="active" href="/trend/getall">Trends</a>
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
