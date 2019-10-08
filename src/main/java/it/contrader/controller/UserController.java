@@ -24,12 +24,12 @@ public class UserController {
 	@PostMapping("/login")
 	public String login(HttpServletRequest request, @RequestParam(value = "username", required = true) String username,
 			@RequestParam(value = "password", required = true) String password) {
-
+		System.out.println(username);
 		UserDTO userDTO = service.findByUsernameAndPassword(username, password);
 		request.getSession().setAttribute("user", userDTO);
 
 		switch (userDTO.getUsertype()) {
-
+		
 		case ADMIN:
 			return "homeadmin";
 
