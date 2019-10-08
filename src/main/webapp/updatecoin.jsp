@@ -18,6 +18,7 @@
   <a href="/homeadmin.jsp">Home</a>
   <a href="/coin/getall">Users</a>
   <a class="active" href="/user/getall">Coins</a>
+  <a  href="/trend/getall">Trends</a>
   <a href="/user/logout" id="logout">Logout</a>
 </div>
 <br>
