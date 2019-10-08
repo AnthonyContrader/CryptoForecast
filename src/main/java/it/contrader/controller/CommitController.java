@@ -43,7 +43,8 @@ public class CommitController {
 
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("stars") int stars,
-			@RequestParam("fork") int fork, @RequestParam("watcher") int watcher), @RequestParam("collaborators") int collaborators), @RequestParam("number") int number) {
+			@RequestParam("fork") int fork, @RequestParam("watcher") int watcher, @RequestParam("collaborators") int collaborators, 
+			@RequestParam("number") int number) {
 
 		CommitDTO dto = new CommitDTO();
 		dto.setId(id);
@@ -60,7 +61,8 @@ public class CommitController {
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("stars") int stars,
-			@RequestParam("fork") int fork, @RequestParam("watcher") int watcher), @RequestParam("collaborators") int collaborators), @RequestParam("number") int number) {
+			@RequestParam("fork") int fork, @RequestParam("watcher") int watcher, @RequestParam("collaborators") int collaborators, 
+			@RequestParam("number") int number) {
 		CommitDTO dto = new CommitDTO();
 		dto.setStars(stars);
 		dto.setFork(fork);
