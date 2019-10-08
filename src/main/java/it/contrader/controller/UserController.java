@@ -74,7 +74,7 @@ public class UserController {
 		String password = request.getParameter("password").toString();
 		String ruolo = request.getParameter("ruolo").toString();
 
-		UserDTO userObj = new UserDTO(0, username, password, ruolo,"");
+		UserDTO userObj = new UserDTO(0, username, password, ruolo, "");
 		
 		userService.insertUser(userObj);
 
