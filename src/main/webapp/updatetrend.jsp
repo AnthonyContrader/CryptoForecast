@@ -9,7 +9,7 @@
 <meta name="description" content="User Edit page">
 <meta name="author" content="Vittorio Valent">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>Edit User</title>
+<title>Edit Trend</title>
 
 </head>
 <body>

@@ -7,7 +7,7 @@
 <meta name="description" content="User Management">
 <meta name="author" content="Vittorio Valent">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
-<title>User Manager</title>
+<title>Coin Manager</title>
 
 </head>
 <body>
@@ -15,9 +15,9 @@
 
 	<div class="navbar">
 		<a href="/homeadmin.jsp">Home</a> 
-		<a href="/user/getall">Users</a> 
-			<a href="/trend/getall">Trends</a>
-		<a class="active" href="/user/getall">Coins</a> 
+		<a href="/user/getall">Users</a> 	
+		<a class="active" href="/user/getall">Coins</a>
+		<a href="/trend/getall">Trends</a> 
 		<a href="/user/logout" id="logout">Logout</a>
 	</div>
 	<div class="main">
