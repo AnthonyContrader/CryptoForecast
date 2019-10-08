@@ -1,9 +1,13 @@
 package it.contrader.converter;
 
-public interface Converter<Entity,DTO> {
+import java.util.List;
 
-	public Entity converToEntity(DTO dto);
-	
-	public DTO covertToDTO(Entity entity);
-	
+public interface Converter<Entity, DTO> {
+
+	public Entity toEntity(DTO dto);
+
+	public DTO toDTO(Entity entity);
+
+	public List<DTO> toDTOList(Iterable<Entity> entityList);
+
 }

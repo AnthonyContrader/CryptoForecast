@@ -1,103 +1,105 @@
 package it.contrader.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import it.contrader.dto.UserDTO;
-import it.contrader.services.UserService;
-
-import java.util.List;
+import it.contrader.model.User.Usertype;
+import it.contrader.service.UserService;
 
 
 @Controller
-@RequestMapping("/User")
+@RequestMapping("/user")
 public class UserController {
 
-	private final UserService userService;
-	private HttpSession session;
-	
 	@Autowired
-	public UserController(UserService userService) {
-		this.userService = userService;
-	}
+	private UserService service;
 
-	private void visualUser(HttpServletRequest request){
-		List<UserDTO> allUser = this.userService.getListaUserDTO();
-		request.setAttribute("allUserDTO", allUser);
-	}
-	
-	@RequestMapping(value = "/userManagement", method = RequestMethod.GET)
-	public String userManagement(HttpServletRequest request) {
-		visualUser(request);
-		return "homeUser";		
-	}
-	
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public String delete(HttpServletRequest request) {
-		int id = Integer.parseInt(request.getParameter("id"));
-		request.setAttribute("id", id);
-		this.userService.deleteUserById(id);
-		visualUser(request);
-		return "homeUser";
-		
-	}
-	
-	@RequestMapping(value = "/crea", method = RequestMethod.GET)
-	public String insert(HttpServletRequest request) {
-		visualUser(request);
-		request.setAttribute("option", "insert");
-		return "creaUser";
-		
-	}
-	
-	@RequestMapping(value = "/cercaUser", method = RequestMethod.GET)
-	public String cercaUser(HttpServletRequest request) {
+	@PostMapping("/login")
+	public String login(HttpServletRequest request, @RequestParam(value = "username", required = true) String username,
+			@RequestParam(value = "password", required = true) String password) {
 
-		final String content = request.getParameter("search");
+		UserDTO userDTO = service.findByUsernameAndPassword(username, password);
+		request.getSession().setAttribute("user", userDTO);
 
-		List<UserDTO> allUser = this.userService.findUserDTOByUsername(content);
-		request.setAttribute("allUserDTO", allUser);
+		switch (userDTO.getUsertype()) {
 
-		return "homeUser";
+		case ADMIN:
+			return "homeadmin";
 
-	}
-	
-	@RequestMapping(value = "/creaUser", method = RequestMethod.POST)
-	public String insertUser(HttpServletRequest request) {
-		String username = request.getParameter("username").toString();
-		String password = request.getParameter("password").toString();
-		String ruolo = request.getParameter("ruolo").toString();
+		case USER:
+			return "index";
 
-		UserDTO userObj = new UserDTO(0, username, password, ruolo, "");
-		
-		userService.insertUser(userObj);
-
-		visualUser(request);
-		return "homeUser";
-	}
-	
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String loginControl(HttpServletRequest request) {
-
-		session = request.getSession();
-		final String username = request.getParameter("username");
-		final String password = request.getParameter("password");
-		final UserDTO userDTO = userService.getByUsernameAndPassword(username, password);
-		final String ruolo = userDTO.getRuolo();
-		if (!StringUtils.isEmpty(ruolo)) {
-			session.setAttribute("utenteCollegato", userDTO);
-			if (ruolo.equals("ADMIN")) {
-				return "home";
-			} else if (ruolo.equals("CHATMASTER")) {
-				return "home";
-			}
+		default:
+			return "index";
 		}
+	}
+
+	@GetMapping("/getall")
+	public String getAll(HttpServletRequest request) {
+		setAll(request);
+		return "users";
+	}
+
+	@GetMapping("/delete")
+	public String delete(HttpServletRequest request, @RequestParam("id") Long id) {
+		service.delete(id);
+		setAll(request);
+		return "users";
+	}
+
+	@GetMapping("/preupdate")
+	public String preUpdate(HttpServletRequest request, @RequestParam("id") Long id) {
+		request.getSession().setAttribute("dto", service.read(id));
+		return "updateuser";
+	}
+
+	@PostMapping("/update")
+	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("username") String username,
+			@RequestParam("password") String password, @RequestParam("usertype") Usertype usertype) {
+
+		UserDTO dto = new UserDTO();
+		dto.setId(id);
+		dto.setUsername(username);
+		dto.setPassword(password);
+		dto.setUsertype(usertype);
+		service.update(dto);
+		setAll(request);
+		return "users";
+
+	}
+
+	@PostMapping("/insert")
+	public String insert(HttpServletRequest request, @RequestParam("username") String username,
+			@RequestParam("password") String password, @RequestParam("usertype") Usertype usertype) {
+		UserDTO dto = new UserDTO();
+		dto.setUsername(username);
+		dto.setPassword(password);
+		dto.setUsertype(usertype);
+		service.insert(dto);
+		setAll(request);
+		return "users";
+	}
+
+	@GetMapping("/read")
+	public String read(HttpServletRequest request, @RequestParam("id") Long id) {
+		request.getSession().setAttribute("dto", service.read(id));
+		return "readuser";
+	}
+
+	@GetMapping("/logout")
+	public String logout(HttpServletRequest request) {
+		request.getSession().invalidate();
 		return "index";
+	}
+
+	private void setAll(HttpServletRequest request) {
+		request.getSession().setAttribute("list", service.getAll());
 	}
 }
