@@ -31,7 +31,7 @@
 			<tr>
 				<th>Variations</th>
 				<th>Date</th>
-				<th>Idtrend</th>
+				<th>IdCoin</th>
 				<th></th>
 				<th></th>
 			</tr>
