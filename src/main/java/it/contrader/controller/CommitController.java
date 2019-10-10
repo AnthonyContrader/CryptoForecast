@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.contrader.dto.CoinDTO;
 import it.contrader.dto.CommitDTO;
 import it.contrader.model.Commit;
 import it.contrader.service.CommitService;
@@ -44,7 +45,7 @@ public class CommitController {
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("stars") int stars,
 			@RequestParam("fork") int fork, @RequestParam("watcher") int watcher, @RequestParam("collaborators") int collaborators, 
-			@RequestParam("number") int number) {
+			@RequestParam("number") int number, @RequestParam("idcoin") Long idcoin) {
 
 		CommitDTO dto = new CommitDTO();
 		dto.setId(id);
@@ -53,6 +54,10 @@ public class CommitController {
 		dto.setWatcher(watcher);
 		dto.setCollaborators(collaborators);
 		dto.setNumber(number);
+		CoinDTO c = new CoinDTO();
+		c.setId(idcoin);
+		dto.setCoinDTO(c);
+		
 		service.update(dto);
 		setAll(request);
 		return "commits";
@@ -62,13 +67,18 @@ public class CommitController {
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, @RequestParam("stars") int stars,
 			@RequestParam("fork") int fork, @RequestParam("watcher") int watcher, @RequestParam("collaborators") int collaborators, 
-			@RequestParam("number") int number) {
+			@RequestParam("number") int number, @RequestParam("idcoin") Long idcoin) {
+		
 		CommitDTO dto = new CommitDTO();
 		dto.setStars(stars);
 		dto.setFork(fork);
 		dto.setWatcher(watcher);
 		dto.setCollaborators(collaborators);
 		dto.setNumber(number);
+		CoinDTO c = new CoinDTO();
+		c.setId(idcoin);
+		dto.setCoinDTO(c);
+
 		service.insert(dto);
 		setAll(request);
 		return "commits";

@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,4 +31,8 @@ public class Commit {
 	private int collaborators;
 	private int number;
 
+	@ManyToOne 
+	@JoinColumn(name = "idCoin", referencedColumnName = "id")
+	private Coin coin;
+	
 }

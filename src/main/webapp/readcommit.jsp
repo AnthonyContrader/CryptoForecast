@@ -37,7 +37,8 @@
 				<th>Watcher</th>
 				<th>Collaborators</th>
 				<th>Number</th>
-				
+				<th>IdCoin</th>
+								
 			</tr>
 			<tr>
 				<td><%=u.getId()%></td>
@@ -46,7 +47,7 @@
 				<td><%=u.getWatcher()%></td>
 				<td><%=u.getCollaborators()%></td>
 				<td><%=u.getNumber()%></td>
-				
+				<td><%=u.getCoinDTO().getId()%></td>
 				
 			</tr>
 		</table>

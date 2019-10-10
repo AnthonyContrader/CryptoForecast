@@ -36,6 +36,7 @@
 				<th>Watcher</th>
 				<th>Collaborators</th>
 				<th>Number</th>
+				<th>IdCoin</th>
 			</tr>
 			<%
 				for (CommitDTO c : list) {
@@ -47,7 +48,7 @@
 				<td><%=c.getWatcher()%></td>
 				<td><%=c.getCollaborators()%></td>
 				<td><%=c.getNumber()%></td>
-				<td></td>
+				<td><%=c.getCoinDTO().getId()%></td>
 				<td></td>
 				<td><a href="/commit/preupdate?id=<%=c.getId()%>">Edit</a></td>
 
@@ -105,6 +106,15 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="circ" name="number"
+						placeholder="inserisci moneta">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label> IdCoin</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="idc" name="idcoin"
 						placeholder="inserisci number">
 				</div>
 			</div>

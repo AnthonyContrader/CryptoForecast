@@ -38,5 +38,7 @@ public class Coin {
 	@OneToMany(mappedBy="coin", cascade = CascadeType.MERGE)
 	private List<Trend> trends;
 	
+	@OneToMany(mappedBy="coin", cascade = CascadeType.MERGE)
+	private List<Commit> commits;
 	
 }

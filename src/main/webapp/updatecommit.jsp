@@ -17,8 +17,9 @@
 <div class="navbar">
   <a href="/homeadmin.jsp">Home</a>
   <a href="/commit/getall">Users</a>
-  <a class="active" href="/user/getall">Commits</a>
   <a  href="/trend/getall">Trends</a>
+  <a  href="/social/getall">Socials</a>
+   <a class="active" href="/commit/getall">Commits</a>
   <a href="/user/logout" id="logout">Logout</a>
 </div>
 <br>
@@ -72,6 +73,16 @@
     <div class="col-75">
       <input
 			type="text" id="numb" name="number" value=<%=u.getNumber()%>> 
+	  
+    </div>
+    </div>
+     <div class="row">
+    <div class="col-25">
+     <label for="numb">IdCoin</label>
+    </div>
+    <div class="col-75">
+      <input
+			type="text" id="numb" name="idcoin" value=<%=u.getCoinDTO().getId()%>>
 	  
     </div>
     <input type="hidden" name="id" value =<%=u.getId() %>>  

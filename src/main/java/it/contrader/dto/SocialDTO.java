@@ -11,9 +11,6 @@ import lombok.NoArgsConstructor;
 public class SocialDTO {
 
 	private Long id;
-
-
-
 	private int reddit;
 	private int telegram;
 	private int likefb;

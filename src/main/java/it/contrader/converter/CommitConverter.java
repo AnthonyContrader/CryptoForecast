@@ -14,7 +14,15 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 	public Commit toEntity(CommitDTO commitDTO) {
 		Commit commit = null;
 		if (commitDTO != null) {
-			commit = new Commit(commitDTO.getId(), commitDTO.getStars(), commitDTO.getFork(), commitDTO.getWatcher(), commitDTO.getCollaborators(), commitDTO.getNumber());
+			commit = new Commit();
+			commit.setId(commitDTO.getId());
+			commit.setStars(commitDTO.getStars());
+			commit.setFork(commitDTO.getFork());
+			commit.setWatcher(commitDTO.getWatcher());
+			commit.setCollaborators(commit.getCollaborators());
+			commit.setNumber(commitDTO.getNumber());
+			CoinConverter cc = new CoinConverter ();
+			commit.setCoin(cc.toEntityS(commitDTO.getCoinDTO()));
 		}
 		return commit;
 	}
@@ -23,7 +31,15 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 	public CommitDTO toDTO(Commit commit) {
 		CommitDTO commitDTO = null;
 		if (commit != null) {
-			commitDTO = new CommitDTO(commit.getId(), commit.getStars(), commit.getFork(), commit.getWatcher(), commit.getCollaborators(), commit.getNumber());
+			commitDTO = new CommitDTO();
+			commitDTO.setId(commit.getId());
+			commitDTO.setStars(commit.getStars());
+			commitDTO.setFork(commit.getFork());
+			commitDTO.setWatcher(commit.getWatcher());
+			commitDTO.setCollaborators(commit.getCollaborators());
+			commitDTO.setNumber(commitDTO.getNumber());
+			CoinConverter cc = new CoinConverter ();
+			commitDTO.setCoinDTO(cc.toDTOS(commit.getCoin()));
 
 		}
 		return commitDTO;
@@ -34,7 +50,15 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 
 		Commit commit = null;
 		if (commitDTO != null) {
-			commit = new Commit(commitDTO.getId(), commitDTO.getStars(), commitDTO.getFork(), commitDTO.getWatcher(), commitDTO.getCollaborators(), commitDTO.getNumber());
+			commit = new Commit();
+			commit.setId(commitDTO.getId());
+			commit.setStars(commitDTO.getStars());
+			commit.setFork(commitDTO.getFork());
+			commit.setWatcher(commitDTO.getWatcher());
+			commit.setCollaborators(commit.getCollaborators());
+			commit.setNumber(commitDTO.getNumber());
+			CoinConverter cc = new CoinConverter ();
+			commit.setCoin(cc.toEntityS(commitDTO.getCoinDTO()));
 		}
 		return commit;
 		
@@ -45,7 +69,15 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 
 		CommitDTO commitDTO = null;
 		if (commit != null) {
-			commitDTO = new CommitDTO(commit.getId(), commit.getStars(), commit.getFork(), commit.getWatcher(), commit.getCollaborators(), commit.getNumber());
+			commitDTO = new CommitDTO();
+			commitDTO.setId(commit.getId());
+			commitDTO.setStars(commit.getStars());
+			commitDTO.setFork(commit.getFork());
+			commitDTO.setWatcher(commit.getWatcher());
+			commitDTO.setCollaborators(commit.getCollaborators());
+			commitDTO.setNumber(commitDTO.getNumber());
+			CoinConverter cc = new CoinConverter ();
+			commitDTO.setCoinDTO(cc.toDTOS(commit.getCoin()));
 
 		}
 		return commitDTO;

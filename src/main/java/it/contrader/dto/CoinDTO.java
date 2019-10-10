@@ -22,5 +22,12 @@ public class CoinDTO {
 	private int circulating;
 	
 	private List<TrendDTO> trendsDTO;
+	
+	private List<CommitDTO> commitsDTO;
+	
+	
+	
+
+	
 
 }

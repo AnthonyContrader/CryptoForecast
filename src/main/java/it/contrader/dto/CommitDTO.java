@@ -16,5 +16,8 @@ public class CommitDTO {
 	private int watcher;
 	private int collaborators;
 	private int number;
+	
+	private CoinDTO coinDTO;
+	
 
 }
