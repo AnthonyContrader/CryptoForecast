@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.contrader.dto.CoinDTO;
 import it.contrader.dto.SocialDTO;
 import it.contrader.model.Social;
 import it.contrader.service.SocialService;
@@ -43,7 +44,7 @@ public class SocialController {
 
 	@PostMapping("/update")
 	public String update(HttpServletRequest request, @RequestParam("id") Long id, @RequestParam("reddit") int reddit,
-			@RequestParam("telegram") int telegram, @RequestParam("likefb") int likefb, @RequestParam("twitter") int twitter) {
+			@RequestParam("telegram") int telegram, @RequestParam("likefb") int likefb, @RequestParam("twitter") int twitter, @RequestParam("idcoin") Long idcoin ) {
 
 		SocialDTO dto = new SocialDTO();
 		dto.setId(id);
@@ -51,6 +52,9 @@ public class SocialController {
 		dto.setReddit(reddit);
 		dto.setLikefb(likefb);
 		dto.setTwitter(twitter);
+		CoinDTO sc = new CoinDTO();
+		sc.setId(idcoin);
+		dto.setCoinDTO(sc);
 		service.update(dto);
 		setAll(request);
 		return "socials";
@@ -59,13 +63,17 @@ public class SocialController {
 
 	@PostMapping("/insert")
 	public String insert(HttpServletRequest request, 
-			@RequestParam("reddit") int reddit, @RequestParam("telegram") int telegram, @RequestParam("likefb") int likefb, @RequestParam("twitter") int twitter ) {
+			@RequestParam("reddit") int reddit, @RequestParam("telegram") int telegram, @RequestParam("likefb") int likefb, @RequestParam("twitter") int twitter, @RequestParam("idcoin") Long idcoin ) {
+		
 		SocialDTO dto = new SocialDTO();
 		
 		dto.setTelegram(telegram);
 		dto.setReddit(reddit);
 		dto.setLikefb(likefb);
 		dto.setTwitter(twitter);
+		CoinDTO sc = new CoinDTO();
+		sc.setId(idcoin);
+		dto.setCoinDTO(sc);
 		service.insert(dto);
 		setAll(request);
 		return "socials";

@@ -37,6 +37,8 @@
 				<th>Collaborators</th>
 				<th>Number</th>
 				<th>IdCoin</th>
+				<th></th>
+				<th></th>
 			</tr>
 			<%
 				for (CommitDTO c : list) {
@@ -106,7 +108,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="circ" name="number"
-						placeholder="inserisci moneta">
+						placeholder="inserisci number">
 				</div>
 			</div>
 			<div class="row">
@@ -115,7 +117,7 @@
 				</div>
 				<div class="col-75">
 					<input type="text" id="idc" name="idcoin"
-						placeholder="inserisci number">
+						placeholder="inserisci id moneta">
 				</div>
 			</div>
 			<button type="submit">Insert</button>

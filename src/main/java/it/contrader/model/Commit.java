@@ -25,10 +25,15 @@ public class Commit {
 	private Long id;
 
 	@Column(unique = true)
+	
 	private int stars;
+	
 	private int fork;
+	
 	private int watcher;
+	
 	private int collaborators;
+	
 	private int number;
 
 	@ManyToOne 

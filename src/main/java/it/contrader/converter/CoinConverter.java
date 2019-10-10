@@ -22,6 +22,8 @@ public class CoinConverter extends AbstractConverter<Coin, CoinDTO> {
 			coin.setTrends(tc.toEntityList(coinDTO.getTrendsDTO()));
 			CommitConverter cc = new CommitConverter();
 			coin.setCommits(cc.toEntityList(coinDTO.getCommitsDTO()));
+			SocialConverter sc = new SocialConverter();
+			coin.setSocials(sc.toEntityList(coinDTO.getSocialsDTO()));
 		}
 		return coin;
 	}
@@ -42,6 +44,9 @@ public class CoinConverter extends AbstractConverter<Coin, CoinDTO> {
 			
 			CommitConverter cc = new CommitConverter();
 			coinDTO.setCommitsDTO(cc.toDTOList(coin.getCommits()));
+			
+			SocialConverter sc = new SocialConverter();
+			coinDTO.setSocialsDTO(sc.toDTOList(coin.getSocials()));
 						
 		}
 		return coinDTO;

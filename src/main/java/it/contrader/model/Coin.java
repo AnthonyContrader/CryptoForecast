@@ -41,4 +41,8 @@ public class Coin {
 	@OneToMany(mappedBy="coin", cascade = CascadeType.MERGE)
 	private List<Commit> commits;
 	
+	@OneToMany(mappedBy="coin", cascade = CascadeType.MERGE)
+	private List<Social> socials;
+	
+	
 }

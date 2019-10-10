@@ -35,7 +35,7 @@
 				<th>Telegram</th>
 				<th>Likefb</th>
 				<th>Twitter</th>
-				<th></th>
+				<th>Id Coin</th>
 				<th></th>
 			</tr>
 			<%
@@ -47,6 +47,7 @@
 				<td><%=s.getTelegram()%></td>
 				<td><%=s.getLikefb()%></td>
 				<td><%=s.getTwitter()%></td>
+				<td><%=s.getCoinDTO().getId()%></td>
 				<td><a href="/social/preupdate?id=<%=s.getId()%>">Edit</a></td>
 
 
@@ -97,6 +98,15 @@
 					<input type="text" id="tw" name="twitter"
 						placeholder="inserisci numero tweet">
 					
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-25">
+					<label> Idcoin</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="idcoi" name="idcoin"
+						placeholder="inserisci idcoin">
 				</div>
 			</div>
 			<button type="submit">Insert</button>

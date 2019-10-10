@@ -36,6 +36,7 @@
 				<th>Telegram</th>
 				<th>Likefb</th>
 				<th>Twitter</th>
+				<th>Idcoin</th>
 				
 			</tr>
 			<tr>
@@ -44,6 +45,8 @@
 				<td><%=u.getTelegram()%></td>
 				<td><%=u.getLikefb()%></td>
 				<td><%=u.getTwitter()%></td>
+				<td><%=u.getCoinDTO().getId()%></td>
+				
 			</tr>
 		</table>
 

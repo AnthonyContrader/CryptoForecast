@@ -69,6 +69,16 @@
 				</div>
 				<input type="hidden" name="id" value =<%=u.getId() %>>
 			</div>
+			<div class="row">
+   			 <div class="col-25">
+      			<label for="type">Idcoin</label>
+   			 </div>
+   		 	<div class="col-75">
+ 				<input
+					type="text" id="circ" name="idcoin" value=<%=u.getCoinDTO().getId()%>> 
+    			</div>
+    		<input type="hidden" name="id" value =<%=u.getId() %>>
+ 		 </div>
 			<button type="submit">edit</button>
 		</form>
 

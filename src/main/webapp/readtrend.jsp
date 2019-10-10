@@ -35,6 +35,7 @@
 				<th>Variation</th>
 				<th>Date</th>
 				<th>Idcoin</th>
+				
 			</tr>
 			<tr>
 				<td><%=t.getId()%></td>

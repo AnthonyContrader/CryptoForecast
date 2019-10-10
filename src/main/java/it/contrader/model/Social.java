@@ -25,10 +25,15 @@ public class Social {
 	private Long id;
 	
 	@Column(unique = true)
+	
 	private int reddit;
 	private int telegram;
     private int likefb;
 	private int twitter;
+	
+	@ManyToOne
+	@JoinColumn(name = "idCoin", referencedColumnName = "id")
+	private Coin coin;
 
 	
 	

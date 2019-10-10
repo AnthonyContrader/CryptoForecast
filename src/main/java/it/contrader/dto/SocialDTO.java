@@ -15,6 +15,8 @@ public class SocialDTO {
 	private int telegram;
 	private int likefb;
 	private int twitter;
+	
+	private CoinDTO coinDTO;
 
 	
 

@@ -25,6 +25,7 @@ public class CoinDTO {
 	
 	private List<CommitDTO> commitsDTO;
 	
+	private List<SocialDTO> socialsDTO;
 	
 	
 
