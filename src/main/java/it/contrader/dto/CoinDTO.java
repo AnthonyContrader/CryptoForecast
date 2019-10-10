@@ -1,5 +1,8 @@
 package it.contrader.dto;
 
+import java.util.List;
+import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -17,5 +20,7 @@ public class CoinDTO {
 	private int price;
 
 	private int circulating;
+	
+	private List<TrendDTO> trendsDTO;
 
 }

@@ -40,7 +40,7 @@
 				<td><%=t.getId()%></td>
 				<td><%=t.getVariation()%></td>
 				<td><%=t.getDate()%></td>
-				<td><%=t.getIdcoin()%></td>
+				<td><%=t.getCoinDTO().getId()%></td>
 			</tr>
 		</table>
 

@@ -13,7 +13,14 @@ public class CoinConverter extends AbstractConverter<Coin, CoinDTO> {
 	public Coin toEntity(CoinDTO coinDTO) {
 		Coin coin = null;
 		if (coinDTO != null) {
-			coin = new Coin(coinDTO.getId(), coinDTO.getNamecoin(), coinDTO.getPrice(), coinDTO.getCirculating());
+			coin = new Coin();
+			coin.setId(coinDTO.getId());
+			coin.setNamecoin(coinDTO.getNamecoin());
+			coin.setPrice(coinDTO.getPrice());
+			coin.setCirculating(coinDTO.getCirculating());
+			TrendConverter tc = new TrendConverter();
+			coin.setTrends(tc.toEntityList(coinDTO.getTrendsDTO()));
+			
 		}
 		return coin;
 	}
@@ -22,8 +29,53 @@ public class CoinConverter extends AbstractConverter<Coin, CoinDTO> {
 	public CoinDTO toDTO(Coin coin) {
 		CoinDTO coinDTO = null;
 		if (coin != null) {
-			coinDTO = new CoinDTO(coin.getId(), coin.getNamecoin(), coin.getPrice(), coin.getCirculating());
+			
+			//coinDTO = new CoinDTO(coin.getId(), coin.getNamecoin(), coin.getPrice(), coin.getCirculating());
+			coinDTO = new CoinDTO();
+			coinDTO.setId(coin.getId());
+			coinDTO.setNamecoin(coin.getNamecoin());
+			coinDTO.setPrice(coin.getPrice());
+			coinDTO.setCirculating(coin.getCirculating());
+			TrendConverter tc = new TrendConverter();
+			coinDTO.setTrendsDTO(tc.toDTOList(coin.getTrends()));
+			
+			
+			
+		}
+		return coinDTO;
+	}
+	
+	
+	@Override
+	public Coin toEntityS(CoinDTO coinDTO) {
+		Coin coin = null;
+		if (coinDTO != null) {
+			coin = new Coin();
+			coin.setId(coinDTO.getId());
+			coin.setNamecoin(coinDTO.getNamecoin());
+			coin.setPrice(coinDTO.getPrice());
+			coin.setCirculating(coinDTO.getCirculating());
+			
+			
+		}
+		return coin;
+	}
 
+	@Override
+	public CoinDTO toDTOS(Coin coin) {
+		CoinDTO coinDTO = null;
+		if (coin != null) {
+			
+			//coinDTO = new CoinDTO(coin.getId(), coin.getNamecoin(), coin.getPrice(), coin.getCirculating());
+			coinDTO = new CoinDTO();
+			coinDTO.setId(coin.getId());
+			coinDTO.setNamecoin(coin.getNamecoin());
+			coinDTO.setPrice(coin.getPrice());
+			coinDTO.setCirculating(coin.getCirculating());
+			
+			
+			
+			
 		}
 		return coinDTO;
 	}

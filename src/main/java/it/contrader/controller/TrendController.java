@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.contrader.dto.CoinDTO;
 import it.contrader.dto.TrendDTO;
 
 import it.contrader.service.TrendService;
@@ -49,7 +50,9 @@ public class TrendController {
 		dto.setId(id);
 		dto.setVariation(variation);
 		dto.setDate(date);
-		dto.setIdcoin(idcoin);
+		CoinDTO sc = new CoinDTO();
+		sc.setId(idcoin);
+		dto.setCoinDTO(sc);
 		service.update(dto);
 		setAll(request);
 		return "trends";
@@ -62,7 +65,9 @@ public class TrendController {
 		TrendDTO dto = new TrendDTO();
 		dto.setVariation(variation);
 		dto.setDate(date);
-		dto.setIdcoin(idcoin);
+		CoinDTO sc = new CoinDTO();
+		sc.setId(idcoin);
+		dto.setCoinDTO(sc);
 		service.insert(dto);
 		setAll(request);
 		return "trends";

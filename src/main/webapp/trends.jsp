@@ -44,7 +44,7 @@
 				<td><a href="/trend/read?id=<%=t.getId()%>"> <%=t.getVariation()%>
 				</a></td>
 				<td><%=t.getDate()%></td>
-				<td><%=t.getIdcoin()%></td>
+				<td><%=t.getCoinDTO().getId()%></td>
 				<td><a href="/trend/preupdate?id=<%=t.getId()%>">Edit</a></td>
 
 

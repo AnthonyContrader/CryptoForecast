@@ -27,4 +27,26 @@ public class UserConverter extends AbstractConverter<User, UserDTO> {
 		}
 		return userDTO;
 	}
+	
+	@Override
+	public User toEntityS(UserDTO userDTO) {
+		
+		User user = null;
+		if (userDTO != null) {
+			user = new User(userDTO.getId(), userDTO.getUsername(), userDTO.getPassword(), userDTO.getUsertype());
+		}
+		return user;
+	
+	}
+
+	@Override
+	public UserDTO toDTOS(User user) {
+		UserDTO userDTO = null;
+		if (user != null) {
+			
+			userDTO = new UserDTO(user.getId(), user.getUsername(), user.getPassword(), user.getUsertype());
+		}
+		return userDTO;
+	}
+	
 }

@@ -52,7 +52,7 @@
     </div>
    		 <div class="col-75">
  			<input
-			type="text" id="circ" name="idcoin" value=<%=u.getIdcoin()%>> 
+			type="text" id="circ" name="idcoin" value=<%=u.getCoinDTO().getId()%>> 
     	</div>
     	<input type="hidden" name="id" value =<%=u.getId() %>>
   </div>

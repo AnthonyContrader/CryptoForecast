@@ -17,7 +17,9 @@ public class TrendDTO {
 
 	private String date;
 	
-	private Long idcoin;
+	//private Long idcoin;
+
+	private CoinDTO coinDTO;
 
 	
 
