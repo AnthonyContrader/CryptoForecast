@@ -20,6 +20,7 @@ import lombok.NoArgsConstructor;
  * 
  * @see UserDTO
  */
+
 @Data
 @Entity
 @AllArgsConstructor
