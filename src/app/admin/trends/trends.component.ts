@@ -3,11 +3,11 @@ import { UserService } from 'src/service/user.service';
 import { UserDTO } from 'src/dto/userdto';
 
 @Component({
-  selector: 'app-commits',
-  templateUrl: './commits.component.html',
-  styleUrls: ['./commits.component.css']
+  selector: 'app-users',
+  templateUrl: './users.component.html',
+  styleUrls: ['./users.component.css']
 })
-export class CommitsComponent implements OnInit {
+export class UsersComponent implements OnInit {
 
   users: UserDTO[];
   usertoinsert: UserDTO = new UserDTO();

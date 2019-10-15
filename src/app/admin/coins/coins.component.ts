@@ -1,40 +1,42 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/service/user.service';
 import { UserDTO } from 'src/dto/userdto';
+import { CoinDTO } from 'src/dto/coindto';
+import { CoinService } from 'src/service/coin.service';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-coins',
+  templateUrl: './coins.component.html',
+  styleUrls: ['./coins.component.css']
 })
-export class UsersComponent implements OnInit {
+export class CoinsComponent implements OnInit {
 
-  users: UserDTO[];
-  usertoinsert: UserDTO = new UserDTO();
+  coins: CoinDTO[];
+  cointoinsert: CoinDTO = new CoinDTO();
 
-  constructor(private service: UserService) { }
+  constructor(private service: CoinService) { }
 
   ngOnInit() {
-    this.getUsers();
+    this.getCoins();
   }
 
-  getUsers() {
-    this.service.getAll().subscribe(users => this.users = users);
+  getCoins() {
+    this.service.getAll().subscribe(coins => this.coins = coins);
   }
 
-  delete(user: UserDTO) {
-    this.service.delete(user.id).subscribe(() => this.getUsers());
+  delete(coin: CoinDTO) {
+    this.service.delete(coin.id).subscribe(() => this.getCoins());
   }
 
-  update(user: UserDTO) {
-    this.service.update(user).subscribe(() => this.getUsers());
+  update(coin: CoinDTO) {
+    this.service.update(coin).subscribe(() => this.getCoins());
   }
 
-  insert(user: UserDTO) {
-    this.service.insert(user).subscribe(() => this.getUsers());
+  insert(coin: CoinDTO) {
+    this.service.insert(coin).subscribe(() => this.getCoins());
   }
 
   clear(){
-    this.usertoinsert = new UserDTO();
+    this.cointoinsert = new CoinDTO();
   }
 }

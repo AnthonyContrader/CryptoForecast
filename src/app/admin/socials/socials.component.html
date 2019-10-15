@@ -10,21 +10,18 @@
              Date 
             </th>
             <th>
-              Stars
+              Reddit
             </th>
             <th>
-              fork
+              Telegram
             </th>
             <th>
-                Watcher
+                Likefb
               </th>
               <th>
-                Collaborators
+                Twitter
               </th>
               <th>
-                 Numbers
-                </th>
-                <th>
                   Edit
                 </th>
                 <th>
@@ -33,56 +30,49 @@
           </tr>
           <tr>
             <td>
-              <input placeholder="date" [(ngModel)]="committoinsert.date">
+              <input placeholder="date" [(ngModel)]="socialtoinsert.date">
             </td>
             <td>
-              <input placeholder="stars" [(ngModel)]="committoinsert.stars">
-            </td>
-            <td>
-            
-                <input placeholder="fork" [(ngModel)]="committoinsert.fork">
-            
+              <input placeholder="reddit" [(ngModel)]="socialtoinsert.reddit">
             </td>
             <td>
             
-              <input placeholder="watcher" [(ngModel)]="committoinsert.watcher">
+                <input placeholder="telegram" [(ngModel)]="socialtoinsert.telegram">
+            
+            </td>
+            <td>
+            
+              <input placeholder="likefb" [(ngModel)]="socialtoinsert.likefb">
           
           </td>
           <td>
             
-            <input placeholder="collaborators" [(ngModel)]="committoinsert.collaborators">
+            <input placeholder="twitter" [(ngModel)]="socialtoinsert.twitter">
         
           </td>
-          <td>
-            
-            <input placeholder="numbers" [(ngModel)]="committoinsert.numbers">
-      
-          </td>
+          
             <td>
-              <button (click)="insert(committoinsert)">Insert</button>
+              <button (click)="insert(socialtoinsert)">Insert</button>
             </td>
             <td>
               <button (click)="clear()">Clear</button>
             </td>
           </tr>
-          <tr *ngFor="let commit of commits">
+          <tr *ngFor="let social of socials">
             <td>
-              <input [(ngModel)]="commit.date">
+              <input [(ngModel)]="social.date">
             </td>
             <td>
-              <input [(ngModel)]="commit.stars">
+              <input [(ngModel)]="social.reddit">
             </td>
             <td>
-              <input [(ngModel)]="commit.fork">
+              <input [(ngModel)]="social.telegram">
             </td>
             <td>
-              <input [(ngModel)]="commit.watcher">
+              <input [(ngModel)]="social.likefb">
             </td>
             <td>
-              <input [(ngModel)]="commit.collaborators">
-            </td>
-            <td>
-                <input [(ngModel)]="commit.numbers">
+              <input [(ngModel)]="social.twitter">
             </td>
             <td>
               <button (click)=update(coin)>Save</button>

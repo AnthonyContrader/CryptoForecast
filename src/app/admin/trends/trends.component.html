@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row mt-5">
+      <div class="col-md-1">
+  
+      </div>
+      <div class="col-md-10">
+        <table>
+          <tr>
+           <th>
+             Variation  
+            </th>
+            <th>
+              Date
+            </th>
+            <th>
+              Edit
+            </th>
+            <th>
+              Trend
+            </th>
+          </tr>
+          <tr>
+            <td>
+              <input placeholder="variation" [(ngModel)]="trendtoinsert.variation">
+            </td>
+            <td>
+              <input placeholder="date" [(ngModel)]="trendtoinsert.date">
+            </td>
+            
+         
+            <td>
+              <button (click)="insert(trendtoinsert)">Insert</button>
+            </td>
+            <td>
+              <button (click)="clear()">Clear</button>
+            </td>
+          </tr>
+          <tr *ngFor="let trend of trends">
+            <td>
+              <input [(ngModel)]="trend.variation">
+            </td>
+            <td>
+              <input [(ngModel)]="trend.date">
+            </td>
+            
+            <td>
+              <button (click)=update(coin)>Save</button>
+            </td>
+            <td>
+              <button (click)="delete(coin)">Delete</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-md-1">
+  
+      </div>
+    </div>
+  </div>
