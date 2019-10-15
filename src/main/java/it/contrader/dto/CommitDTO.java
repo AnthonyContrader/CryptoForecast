@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 public class CommitDTO {
 
 	private Long id;
-	private String data;
+	private String date;
 	private int stars;
 	private int fork;
 	private int watcher;
