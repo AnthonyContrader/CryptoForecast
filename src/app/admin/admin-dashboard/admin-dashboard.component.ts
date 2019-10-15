@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDTO } from 'src/dto/userdto';
+import { CoinDTO } from 'src/dto/coindto';
+import { CommitDTO } from 'src/dto/commitdto';
 
 /**
  * Componente della dashboard admin. Nell'ngOnInit recupera
@@ -12,12 +14,16 @@ import { UserDTO } from 'src/dto/userdto';
 })
 export class AdminDashboardComponent implements OnInit {
 
-  user: UserDTO;
+  user: UserDTO;   
+  coin: CoinDTO;
+  commit: CommitDTO;
 
   constructor() { }
 
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('currentUser'));
+    this.coin = JSON.parse(localStorage.getItem('currentCoin'));
+    this.commit = JSON.parse(localStorage.getItem('currentCommit'));
   }
 
 }

@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class AdminMenuComponent implements OnInit {
 
   isUserCollapsed = false;
+  isCoinCollapsed = false;
+  isCommitCollapsed = false;
   isClientCollapsed = false;
   isAccountCollapsed = false;
 
@@ -28,6 +30,19 @@ export class AdminMenuComponent implements OnInit {
       this.isUserCollapsed = true;
     } else { this.isUserCollapsed = false; }
   }
+
+  coinscollapse() {
+    if (this.isCoinCollapsed === false) {
+      this.isCoinCollapsed = true;
+    } else { this.isCoinCollapsed = false; }
+  }
+
+  commitscollapse() {
+    if (this.isCommitCollapsed === false) {
+      this.isCommitCollapsed = true;
+    } else { this.isCommitCollapsed = false; }
+  }
+
 
   accountcollapse() {
     if (this.isAccountCollapsed === false) {
