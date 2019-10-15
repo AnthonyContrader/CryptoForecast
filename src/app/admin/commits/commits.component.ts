@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/service/user.service';
-import { UserDTO } from 'src/dto/userdto';
+import { CommitDTO } from 'src/dto/commitdto';
+import { CommitService } from 'src/service/commit.service';
 
 @Component({
   selector: 'app-commits',
@@ -9,32 +9,32 @@ import { UserDTO } from 'src/dto/userdto';
 })
 export class CommitsComponent implements OnInit {
 
-  users: UserDTO[];
-  usertoinsert: UserDTO = new UserDTO();
+  commits: CommitDTO[];
+  committoinsert: CommitDTO = new CommitDTO();
 
-  constructor(private service: UserService) { }
+  constructor(private service: CommitService) { }
 
   ngOnInit() {
-    this.getUsers();
+    this.getCommits();
   }
 
-  getUsers() {
-    this.service.getAll().subscribe(users => this.users = users);
+  getCommits() {
+    this.service.getAll().subscribe(commits => this.commits = commits);
   }
 
-  delete(user: UserDTO) {
-    this.service.delete(user.id).subscribe(() => this.getUsers());
+  delete(commit: CommitDTO) {
+    this.service.delete(commit.id).subscribe(() => this.getCommits());
   }
 
-  update(user: UserDTO) {
-    this.service.update(user).subscribe(() => this.getUsers());
+  update(commit: CommitDTO) {
+    this.service.update(commit).subscribe(() => this.getCommits());
   }
 
-  insert(user: UserDTO) {
-    this.service.insert(user).subscribe(() => this.getUsers());
+  insert(commit: CommitDTO) {
+    this.service.insert(commit).subscribe(() => this.getCommits());
   }
 
   clear(){
-    this.usertoinsert = new UserDTO();
+    this.committoinsert = new CommitDTO();
   }
 }
