@@ -1,40 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/service/user.service';
-import { UserDTO } from 'src/dto/userdto';
+import { SocialService } from 'src/service/social.service';
+import { SocialDTO as SocialDTO } from 'src/dto/socialdto';
 
 @Component({
-  selector: 'app-users',
-  templateUrl: './users.component.html',
-  styleUrls: ['./users.component.css']
+  selector: 'app-socials',
+  templateUrl: './socials.component.html',
+  styleUrls: ['./socials.component.css']
 })
-export class UsersComponent implements OnInit {
+export class SocialsComponent implements OnInit {
 
-  users: UserDTO[];
-  usertoinsert: UserDTO = new UserDTO();
+  socials: SocialDTO[];
+  socialtoinsert: SocialDTO = new SocialDTO();
 
-  constructor(private service: UserService) { }
+  constructor(private service: SocialService) { }
 
   ngOnInit() {
-    this.getUsers();
+    this.getSocials();
   }
 
-  getUsers() {
-    this.service.getAll().subscribe(users => this.users = users);
+  getSocials() {
+    this.service.getAll().subscribe(socials => this.socials = socials);
   }
 
-  delete(user: UserDTO) {
-    this.service.delete(user.id).subscribe(() => this.getUsers());
+  delete(social: SocialDTO) {
+    this.service.delete(social.id).subscribe(() => this.getSocials());
   }
 
-  update(user: UserDTO) {
-    this.service.update(user).subscribe(() => this.getUsers());
+  update(social: SocialDTO) {
+    this.service.update(social).subscribe(() => this.getSocials());
   }
 
-  insert(user: UserDTO) {
-    this.service.insert(user).subscribe(() => this.getUsers());
+  insert(social: SocialDTO) {
+    this.service.insert(social).subscribe(() => this.getSocials());
   }
 
   clear(){
-    this.usertoinsert = new UserDTO();
+    this.socialtoinsert = new SocialDTO();
   }
 }
