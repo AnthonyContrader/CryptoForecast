@@ -9,11 +9,12 @@ import it.contrader.dto.CommitDTO;
 import it.contrader.service.CommitService;
 
 @RestController
-@RequestMapping("/trend")
+@RequestMapping("/commit")
 @CrossOrigin(origins = "http://localhost4200")
 
 public class CommitController extends AbstractController<CommitDTO>
 {
+	
 	@Autowired
 	private CommitService commitService;
 }

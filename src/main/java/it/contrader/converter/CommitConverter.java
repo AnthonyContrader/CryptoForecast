@@ -16,7 +16,7 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 		if (commitDTO != null) {
 			commit = new Commit();
 			commit.setId(commitDTO.getId());
-			commit.setData(commitDTO.getData());
+			commit.setDate(commitDTO.getDate());
 			commit.setStars(commitDTO.getStars());
 			commit.setFork(commitDTO.getFork());
 			commit.setWatcher(commitDTO.getWatcher());
@@ -34,7 +34,7 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 		if (commit != null) {
 			commitDTO = new CommitDTO();
 			commitDTO.setId(commit.getId());
-			commitDTO.setData(commit.getData());
+			commitDTO.setDate(commit.getDate());
 			commitDTO.setStars(commit.getStars());
 			commitDTO.setFork(commit.getFork());
 			commitDTO.setWatcher(commit.getWatcher());
@@ -54,7 +54,7 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 		if (commitDTO != null) {
 			commit = new Commit();
 			commit.setId(commitDTO.getId());
-			commit.setData(commitDTO.getData());
+			commit.setDate(commitDTO.getDate());
 			commit.setStars(commitDTO.getStars());
 			commit.setFork(commitDTO.getFork());
 			commit.setWatcher(commitDTO.getWatcher());
@@ -74,7 +74,7 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 		if (commit != null) {
 			commitDTO = new CommitDTO();
 			commitDTO.setId(commit.getId());
-			commitDTO.setData(commit.getData());
+			commitDTO.setDate(commit.getDate());
 			commitDTO.setStars(commit.getStars());
 			commitDTO.setFork(commit.getFork());
 			commitDTO.setWatcher(commit.getWatcher());

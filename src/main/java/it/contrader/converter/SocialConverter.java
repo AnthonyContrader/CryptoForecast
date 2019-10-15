@@ -17,7 +17,7 @@ public class SocialConverter extends AbstractConverter<Social, SocialDTO> {
 			//social = new Social(socialDTO.getId(), socialDTO.getReddit(), socialDTO.getTelegram(),socialDTO.getTwitter(), socialDTO.getLikefb());
 		social = new Social();
 		social.setId(socialDTO.getId());
-		social.setData(socialDTO.getData());
+		social.setDate(socialDTO.getDate());
 		social.setReddit(socialDTO.getReddit());
 		social.setTelegram(socialDTO.getTelegram());
 		social.setLikefb(socialDTO.getLikefb());
@@ -38,7 +38,7 @@ public class SocialConverter extends AbstractConverter<Social, SocialDTO> {
 
 			socialDTO = new SocialDTO();
 			socialDTO.setId(social.getId());
-			socialDTO.setData(social.getData());
+			socialDTO.setDate(social.getDate());
 			socialDTO.setReddit(social.getReddit());
 			socialDTO.setTelegram(social.getTelegram());
 			socialDTO.setLikefb(social.getLikefb());
@@ -59,7 +59,7 @@ public class SocialConverter extends AbstractConverter<Social, SocialDTO> {
 			//social = new Social(socialDTO.getId(), socialDTO.getReddit(), socialDTO.getTelegram(),socialDTO.getTwitter(), socialDTO.getLikefb());
 			social = new Social();
 			social.setId(socialDTO.getId());
-			social.setData(socialDTO.getData());
+			social.setDate(socialDTO.getDate());
 			social.setReddit(socialDTO.getReddit());
 			social.setTelegram(socialDTO.getTelegram());
 			social.setLikefb(socialDTO.getLikefb());
@@ -83,7 +83,7 @@ public class SocialConverter extends AbstractConverter<Social, SocialDTO> {
 
 			socialDTO = new SocialDTO();
 			socialDTO.setId(social.getId());
-			socialDTO.setData(social.getData());
+			socialDTO.setDate(social.getDate());
 			socialDTO.setReddit(social.getReddit());
 			socialDTO.setTelegram(social.getTelegram());
 			socialDTO.setLikefb(social.getLikefb());

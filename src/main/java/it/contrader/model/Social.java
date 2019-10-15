@@ -25,7 +25,7 @@ public class Social {
 	private Long id;
 	
 	@Column(unique = true)
-	private String data;
+	private String date;
 	
 	private int reddit;
 	private int telegram;

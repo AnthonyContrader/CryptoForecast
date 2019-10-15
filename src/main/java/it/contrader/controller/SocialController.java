@@ -13,6 +13,7 @@ import it.contrader.service.SocialService;
 @CrossOrigin(origins = "http://localhost:4200")
 
 public class SocialController extends AbstractController<SocialDTO>{
+
 	@Autowired
 	private SocialService socialservice;
 	
