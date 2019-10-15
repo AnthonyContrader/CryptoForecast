@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-1">
+
+    </div>
+    <div class="col-md-10">
+      <table>
+        <tr>
+          <th>
+          Namecoin
+            
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Circulating
+          </th>
+          <th>
+            Symbol
+          </th>
+          <th>
+              Edit
+            </th>
+            <th>
+              Coin
+            </th>
+          
+        </tr>
+        <tr>
+          <td>
+            <input placeholder="namecoin" [(ngModel)]="cointoinsert.namecoin">
+          </td>
+          <td>
+            <input placeholder="price" [(ngModel)]="cointoinsert.price">
+          </td>
+          <td>
+          
+              <input placeholder="circulating" [(ngModel)]="cointoinsert.circulating">
+          
+          </td>
+          <td>
+          
+            <input placeholder="symbol" [(ngModel)]="cointoinsert.symbol">
+        
+        </td>
+          <td>
+            <button (click)="insert(cointoinsert)">Insert</button>
+          </td>
+          <td>
+            <button (click)="clear()">Clear</button>
+          </td>
+        </tr>
+        <tr *ngFor="let coin of coins">
+          <td>
+            <input [(ngModel)]="coin.namecoin">
+          </td>
+          <td>
+            <input [(ngModel)]="coin.price">
+          </td>
+          <td>
+            <input [(ngModel)]="coin.circulating">
+          </td>
+          <td>
+              <input [(ngModel)]="coin.symbol">
+          </td>
+          <td>
+            <button (click)=update(coin)>Save</button>
+          </td>
+          <td>
+            <button (click)="delete(coin)">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

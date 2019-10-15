@@ -20,4 +20,6 @@ export class TrendService extends AbstractService<TrendDTO>{
         super(http);
         this.type = 'trend';
     }
+
+    
 }

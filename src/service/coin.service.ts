@@ -21,5 +21,7 @@ export class CoinService extends AbstractService<CoinDTO>{
         this.type = 'coin' ;
 
     }
+
+    
 }
      
