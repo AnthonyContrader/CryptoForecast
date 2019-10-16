@@ -11,9 +11,11 @@ export class CommitDTO {
     stars: number;
     
     fork: number;
+
     watcher: number;
 
     collaborators: number;
+    
     number: number;
 
     coindto: CoinDTO;

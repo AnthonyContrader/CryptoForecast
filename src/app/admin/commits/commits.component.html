@@ -25,7 +25,7 @@
                  Numbers
                 </th>
                 <th>
-                  Idcoins
+                  Idcoin
                  </th>
                 <th>
                   Edit
@@ -58,7 +58,7 @@
           </td>
           <td>
             
-            <input placeholder="numbers" [(ngModel)]="committoinsert.numbers">
+            <input placeholder="number" [(ngModel)]="committoinsert.number">
       
           </td>
           <td>
@@ -92,10 +92,10 @@
               <input [(ngModel)]="commit.collaborators">
             </td>
             <td>
-                <input [(ngModel)]="commit.numbers">
+                <input [(ngModel)]="commit.number">
             </td>
             <td>
-             {{commit.coin.id}}
+              {{commit.coin.id}}
           </td>
             <td>
               <button (click)=update(coin)>Save</button>
