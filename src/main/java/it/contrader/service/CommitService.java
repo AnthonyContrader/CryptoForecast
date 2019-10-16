@@ -18,7 +18,7 @@ public class CommitService extends AbstractService<Commit, CommitDTO> {
 	private CommitRepository repository;
 
 	public CommitDTO findById(Long id) {
-		return converter.toDTO(repository.findCoinById(id));
+		return converter.toDTO(repository.findCommitById(id));
 	}
 
 }

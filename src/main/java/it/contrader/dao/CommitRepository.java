@@ -11,5 +11,5 @@ import it.contrader.model.Commit;
 @Transactional
 public interface CommitRepository extends CrudRepository<Commit, Long> {
 
-	Commit findCoinById(Long Id);
+	Commit findCommitById(Long Id);
 }
