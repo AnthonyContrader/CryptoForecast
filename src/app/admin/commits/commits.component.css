@@ -1,12 +1,12 @@
 *{
-    text-align: left;
+    text-align: center;
 }
 
 /*Tables*/
 table {
 	border-collapse: collapse;
 	width: 100%;
-	float: left;
+	float: right ;
 	border-radius: 4px;
 	-moz-border-radius: 4px;
 }
