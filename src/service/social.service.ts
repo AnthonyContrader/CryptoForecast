@@ -19,6 +19,6 @@ export class SocialService extends AbstractService<SocialDTO>{
 
     constructor(http: HttpClient){
         super(http);
-        this.type = 'socail' ;
+        this.type = 'social' ;
     }
 }
