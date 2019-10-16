@@ -10,7 +10,7 @@ import it.contrader.service.TrendService;
 
 @RestController
 @RequestMapping("/trend")
-@CrossOrigin(origins = "http://localhost4200")
+@CrossOrigin(origins = "http://localhost:4200")
 
 public class TrendController extends AbstractController<TrendDTO>{
 

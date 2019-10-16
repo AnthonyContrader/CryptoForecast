@@ -10,7 +10,7 @@ import it.contrader.service.CommitService;
 
 @RestController
 @RequestMapping("/commit")
-@CrossOrigin(origins = "http://localhost4200")
+@CrossOrigin(origins = "http://localhost:4200")
 
 public class CommitController extends AbstractController<CommitDTO>
 {
