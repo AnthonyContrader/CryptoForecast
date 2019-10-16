@@ -1,40 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { SocialService } from 'src/service/social.service';
-import { SocialDTO as SocialDTO } from 'src/dto/socialdto';
+import { TrendDTO } from 'src/dto/trenddto';
+import { TrendService } from 'src/service/trend.service';
 
 @Component({
-  selector: 'app-socials',
-  templateUrl: './socials.component.html',
-  styleUrls: ['./socials.component.css']
+  selector: 'app-trends',
+  templateUrl: './trends.component.html',
+  styleUrls: ['./trends.component.css']
 })
-export class SocialsComponent implements OnInit {
+export class TrendsComponent implements OnInit {
 
-  socials: SocialDTO[];
-  socialtoinsert: SocialDTO = new SocialDTO();
+  trends: TrendDTO[];
+  trendtoinsert: TrendDTO = new TrendDTO();
 
-  constructor(private service: SocialService) { }
+  constructor(private service: TrendService ) { }
 
   ngOnInit() {
-    this.getSocials();
+    this.getTrends();
   }
 
-  getSocials() {
-    this.service.getAll().subscribe(socials => this.socials = socials);
+  getTrends() {
+    this.service.getAll().subscribe(trends => this.trends = trends);
   }
 
-  delete(social: SocialDTO) {
-    this.service.delete(social.id).subscribe(() => this.getSocials());
+  delete(trend: TrendDTO) {
+    this.service.delete(trend.id).subscribe(() => this.getTrends());
   }
 
-  update(social: SocialDTO) {
-    this.service.update(social).subscribe(() => this.getSocials());
+  update(trend: TrendDTO) {
+    this.service.update(trend).subscribe(() => this.getTrends());
   }
 
-  insert(social: SocialDTO) {
-    this.service.insert(social).subscribe(() => this.getSocials());
+  insert(trend: TrendDTO) {
+    this.service.insert(trend).subscribe(() => this.getTrends());
   }
 
   clear(){
-    this.socialtoinsert = new SocialDTO();
+    this.trendtoinsert = new TrendDTO();
   }
 }
