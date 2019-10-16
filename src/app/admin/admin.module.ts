@@ -6,6 +6,7 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './users/users.component';
 import { WorkInProgressComponent } from './work-in-progress/work-in-progress.component';
 import { CoinsComponent } from './coins/coins.component';
+import { CommitsComponent } from './commits/commits.component';
 
 /**
  * Modulo dell'admin, qui vengono dichiarate le component che utilizza 
@@ -16,7 +17,7 @@ import { CoinsComponent } from './coins/coins.component';
  * @see AdminRoutingModule
  */
 @NgModule({
-  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, CoinsComponent],
+  declarations: [AdminDashboardComponent, UsersComponent, WorkInProgressComponent, CoinsComponent, CommitsComponent ] ,
   imports: [
     CommonModule,
     AdminRoutingModule,
