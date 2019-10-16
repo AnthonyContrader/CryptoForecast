@@ -25,6 +25,9 @@
                  Numbers
                 </th>
                 <th>
+                  Idcoins
+                 </th>
+                <th>
                   Edit
                 </th>
                 <th>
@@ -58,6 +61,13 @@
             <input placeholder="numbers" [(ngModel)]="committoinsert.numbers">
       
           </td>
+          <td>
+            
+              <select [(ngModel)] = "committoinsert.coin">  
+                  <option [(ngValue)] = "coin" *ngFor = "let coin of coins"> {{coin.id}}</option>
+                   </select>
+      
+          </td>
             <td>
               <button (click)="insert(committoinsert)">Insert</button>
             </td>
@@ -84,6 +94,9 @@
             <td>
                 <input [(ngModel)]="commit.numbers">
             </td>
+            <td>
+             {{commit.coin.id}}
+          </td>
             <td>
               <button (click)=update(coin)>Save</button>
             </td>
