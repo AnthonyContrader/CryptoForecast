@@ -13,6 +13,10 @@
               Date
             </th>
             <th>
+              Idcoin
+             </th>
+            <th>
+            <th>
               Edit
             </th>
             <th>
@@ -26,6 +30,13 @@
             <td>
               <input placeholder="date" [(ngModel)]="trendtoinsert.date">
             </td>
+            <td>
+            
+              <select [(ngModel)] = "trendtoinsert.coin">  
+                  <option [(ngValue)] = "coin" *ngFor = "let coin of coins"> {{coin.id}}</option>
+                   </select>
+      
+          </td>
             
          
             <td>
@@ -42,7 +53,9 @@
             <td>
               <input [(ngModel)]="trend.date">
             </td>
-            
+            <td>
+              <input [(ngModel)]="trend.coin.id">
+          </td>
             <td>
               <button (click)=update(coin)>Save</button>
             </td>

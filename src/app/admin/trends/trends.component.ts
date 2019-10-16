@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TrendDTO } from 'src/dto/trenddto';
 import { TrendService } from 'src/service/trend.service';
+import { CoinDTO } from 'src/dto/coindto';
+import { CoinService } from 'src/service/coin.service';
 
 @Component({
   selector: 'app-trends',
@@ -11,8 +13,9 @@ export class TrendsComponent implements OnInit {
 
   trends: TrendDTO[];
   trendtoinsert: TrendDTO = new TrendDTO();
+  coins: CoinDTO[];
 
-  constructor(private service: TrendService ) { }
+  constructor(private service: TrendService,  private cService: CoinService ) { }
 
   ngOnInit() {
     this.getTrends();
@@ -20,6 +23,12 @@ export class TrendsComponent implements OnInit {
 
   getTrends() {
     this.service.getAll().subscribe(trends => this.trends = trends);
+  }
+
+  getCoins(){
+
+    this.cService.getAll().subscribe(coins => this.coins =coins);
+
   }
 
   delete(trend: TrendDTO) {

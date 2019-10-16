@@ -3,6 +3,7 @@ import { UserDTO } from 'src/dto/userdto';
 import { CoinDTO } from 'src/dto/coindto';
 import { CommitDTO } from 'src/dto/commitdto';
 import { SocialDTO } from 'src/dto/socialdto';
+import { TrendDTO } from 'src/dto/trenddto';
 
 /**
  * Componente della dashboard admin. Nell'ngOnInit recupera
@@ -19,6 +20,7 @@ export class AdminDashboardComponent implements OnInit {
   coin: CoinDTO;
   commit: CommitDTO;
   social: SocialDTO ;
+  trend: TrendDTO
 
   constructor() { }
 
@@ -27,6 +29,7 @@ export class AdminDashboardComponent implements OnInit {
     this.coin = JSON.parse(localStorage.getItem('currentCoin'));
     this.commit = JSON.parse(localStorage.getItem('currentCommit'));
     this.social = JSON.parse(localStorage.getItem('currentSocial'));
+    this.trend = JSON.parse(localStorage.getItem('currentTrend'));
   }
 
 }

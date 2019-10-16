@@ -7,6 +7,7 @@ import { WorkInProgressComponent } from './work-in-progress/work-in-progress.com
 import { CoinsComponent } from './coins/coins.component';
 import { CommitsComponent } from './commits/commits.component';
 import { SocialsComponent } from './socials/socials.component';
+import { TrendsComponent } from './trends/trends.component';
 
 /**
  * Modulo di routing dell'admin. Qui ci sono i percorsi che un admin può seguire:
@@ -27,6 +28,7 @@ const routes: Routes = [
     { path: 'coins', component: CoinsComponent},
     { path: 'commits', component: CommitsComponent},
     { path: 'socials', component: SocialsComponent},
+    { path: 'trends', component: TrendsComponent},
     { path: 'work-in-progress', component: WorkInProgressComponent}
   ]}
 ];
