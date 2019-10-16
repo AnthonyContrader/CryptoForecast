@@ -42,7 +42,7 @@
             </div>
             <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#commits"
                 (click)="commitscollapse()">
-                <i class="fas fa-coins" style="margin-right: 15px"></i>Commits
+                <i class="fas fa-commits" style="margin-right: 15px"></i>Commits
             </button>
             <div class="collapsebtn" id="commits" *ngIf="isCommitCollapsed">
                 <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
@@ -50,6 +50,16 @@
                         </i> Manage Commits </a>
                 </button>
             </div>
+            <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#socials"
+            (click)="socialscollapse()">
+            <i class="fas fa-socials" style="margin-right: 15px"></i>Socials
+        </button>
+        <div class="collapsebtn" id="socials" *ngIf="isSocialCollapsed">
+            <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+                <a [routerLink]="['/admin-dashboard/socials']"> <i class="fas fa-edit" style="margin-right: 10px">
+                    </i> Manage Socials </a>
+            </button>
+        </div>
             <button class="menubtn" (click)="logout()">
                 <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
             </button>

@@ -22,10 +22,13 @@
                 Twitter
               </th>
               <th>
+                Idcoin
+              </th>
+              <th>
                   Edit
                 </th>
                 <th>
-                  Commit
+                  social
                 </th>
           </tr>
           <tr>
@@ -50,7 +53,13 @@
             <input placeholder="twitter" [(ngModel)]="socialtoinsert.twitter">
         
           </td>
-          
+          <td>
+            
+            <select [(ngModel)] = "socialtoinsert.coin">  
+                <option [(ngValue)] = "coin" *ngFor = "let coin of coins"> {{coin.id}}</option>
+                 </select>
+    
+        </td>
             <td>
               <button (click)="insert(socialtoinsert)">Insert</button>
             </td>
@@ -74,6 +83,9 @@
             <td>
               <input [(ngModel)]="social.twitter">
             </td>
+            <td>
+              {{social.coin.id}}
+          </td>
             <td>
               <button (click)=update(coin)>Save</button>
             </td>

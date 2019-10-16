@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialService } from 'src/service/social.service';
 import { SocialDTO } from 'src/dto/socialdto';
+import { CoinDTO } from 'src/dto/coindto';
+import { CommitService } from 'src/service/commit.service';
+import { CoinService } from 'src/service/coin.service';
 
 @Component({
   selector: 'app-socials',
@@ -11,8 +14,8 @@ export class SocialsComponent implements OnInit {
 
   socials: SocialDTO[];
   socialtoinsert: SocialDTO = new SocialDTO();
-
-  constructor(private service: SocialService) { }
+  coins: CoinDTO[];
+  constructor(private service: SocialService, private cService: CoinService) { }
 
   ngOnInit() {
     this.getSocials();
@@ -22,6 +25,11 @@ export class SocialsComponent implements OnInit {
     this.service.getAll().subscribe(socials => this.socials = socials);
   }
 
+  getCoins(){
+
+    this.cService.getAll().subscribe(coins => this.coins =coins);
+
+  }
   delete(social: SocialDTO) {
     this.service.delete(social.id).subscribe(() => this.getSocials());
   }
