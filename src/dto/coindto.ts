@@ -14,10 +14,10 @@ price:  number;
 circulating: number;
 
 symbol: string;
-
+/*
 trendsDTO: TrendDTO[] ; 
 
 commitsDTO: CommitDTO[] ;
 
-socialDTO: SocialDTO[] ;
+socialDTO: SocialDTO[] ; */
 }

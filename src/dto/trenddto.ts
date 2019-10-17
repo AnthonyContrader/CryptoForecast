@@ -10,7 +10,7 @@ export class TrendDTO {
 
     date: string;
 
-    coinDTO: CoinDTO;
+    coin: CoinDTO;
 
 
 } 

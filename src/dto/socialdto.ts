@@ -11,5 +11,5 @@ export class SocialDTO{
     likefb: number;
     twitter: number;
 
-    coinDTO: CoinDTO;
+    coin: CoinDTO;
 }

@@ -95,7 +95,9 @@
                 <input [(ngModel)]="commit.number">
             </td>
             <td>
-              {{commit.coin.id}}
+              <select [(ngModel)] = "committoinsert.coin">  
+                <option [(ngValue)] = "coin" *ngFor = "let coin of coins"> {{coin.id}}</option>
+                 </select>
           </td>
             <td>
               <button (click)=update(coin)>Save</button>
