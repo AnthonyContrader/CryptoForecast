@@ -14,6 +14,9 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 	public Commit toEntity(CommitDTO commitDTO) {
 		Commit commit = null;
 		if (commitDTO != null) {
+			
+			
+			
 			commit = new Commit();
 			commit.setId(commitDTO.getId());
 			commit.setDate(commitDTO.getDate());
@@ -22,8 +25,9 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 			commit.setWatcher(commitDTO.getWatcher());
 			commit.setCollaborators(commitDTO.getCollaborators());
 			commit.setNumber(commitDTO.getNumber());
-			CoinConverter cc = new CoinConverter ();
-			commit.setCoin(cc.toEntityS(commitDTO.getCoinDTO()));
+			commit.setCoin(commitDTO.getCoin());
+			/*CoinConverter cc = new CoinConverter ();
+			commit.setCoin(cc.toEntityS(commitDTO.getCoinDTO()));*/
 		}
 		return commit;
 	}
@@ -40,13 +44,14 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 			commitDTO.setWatcher(commit.getWatcher());
 			commitDTO.setCollaborators(commit.getCollaborators());
 			commitDTO.setNumber(commit.getNumber());
-			CoinConverter cc = new CoinConverter ();
-			commitDTO.setCoinDTO(cc.toDTOS(commit.getCoin()));
+			commitDTO.setCoin(commit.getCoin());
+			/*CoinConverter cc = new CoinConverter ();
+			commitDTO.setCoinDTO(cc.toDTOS(commit.getCoin()));*/
 
 		}
 		return commitDTO;
 	}
-	
+/*	
 	@Override
 	public Commit toEntityS(CommitDTO commitDTO) {
 
@@ -86,6 +91,6 @@ public class CommitConverter extends AbstractConverter<Commit, CommitDTO> {
 		}
 		return commitDTO;
 		
-	}
+	}*/
 	
 }

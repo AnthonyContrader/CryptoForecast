@@ -27,12 +27,12 @@ public class CoinDTO {
 	
 	private String symbol;
 	
-	private List<TrendDTO> trendsDTO;
+	/*private List<TrendDTO> trendsDTO;
 	
 	private List<CommitDTO> commitsDTO;
 	
 	private List<SocialDTO> socialsDTO; 
-	
+	*/
 	
 
 	

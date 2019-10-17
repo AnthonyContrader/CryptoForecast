@@ -22,8 +22,8 @@ public class SocialConverter extends AbstractConverter<Social, SocialDTO> {
 		social.setTelegram(socialDTO.getTelegram());
 		social.setLikefb(socialDTO.getLikefb());
 		social.setTwitter(socialDTO.getTwitter());
-		CoinConverter cc = new CoinConverter();
-		social.setCoin(cc.toEntityS(socialDTO.getCoinDTO()));
+	//	CoinConverter cc = new CoinConverter();
+	//	social.setCoin(cc.toEntityS(socialDTO.getCoinDTO()));
 		
 		
 		}
@@ -43,13 +43,13 @@ public class SocialConverter extends AbstractConverter<Social, SocialDTO> {
 			socialDTO.setTelegram(social.getTelegram());
 			socialDTO.setLikefb(social.getLikefb());
 			socialDTO.setTwitter(social.getTwitter());
-			CoinConverter cc = new CoinConverter();
-			socialDTO.setCoinDTO(cc.toDTOS(social.getCoin()));
+			//CoinConverter cc = new CoinConverter();
+		//	socialDTO.setCoinDTO(cc.toDTOS(social.getCoin()));
 			
 		}
 		return socialDTO;
 	}
-	
+	/*
 	@Override
 	public Social toEntityS(SocialDTO socialDTO) {
 
@@ -94,6 +94,6 @@ public class SocialConverter extends AbstractConverter<Social, SocialDTO> {
 		}
 		return socialDTO;
 		
-	}
+	}*/
 	
 }

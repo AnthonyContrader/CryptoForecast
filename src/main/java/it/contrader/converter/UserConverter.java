@@ -27,7 +27,7 @@ public class UserConverter extends AbstractConverter<User, UserDTO> {
 		}
 		return userDTO;
 	}
-	
+/*	
 	@Override
 	public User toEntityS(UserDTO userDTO) {
 		
@@ -48,5 +48,5 @@ public class UserConverter extends AbstractConverter<User, UserDTO> {
 		}
 		return userDTO;
 	}
-	
+	*/
 }

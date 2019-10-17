@@ -36,7 +36,7 @@ public class Coin {
 	
 	private String symbol;
 
-	//relazione coin - trend
+	/*relazione coin - trend
 	@OneToMany(mappedBy="coin", cascade = CascadeType.MERGE)
 	private List<Trend> trends;
 	
@@ -45,6 +45,6 @@ public class Coin {
 	
 	@OneToMany(mappedBy="coin", cascade = CascadeType.MERGE)
 	private List<Social> socials;
-	
+	*/
 	
 }

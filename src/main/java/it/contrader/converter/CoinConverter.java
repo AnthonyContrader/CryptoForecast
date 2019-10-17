@@ -19,12 +19,12 @@ public class CoinConverter extends AbstractConverter<Coin, CoinDTO> {
 			coin.setPrice(coinDTO.getPrice());
 			coin.setCirculating(coinDTO.getCirculating());
 			coin.setSymbol(coinDTO.getSymbol());
-			TrendConverter tc = new TrendConverter();
+		/*	TrendConverter tc = new TrendConverter();
 			coin.setTrends(tc.toEntityList(coinDTO.getTrendsDTO()));
 			CommitConverter cc = new CommitConverter();
 			coin.setCommits(cc.toEntityList(coinDTO.getCommitsDTO()));
 			SocialConverter sc = new SocialConverter();
-			coin.setSocials(sc.toEntityList(coinDTO.getSocialsDTO()));
+			coin.setSocials(sc.toEntityList(coinDTO.getSocialsDTO()));*/
 		}
 		return coin;
 	}
@@ -41,7 +41,7 @@ public class CoinConverter extends AbstractConverter<Coin, CoinDTO> {
 			coinDTO.setPrice(coin.getPrice());
 			coinDTO.setCirculating(coin.getCirculating());
 			coinDTO.setSymbol(coin.getSymbol());
-			TrendConverter tc = new TrendConverter();
+		/*	TrendConverter tc = new TrendConverter();
 			coinDTO.setTrendsDTO(tc.toDTOList(coin.getTrends()));
 			
 			CommitConverter cc = new CommitConverter();
@@ -49,12 +49,12 @@ public class CoinConverter extends AbstractConverter<Coin, CoinDTO> {
 			
 			SocialConverter sc = new SocialConverter();
 			coinDTO.setSocialsDTO(sc.toDTOList(coin.getSocials()));
-						
+						*/
 		}
 		return coinDTO;
 	}
 	
-	
+/*	
 	@Override
 	public Coin toEntityS(CoinDTO coinDTO) {
 		
@@ -86,5 +86,5 @@ public class CoinConverter extends AbstractConverter<Coin, CoinDTO> {
 	
 		}
 		return coinDTO;
-	}
+	}*/
 }
