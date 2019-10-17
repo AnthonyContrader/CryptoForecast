@@ -54,13 +54,21 @@
               <input [(ngModel)]="trend.date">
             </td>
             <td>
-              <input [(ngModel)]="trend.coin.id">
+               
+                <select [(ngModel)]="trend.coin.id">
+
+                    <option [selected] = "coin" *ngFor = "let coin of coins"> {{coin.id}}</option>
+  
+                </select>
+              <!--<select [(ngModel)] = "trendtoinsert.coin">  
+                    <option [(ngValue)] = "coin" *ngFor = "let coin of coins"> {{coin.id}}</option>
+                     </select>-->
           </td>
             <td>
-              <button (click)=update(coin)>Save</button>
+              <button (click)=update(trend)>Save</button>
             </td>
             <td>
-              <button (click)="delete(coin)">Delete</button>
+              <button (click)="delete(trend)">Delete</button>
             </td>
           </tr>
         </table>

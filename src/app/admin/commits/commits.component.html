@@ -95,15 +95,23 @@
                 <input [(ngModel)]="commit.number">
             </td>
             <td>
+
+              <select [(ngModel)]="commit.coin.id">
+
+                  <option [selected] = "coin" *ngFor = "let coin of coins"> {{coin.id}}</option>
+
+              </select>
+                <!--
+                <input [(ngModel)]="commit.coin.id">
               <select [(ngModel)] = "committoinsert.coin">  
                 <option [(ngValue)] = "coin" *ngFor = "let coin of coins"> {{coin.id}}</option>
-                 </select>
+                 </select>-->
           </td>
             <td>
-              <button (click)=update(coin)>Save</button>
+              <button (click)=update(commit)>Save</button>
             </td>
             <td>
-              <button (click)="delete(coin)">Delete</button>
+              <button (click)="delete(commit)">Delete</button>
             </td>
           </tr>
         </table>

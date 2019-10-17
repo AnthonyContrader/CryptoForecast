@@ -18,5 +18,5 @@ export class CommitDTO {
     
     number: number;
 
-    coindto: CoinDTO;
+    coin: CoinDTO;
 }

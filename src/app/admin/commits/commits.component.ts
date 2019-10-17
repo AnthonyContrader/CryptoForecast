@@ -37,10 +37,12 @@ export class CommitsComponent implements OnInit {
   }
 
   update(commit: CommitDTO) {
+    console.log(commit);
     this.service.update(commit).subscribe(() => this.getCommits());
   }
 
   insert(commit: CommitDTO) {
+    
     this.service.insert(commit).subscribe(() => this.getCommits());
   }
 
