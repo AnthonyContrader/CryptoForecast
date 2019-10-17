@@ -23,6 +23,7 @@ public class TrendConverter extends AbstractConverter<Trend, TrendDTO> {
 			trend.setId(trendDTO.getId());
 			trend.setVariation(trendDTO.getVariation());
 			trend.setDate(trendDTO.getDate());
+			trend.setCoin(trendDTO.getCoin());
 		//	CoinConverter cc = new CoinConverter();
 		//	trend.setCoin(cc.toEntityS(trendDTO.getCoinDTO()));
 		}
@@ -39,6 +40,7 @@ public class TrendConverter extends AbstractConverter<Trend, TrendDTO> {
 			trendDTO.setId(trend.getId());
 			trendDTO.setVariation(trend.getVariation());
 			trendDTO.setDate(trend.getDate());
+			trendDTO.setCoin(trend.getCoin());
 		//	CoinConverter cc = new CoinConverter();
 		//	trendDTO.setCoinDTO(cc.toDTOS(trend.getCoin()));
 
