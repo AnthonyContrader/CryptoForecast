@@ -12,6 +12,7 @@ export class AdminMenuComponent implements OnInit {
   isCoinCollapsed = false;
   isCommitCollapsed = false;
   isSocialCollapsed = false;
+  isTrendCollapsed = false;
   isClientCollapsed = false;
   isAccountCollapsed = false;
 
@@ -49,6 +50,13 @@ export class AdminMenuComponent implements OnInit {
       this.isSocialCollapsed = true;
     } else { this.isSocialCollapsed = false; }
   }
+
+  trendscollapse() {
+    if (this.isTrendCollapsed === false) {
+      this.isTrendCollapsed = true;
+    } else { this.isTrendCollapsed = false; }
+  }
+
   accountcollapse() {
     if (this.isAccountCollapsed === false) {
       this.isAccountCollapsed = true;

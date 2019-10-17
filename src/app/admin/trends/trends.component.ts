@@ -19,6 +19,7 @@ export class TrendsComponent implements OnInit {
 
   ngOnInit() {
     this.getTrends();
+    this.getCoins();
   }
 
   getTrends() {

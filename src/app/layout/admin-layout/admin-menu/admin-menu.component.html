@@ -60,6 +60,16 @@
                     </i> Manage Socials </a>
             </button>
         </div>
+        <button type="button" class="menubtn" data-toggle="collapsebtn" data-target="#trends"
+        (click)="trendscollapse()">
+        <i class="fas fa-trends" style="margin-right: 15px"></i>Trends
+    </button>
+    <div class="collapsebtn" id="trends" *ngIf="isTrendCollapsed">
+        <button class="menubtn" style="padding-left: 40px; background-color: #334247;">
+            <a [routerLink]="['/admin-dashboard/trends']"> <i class="fas fa-edit" style="margin-right: 10px">
+                </i> Manage Trends </a>
+        </button>
+    </div>
             <button class="menubtn" (click)="logout()">
                 <i class="fas fa-sign-out-alt" style="margin-right: 15px"></i>Logout
             </button>

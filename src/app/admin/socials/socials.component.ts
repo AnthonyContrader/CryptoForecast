@@ -19,6 +19,7 @@ export class SocialsComponent implements OnInit {
 
   ngOnInit() {
     this.getSocials();
+    this.getCoins();
   }
 
   getSocials() {
